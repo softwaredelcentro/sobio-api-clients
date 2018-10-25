@@ -55,7 +55,7 @@ import ar.com.sdc.sobio.client.v1.auth.OAuth;
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-25T13:07:38.915-03:00")
 public class ApiClient {
   protected Map<String, String> defaultHeaderMap = new HashMap<String, String>();
-  protected String basePath = "https://sobio-b76a.sdc.com.ar";
+  protected String basePath = "http://127.0.0.1:8081";
   protected boolean debugging = false;
   protected int connectionTimeout = 0;
   private int readTimeout = 0;
