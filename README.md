@@ -1,8 +1,9 @@
 # client
 
-## Generated with swagger-codegen with
+Generated with swagger-codegen with
 
-```java -jar swagger-codegen-cli-2.3.1.jar generate -i http://127.0.0.1:8081/v2/api-docs -l java -c java-config.json -o .```
+```java -jar swagger-codegen-cli-2.3.1.jar generate -i http://127.0.0.1:8081/v2/api-docs -l java -c java-config.json -o .
+```
 
 ## Requirements
 

@@ -21,3 +21,4 @@ target
 .project
 .gradle
 build
+/pom.xml.versionsBackup
