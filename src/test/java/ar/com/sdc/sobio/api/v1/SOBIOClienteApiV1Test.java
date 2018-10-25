@@ -18,12 +18,15 @@ import static org.junit.Assert.assertTrue;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import org.apache.commons.io.IOUtils;
 import org.junit.Test;
 
 import ar.com.sdc.sobio.client.v1.ApiException;
 import ar.com.sdc.sobio.model.v1.BiometricData;
+import ar.com.sdc.sobio.model.v1.DetectedAction;
 import ar.com.sdc.sobio.model.v1.ExtractFaceFromImageInput;
 import ar.com.sdc.sobio.model.v1.ExtractFaceFromImageResult;
 import ar.com.sdc.sobio.model.v1.ExtractFaceFromVideoInput;
@@ -179,6 +182,37 @@ public class SOBIOClienteApiV1Test {
 		VerifyResult verifyOutput = apiMatching.verifyT2t(verifyInput);
 		assertEquals(verifyOutput.getStatus(), VerifyResult.StatusEnum.VERIFY_OK);
 		assertTrue(verifyOutput.getFaP() < 0.007d);// Assess that matched probability is below accepted rate
+	}
+	
+	@Test
+	public void extractAndAssertVideoActions() throws IOException, ApiException {
+		ExtractionApi apiExtraction = new ExtractionApi();
+		ExtractFaceFromVideoInput inputSelfieVideo = new ExtractFaceFromVideoInput();
+		inputSelfieVideo.setAuditToken("tok123");
+		inputSelfieVideo.setVideo(cargar("selfie-vid-01.mp4"));
+		FaceExtractionParams params=new FaceExtractionParams();
+		params.detectTraitsAndActions(true);
+		inputSelfieVideo.setParams(params);
+		ExtractFaceFromVideoResult outputSelfieVideo = apiExtraction.extractFaceVideo(inputSelfieVideo);
+		List<DetectedAction.TypeEnum> expected = new ArrayList<DetectedAction.TypeEnum>();
+		expected.add(DetectedAction.TypeEnum.LOOKING_FRONT);
+		expected.add(DetectedAction.TypeEnum.LOOKING_RIGHT);
+		expected.add(DetectedAction.TypeEnum.LOOKING_FRONT);
+		expected.add(DetectedAction.TypeEnum.LOOKING_LEFT);
+		expected.add(DetectedAction.TypeEnum.LOOKING_FRONT);
+		expected.add(DetectedAction.TypeEnum.LOOKING_UPWARDS);
+		expected.add(DetectedAction.TypeEnum.LOOKING_FRONT);
+		expected.add(DetectedAction.TypeEnum.LOOKING_DOWNWARDS);
+		expected.add(DetectedAction.TypeEnum.LOOKING_FRONT);
+		int idxEsperada=0;
+		for (DetectedAction ad : outputSelfieVideo.getDetectedActions()) {
+			if (ad.getType().toString().startsWith("LOOKING")) {// Only interested in LOOKING ones
+				assertEquals(ad.getType(), expected.get(idxEsperada));
+				idxEsperada++;
+			}
+		}
+
+		
 	}
 
 }
