@@ -1,5 +1,31 @@
 package ar.com.sdc.sobio.client.v1;
 
+import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.UnsupportedEncodingException;
+import java.net.URLEncoder;
+import java.nio.file.Files;
+import java.nio.file.StandardCopyOption;
+import java.security.SecureRandom;
+import java.security.cert.CertificateException;
+import java.security.cert.X509Certificate;
+import java.text.DateFormat;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import javax.net.ssl.HttpsURLConnection;
+import javax.net.ssl.SSLContext;
+import javax.net.ssl.TrustManager;
+import javax.net.ssl.X509TrustManager;
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.Entity;
@@ -15,39 +41,15 @@ import org.glassfish.jersey.client.ClientConfig;
 import org.glassfish.jersey.client.ClientProperties;
 import org.glassfish.jersey.client.HttpUrlConnectorProvider;
 import org.glassfish.jersey.jackson.JacksonFeature;
+import org.glassfish.jersey.logging.LoggingFeature;
 import org.glassfish.jersey.media.multipart.FormDataBodyPart;
 import org.glassfish.jersey.media.multipart.FormDataContentDisposition;
 import org.glassfish.jersey.media.multipart.MultiPart;
 import org.glassfish.jersey.media.multipart.MultiPartFeature;
 
-import java.io.IOException;
-import java.io.InputStream;
-
-import java.nio.file.Files;
-import java.nio.file.StandardCopyOption;
-import org.glassfish.jersey.logging.LoggingFeature;
-import java.util.Collection;
-import java.util.Collections;
-import java.util.Map;
-import java.util.Map.Entry;
-import java.util.HashMap;
-import java.util.List;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.TimeZone;
-
-import java.net.URLEncoder;
-
-import java.io.File;
-import java.io.UnsupportedEncodingException;
-
-import java.text.DateFormat;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
+import ar.com.sdc.sobio.client.v1.auth.ApiKeyAuth;
 import ar.com.sdc.sobio.client.v1.auth.Authentication;
 import ar.com.sdc.sobio.client.v1.auth.HttpBasicAuth;
-import ar.com.sdc.sobio.client.v1.auth.ApiKeyAuth;
 import ar.com.sdc.sobio.client.v1.auth.OAuth;
 
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-25T13:07:38.915-03:00")
@@ -763,7 +765,30 @@ public class ApiClient {
       java.util.logging.Logger.getLogger(LoggingFeature.DEFAULT_LOGGER_NAME).setLevel(java.util.logging.Level.ALL);
     }
     performAdditionalClientConfiguration(clientConfig);
-    return ClientBuilder.newClient(clientConfig);
+    TrustManager[ ] certs = new TrustManager[ ] {
+            new X509TrustManager() {
+				@Override
+				public X509Certificate[] getAcceptedIssuers() {
+					return null;
+				}
+				@Override
+				public void checkServerTrusted(X509Certificate[] chain, String authType)
+						throws CertificateException {
+				}
+				@Override
+				public void checkClientTrusted(X509Certificate[] chain, String authType)
+						throws CertificateException {
+				}
+			}
+    };
+    SSLContext ctx = null;
+    try {
+        ctx = SSLContext.getInstance("TLS");
+        ctx.init(null, certs, null);
+    } catch (java.security.GeneralSecurityException ex) {
+    }
+    HttpsURLConnection.setDefaultSSLSocketFactory(ctx.getSocketFactory());
+    return ClientBuilder.newBuilder().sslContext(ctx).withConfig(clientConfig).build();
   }
 
   protected void performAdditionalClientConfiguration(ClientConfig clientConfig) {

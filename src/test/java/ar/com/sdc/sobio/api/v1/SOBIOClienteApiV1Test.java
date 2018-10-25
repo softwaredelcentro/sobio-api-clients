@@ -121,7 +121,7 @@ public class SOBIOClienteApiV1Test {
 		subject2BioInfo.addFacesItem(outputImage.getExtractedFaces().get(0).getFace());
 		VerifyT2TInput verifyInput = new VerifyT2TInput();
 		VerificationParameters verifyParams = new VerificationParameters();
-		verifyParams.setFar(0.07);// sets to accept valid a 7% False Acceptance Rate 
+		verifyParams.setFar(0.085); 
 		verifyInput.setParams(verifyParams);
 		verifyInput.bioInfo1(subject1BioInfo);
 		verifyInput.bioInfo2(subject2BioInfo);
