@@ -101,7 +101,7 @@ public class SOBIOClienteApiV1Test {
 		input.setVideo(cargar("paul-3.mp4"));// Extracted from https://www.youtube.com/watch?v=ui4at87SCB0
 		ExtractFaceFromVideoResult output = api.extractFaceVideo(input);
 		assertEquals(output.getStatus(), ExtractFaceFromVideoResult.StatusEnum.OK);
-		assertEquals(output.getProperties().getGender(), Gender.TypeEnum.MALE);
+		assertEquals(output.getProperties().getGender().getType(), Gender.TypeEnum.MALE);
 	}
 
 	@Test
