@@ -1,0 +1,9 @@
+{
+  "modelPackage" : "ar.com.sdc.sobio.model.v1",
+  "apiPackage"   : "ar.com.sdc.sobio.api.v1",
+  "invokerPackage" : "ar.com.sdc.sobio.client.v1",
+  "groupId" : "ar.com.sdc.sobio",
+  "artifactId"  : "sobio-api-client",
+  "fullJavaUtil" : true,
+  "library" :  "jersey2"
+} 
