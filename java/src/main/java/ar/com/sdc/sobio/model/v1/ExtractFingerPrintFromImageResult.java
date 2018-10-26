@@ -15,7 +15,7 @@ package ar.com.sdc.sobio.model.v1;
 
 import java.util.Objects;
 import ar.com.sdc.sobio.model.v1.FingerPrint;
-import ar.com.sdc.sobio.model.v1.PropiedadesHuella;
+import ar.com.sdc.sobio.model.v1.FingerPrintProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -23,10 +23,10 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 /**
- * ResultadoExtraccionHuellaSimple
+ * ExtractFingerPrintFromImageResult
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-25T13:07:38.915-03:00")
-public class ResultadoExtraccionHuellaSimple {
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-26T11:28:18.014-03:00")
+public class ExtractFingerPrintFromImageResult {
   @JsonProperty("auditId")
   private Long auditId = null;
 
@@ -36,9 +36,9 @@ public class ResultadoExtraccionHuellaSimple {
   public enum EstadoEnum {
     OK("OK"),
     
-    BAJA_CALIDAD("BAJA_CALIDAD"),
+    LOW_QUALITY("LOW_QUALITY"),
     
-    RESOLUCION_INVALIDA("RESOLUCION_INVALIDA");
+    INVALID_IMAGE_RESOLUTION("INVALID_IMAGE_RESOLUTION");
 
     private String value;
 
@@ -77,9 +77,9 @@ public class ResultadoExtraccionHuellaSimple {
   private FingerPrint huella = null;
 
   @JsonProperty("propiedadesHuella")
-  private PropiedadesHuella propiedadesHuella = null;
+  private FingerPrintProperties propiedadesHuella = null;
 
-  public ResultadoExtraccionHuellaSimple auditId(Long auditId) {
+  public ExtractFingerPrintFromImageResult auditId(Long auditId) {
     this.auditId = auditId;
     return this;
   }
@@ -97,7 +97,7 @@ public class ResultadoExtraccionHuellaSimple {
     this.auditId = auditId;
   }
 
-  public ResultadoExtraccionHuellaSimple estado(EstadoEnum estado) {
+  public ExtractFingerPrintFromImageResult estado(EstadoEnum estado) {
     this.estado = estado;
     return this;
   }
@@ -115,7 +115,7 @@ public class ResultadoExtraccionHuellaSimple {
     this.estado = estado;
   }
 
-  public ResultadoExtraccionHuellaSimple exception(Boolean exception) {
+  public ExtractFingerPrintFromImageResult exception(Boolean exception) {
     this.exception = exception;
     return this;
   }
@@ -133,7 +133,7 @@ public class ResultadoExtraccionHuellaSimple {
     this.exception = exception;
   }
 
-  public ResultadoExtraccionHuellaSimple huella(FingerPrint huella) {
+  public ExtractFingerPrintFromImageResult huella(FingerPrint huella) {
     this.huella = huella;
     return this;
   }
@@ -151,7 +151,7 @@ public class ResultadoExtraccionHuellaSimple {
     this.huella = huella;
   }
 
-  public ResultadoExtraccionHuellaSimple propiedadesHuella(PropiedadesHuella propiedadesHuella) {
+  public ExtractFingerPrintFromImageResult propiedadesHuella(FingerPrintProperties propiedadesHuella) {
     this.propiedadesHuella = propiedadesHuella;
     return this;
   }
@@ -161,11 +161,11 @@ public class ResultadoExtraccionHuellaSimple {
    * @return propiedadesHuella
   **/
   @ApiModelProperty(value = "")
-  public PropiedadesHuella getPropiedadesHuella() {
+  public FingerPrintProperties getPropiedadesHuella() {
     return propiedadesHuella;
   }
 
-  public void setPropiedadesHuella(PropiedadesHuella propiedadesHuella) {
+  public void setPropiedadesHuella(FingerPrintProperties propiedadesHuella) {
     this.propiedadesHuella = propiedadesHuella;
   }
 
@@ -178,12 +178,12 @@ public class ResultadoExtraccionHuellaSimple {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ResultadoExtraccionHuellaSimple resultadoExtraccionHuellaSimple = (ResultadoExtraccionHuellaSimple) o;
-    return Objects.equals(this.auditId, resultadoExtraccionHuellaSimple.auditId) &&
-        Objects.equals(this.estado, resultadoExtraccionHuellaSimple.estado) &&
-        Objects.equals(this.exception, resultadoExtraccionHuellaSimple.exception) &&
-        Objects.equals(this.huella, resultadoExtraccionHuellaSimple.huella) &&
-        Objects.equals(this.propiedadesHuella, resultadoExtraccionHuellaSimple.propiedadesHuella);
+    ExtractFingerPrintFromImageResult extractFingerPrintFromImageResult = (ExtractFingerPrintFromImageResult) o;
+    return Objects.equals(this.auditId, extractFingerPrintFromImageResult.auditId) &&
+        Objects.equals(this.estado, extractFingerPrintFromImageResult.estado) &&
+        Objects.equals(this.exception, extractFingerPrintFromImageResult.exception) &&
+        Objects.equals(this.huella, extractFingerPrintFromImageResult.huella) &&
+        Objects.equals(this.propiedadesHuella, extractFingerPrintFromImageResult.propiedadesHuella);
   }
 
   @Override
@@ -195,7 +195,7 @@ public class ResultadoExtraccionHuellaSimple {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ResultadoExtraccionHuellaSimple {\n");
+    sb.append("class ExtractFingerPrintFromImageResult {\n");
     
     sb.append("    auditId: ").append(toIndentedString(auditId)).append("\n");
     sb.append("    estado: ").append(toIndentedString(estado)).append("\n");

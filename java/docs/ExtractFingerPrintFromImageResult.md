@@ -1,5 +1,5 @@
 
-# ResultadoExtraccionHuellaSimple
+# ExtractFingerPrintFromImageResult
 
 ## Properties
 Name | Type | Description | Notes
@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **estado** | [**EstadoEnum**](#EstadoEnum) |  |  [optional]
 **exception** | **Boolean** |  |  [optional]
 **huella** | [**FingerPrint**](FingerPrint.md) |  |  [optional]
-**propiedadesHuella** | [**PropiedadesHuella**](PropiedadesHuella.md) |  |  [optional]
+**propiedadesHuella** | [**FingerPrintProperties**](FingerPrintProperties.md) |  |  [optional]
 
 
 <a name="EstadoEnum"></a>
@@ -16,8 +16,8 @@ Name | Type | Description | Notes
 Name | Value
 ---- | -----
 OK | &quot;OK&quot;
-BAJA_CALIDAD | &quot;BAJA_CALIDAD&quot;
-RESOLUCION_INVALIDA | &quot;RESOLUCION_INVALIDA&quot;
+LOW_QUALITY | &quot;LOW_QUALITY&quot;
+INVALID_IMAGE_RESOLUTION | &quot;INVALID_IMAGE_RESOLUTION&quot;
 
 
 

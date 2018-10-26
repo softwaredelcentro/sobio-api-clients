@@ -20,11 +20,13 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Position
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-25T13:07:38.915-03:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-26T11:28:18.014-03:00")
 public class Position {
   @JsonProperty("height")
   private Integer height = null;
@@ -33,7 +35,7 @@ public class Position {
   private Float pitch = null;
 
   @JsonProperty("points")
-  private java.util.List<Point> points = null;
+  private List<Point> points = null;
 
   @JsonProperty("roll")
   private Float roll = null;
@@ -86,14 +88,14 @@ public class Position {
     this.pitch = pitch;
   }
 
-  public Position points(java.util.List<Point> points) {
+  public Position points(List<Point> points) {
     this.points = points;
     return this;
   }
 
   public Position addPointsItem(Point pointsItem) {
     if (this.points == null) {
-      this.points = new java.util.ArrayList<Point>();
+      this.points = new ArrayList<Point>();
     }
     this.points.add(pointsItem);
     return this;
@@ -104,11 +106,11 @@ public class Position {
    * @return points
   **/
   @ApiModelProperty(value = "")
-  public java.util.List<Point> getPoints() {
+  public List<Point> getPoints() {
     return points;
   }
 
-  public void setPoints(java.util.List<Point> points) {
+  public void setPoints(List<Point> points) {
     this.points = points;
   }
 

@@ -1,5 +1,5 @@
 
-# PropiedadesHuella
+# FingerPrintProperties
 
 ## Properties
 Name | Type | Description | Notes

@@ -11,11 +11,15 @@ import ar.com.sdc.sobio.model.v1.ExtractFaceFromImageInput;
 import ar.com.sdc.sobio.model.v1.ExtractFaceFromImageResult;
 import ar.com.sdc.sobio.model.v1.ExtractFaceFromVideoInput;
 import ar.com.sdc.sobio.model.v1.ExtractFaceFromVideoResult;
-import ar.com.sdc.sobio.model.v1.ExtractFingerFromImageInput;
-import ar.com.sdc.sobio.model.v1.ResultadoExtraccionHuellaSimple;
+import ar.com.sdc.sobio.model.v1.ExtractFingerPrintFromImageInput;
+import ar.com.sdc.sobio.model.v1.ExtractFingerPrintFromImageResult;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-25T13:07:38.915-03:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-26T11:28:18.014-03:00")
 public class ExtractionApi {
   private ApiClient apiClient;
 
@@ -54,9 +58,9 @@ public class ExtractionApi {
     String localVarPath = "/v1/bio/extract-face-image";
 
     // query params
-    java.util.List<Pair> localVarQueryParams = new java.util.ArrayList<Pair>();
-    java.util.Map<String, String> localVarHeaderParams = new java.util.HashMap<String, String>();
-    java.util.Map<String, Object> localVarFormParams = new java.util.HashMap<String, Object>();
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
 
     
@@ -95,9 +99,9 @@ public class ExtractionApi {
     String localVarPath = "/v1/bio/extract-face-video";
 
     // query params
-    java.util.List<Pair> localVarQueryParams = new java.util.ArrayList<Pair>();
-    java.util.Map<String, String> localVarHeaderParams = new java.util.HashMap<String, String>();
-    java.util.Map<String, Object> localVarFormParams = new java.util.HashMap<String, Object>();
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
 
     
@@ -121,10 +125,10 @@ public class ExtractionApi {
    * Extracts finger biometric data (template) from a supplied image
    * 
    * @param input input (required)
-   * @return ResultadoExtraccionHuellaSimple
+   * @return ExtractFingerPrintFromImageResult
    * @throws ApiException if fails to make API call
    */
-  public ResultadoExtraccionHuellaSimple extractFingerprintImage(ExtractFingerFromImageInput input) throws ApiException {
+  public ExtractFingerPrintFromImageResult extractFingerprintImage(ExtractFingerPrintFromImageInput input) throws ApiException {
     Object localVarPostBody = input;
     
     // verify the required parameter 'input' is set
@@ -136,9 +140,9 @@ public class ExtractionApi {
     String localVarPath = "/v1/bio/extract-fingerprint-image";
 
     // query params
-    java.util.List<Pair> localVarQueryParams = new java.util.ArrayList<Pair>();
-    java.util.Map<String, String> localVarHeaderParams = new java.util.HashMap<String, String>();
-    java.util.Map<String, Object> localVarFormParams = new java.util.HashMap<String, Object>();
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
 
     
@@ -155,7 +159,7 @@ public class ExtractionApi {
 
     String[] localVarAuthNames = new String[] {  };
 
-    GenericType<ResultadoExtraccionHuellaSimple> localVarReturnType = new GenericType<ResultadoExtraccionHuellaSimple>() {};
+    GenericType<ExtractFingerPrintFromImageResult> localVarReturnType = new GenericType<ExtractFingerPrintFromImageResult>() {};
     return apiClient.invokeAPI(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
       }
 }

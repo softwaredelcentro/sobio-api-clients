@@ -20,11 +20,13 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * ExtractFaceFromImageResult
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-25T13:07:38.915-03:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-26T11:28:18.014-03:00")
 public class ExtractFaceFromImageResult {
   @JsonProperty("auditId")
   private Long auditId = null;
@@ -33,7 +35,7 @@ public class ExtractFaceFromImageResult {
   private Boolean exception = null;
 
   @JsonProperty("extractedFaces")
-  private java.util.List<ExtractedFace> extractedFaces = null;
+  private List<ExtractedFace> extractedFaces = null;
 
   public ExtractFaceFromImageResult auditId(Long auditId) {
     this.auditId = auditId;
@@ -71,14 +73,14 @@ public class ExtractFaceFromImageResult {
     this.exception = exception;
   }
 
-  public ExtractFaceFromImageResult extractedFaces(java.util.List<ExtractedFace> extractedFaces) {
+  public ExtractFaceFromImageResult extractedFaces(List<ExtractedFace> extractedFaces) {
     this.extractedFaces = extractedFaces;
     return this;
   }
 
   public ExtractFaceFromImageResult addExtractedFacesItem(ExtractedFace extractedFacesItem) {
     if (this.extractedFaces == null) {
-      this.extractedFaces = new java.util.ArrayList<ExtractedFace>();
+      this.extractedFaces = new ArrayList<ExtractedFace>();
     }
     this.extractedFaces.add(extractedFacesItem);
     return this;
@@ -89,11 +91,11 @@ public class ExtractFaceFromImageResult {
    * @return extractedFaces
   **/
   @ApiModelProperty(value = "")
-  public java.util.List<ExtractedFace> getExtractedFaces() {
+  public List<ExtractedFace> getExtractedFaces() {
     return extractedFaces;
   }
 
-  public void setExtractedFaces(java.util.List<ExtractedFace> extractedFaces) {
+  public void setExtractedFaces(List<ExtractedFace> extractedFaces) {
     this.extractedFaces = extractedFaces;
   }
 

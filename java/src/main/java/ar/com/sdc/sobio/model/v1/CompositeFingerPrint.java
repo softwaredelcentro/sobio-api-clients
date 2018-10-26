@@ -19,11 +19,13 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * CompositeFingerPrint
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-25T13:07:38.915-03:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-26T11:28:18.014-03:00")
 public class CompositeFingerPrint {
   /**
    * Gets or Sets dedo
@@ -82,7 +84,7 @@ public class CompositeFingerPrint {
   private DedoEnum dedo = null;
 
   @JsonProperty("images")
-  private java.util.List<java.util.List<Integer>> images = null;
+  private List<List<Integer>> images = null;
 
   /**
    * Gets or Sets source
@@ -145,14 +147,14 @@ public class CompositeFingerPrint {
     this.dedo = dedo;
   }
 
-  public CompositeFingerPrint images(java.util.List<java.util.List<Integer>> images) {
+  public CompositeFingerPrint images(List<List<Integer>> images) {
     this.images = images;
     return this;
   }
 
-  public CompositeFingerPrint addImagesItem(java.util.List<Integer> imagesItem) {
+  public CompositeFingerPrint addImagesItem(List<Integer> imagesItem) {
     if (this.images == null) {
-      this.images = new java.util.ArrayList<java.util.List<Integer>>();
+      this.images = new ArrayList<List<Integer>>();
     }
     this.images.add(imagesItem);
     return this;
@@ -163,11 +165,11 @@ public class CompositeFingerPrint {
    * @return images
   **/
   @ApiModelProperty(value = "")
-  public java.util.List<java.util.List<Integer>> getImages() {
+  public List<List<Integer>> getImages() {
     return images;
   }
 
-  public void setImages(java.util.List<java.util.List<Integer>> images) {
+  public void setImages(List<List<Integer>> images) {
     this.images = images;
   }
 

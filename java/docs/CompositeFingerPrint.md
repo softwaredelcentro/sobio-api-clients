@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **dedo** | [**DedoEnum**](#DedoEnum) |  |  [optional]
-**images** | [**java.util.List&lt;java.util.List&lt;Integer&gt;&gt;**](java.util.List.md) |  |  [optional]
+**images** | [**List&lt;List&lt;Integer&gt;&gt;**](List.md) |  |  [optional]
 **source** | [**SourceEnum**](#SourceEnum) |  |  [optional]
 **template** | **byte[]** |  |  [optional]
 

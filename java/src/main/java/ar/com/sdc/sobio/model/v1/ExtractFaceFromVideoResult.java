@@ -22,17 +22,19 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * ExtractFaceFromVideoResult
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-25T13:07:38.915-03:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-26T11:28:18.014-03:00")
 public class ExtractFaceFromVideoResult {
   @JsonProperty("auditId")
   private Long auditId = null;
 
   @JsonProperty("detectedActions")
-  private java.util.List<DetectedAction> detectedActions = null;
+  private List<DetectedAction> detectedActions = null;
 
   @JsonProperty("exception")
   private Boolean exception = null;
@@ -105,14 +107,14 @@ public class ExtractFaceFromVideoResult {
     this.auditId = auditId;
   }
 
-  public ExtractFaceFromVideoResult detectedActions(java.util.List<DetectedAction> detectedActions) {
+  public ExtractFaceFromVideoResult detectedActions(List<DetectedAction> detectedActions) {
     this.detectedActions = detectedActions;
     return this;
   }
 
   public ExtractFaceFromVideoResult addDetectedActionsItem(DetectedAction detectedActionsItem) {
     if (this.detectedActions == null) {
-      this.detectedActions = new java.util.ArrayList<DetectedAction>();
+      this.detectedActions = new ArrayList<DetectedAction>();
     }
     this.detectedActions.add(detectedActionsItem);
     return this;
@@ -123,11 +125,11 @@ public class ExtractFaceFromVideoResult {
    * @return detectedActions
   **/
   @ApiModelProperty(value = "")
-  public java.util.List<DetectedAction> getDetectedActions() {
+  public List<DetectedAction> getDetectedActions() {
     return detectedActions;
   }
 
-  public void setDetectedActions(java.util.List<DetectedAction> detectedActions) {
+  public void setDetectedActions(List<DetectedAction> detectedActions) {
     this.detectedActions = detectedActions;
   }
 

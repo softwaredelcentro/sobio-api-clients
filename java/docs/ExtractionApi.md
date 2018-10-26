@@ -97,7 +97,7 @@ No authorization required
 
 <a name="extractFingerprintImage"></a>
 # **extractFingerprintImage**
-> ResultadoExtraccionHuellaSimple extractFingerprintImage(input)
+> ExtractFingerPrintFromImageResult extractFingerprintImage(input)
 
 Extracts finger biometric data (template) from a supplied image
 
@@ -109,9 +109,9 @@ Extracts finger biometric data (template) from a supplied image
 
 
 ExtractionApi apiInstance = new ExtractionApi();
-ExtractFingerFromImageInput input = new ExtractFingerFromImageInput(); // ExtractFingerFromImageInput | input
+ExtractFingerPrintFromImageInput input = new ExtractFingerPrintFromImageInput(); // ExtractFingerPrintFromImageInput | input
 try {
-    ResultadoExtraccionHuellaSimple result = apiInstance.extractFingerprintImage(input);
+    ExtractFingerPrintFromImageResult result = apiInstance.extractFingerprintImage(input);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ExtractionApi#extractFingerprintImage");
@@ -123,11 +123,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **input** | [**ExtractFingerFromImageInput**](ExtractFingerFromImageInput.md)| input |
+ **input** | [**ExtractFingerPrintFromImageInput**](ExtractFingerPrintFromImageInput.md)| input |
 
 ### Return type
 
-[**ResultadoExtraccionHuellaSimple**](ResultadoExtraccionHuellaSimple.md)
+[**ExtractFingerPrintFromImageResult**](ExtractFingerPrintFromImageResult.md)
 
 ### Authorization
 

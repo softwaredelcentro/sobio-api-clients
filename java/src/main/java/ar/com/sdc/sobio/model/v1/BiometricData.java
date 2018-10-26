@@ -23,32 +23,34 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * BiometricData
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-25T13:07:38.915-03:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-26T11:28:18.014-03:00")
 public class BiometricData {
   @JsonProperty("compositeFingerPrints")
-  private java.util.List<CompositeFingerPrint> compositeFingerPrints = null;
+  private List<CompositeFingerPrint> compositeFingerPrints = null;
 
   @JsonProperty("faces")
-  private java.util.List<Face> faces = null;
+  private List<Face> faces = null;
 
   @JsonProperty("fingerPrints")
-  private java.util.List<FingerPrint> fingerPrints = null;
+  private List<FingerPrint> fingerPrints = null;
 
   @JsonProperty("voices")
-  private java.util.List<Voice> voices = null;
+  private List<Voice> voices = null;
 
-  public BiometricData compositeFingerPrints(java.util.List<CompositeFingerPrint> compositeFingerPrints) {
+  public BiometricData compositeFingerPrints(List<CompositeFingerPrint> compositeFingerPrints) {
     this.compositeFingerPrints = compositeFingerPrints;
     return this;
   }
 
   public BiometricData addCompositeFingerPrintsItem(CompositeFingerPrint compositeFingerPrintsItem) {
     if (this.compositeFingerPrints == null) {
-      this.compositeFingerPrints = new java.util.ArrayList<CompositeFingerPrint>();
+      this.compositeFingerPrints = new ArrayList<CompositeFingerPrint>();
     }
     this.compositeFingerPrints.add(compositeFingerPrintsItem);
     return this;
@@ -59,22 +61,22 @@ public class BiometricData {
    * @return compositeFingerPrints
   **/
   @ApiModelProperty(value = "")
-  public java.util.List<CompositeFingerPrint> getCompositeFingerPrints() {
+  public List<CompositeFingerPrint> getCompositeFingerPrints() {
     return compositeFingerPrints;
   }
 
-  public void setCompositeFingerPrints(java.util.List<CompositeFingerPrint> compositeFingerPrints) {
+  public void setCompositeFingerPrints(List<CompositeFingerPrint> compositeFingerPrints) {
     this.compositeFingerPrints = compositeFingerPrints;
   }
 
-  public BiometricData faces(java.util.List<Face> faces) {
+  public BiometricData faces(List<Face> faces) {
     this.faces = faces;
     return this;
   }
 
   public BiometricData addFacesItem(Face facesItem) {
     if (this.faces == null) {
-      this.faces = new java.util.ArrayList<Face>();
+      this.faces = new ArrayList<Face>();
     }
     this.faces.add(facesItem);
     return this;
@@ -85,22 +87,22 @@ public class BiometricData {
    * @return faces
   **/
   @ApiModelProperty(value = "")
-  public java.util.List<Face> getFaces() {
+  public List<Face> getFaces() {
     return faces;
   }
 
-  public void setFaces(java.util.List<Face> faces) {
+  public void setFaces(List<Face> faces) {
     this.faces = faces;
   }
 
-  public BiometricData fingerPrints(java.util.List<FingerPrint> fingerPrints) {
+  public BiometricData fingerPrints(List<FingerPrint> fingerPrints) {
     this.fingerPrints = fingerPrints;
     return this;
   }
 
   public BiometricData addFingerPrintsItem(FingerPrint fingerPrintsItem) {
     if (this.fingerPrints == null) {
-      this.fingerPrints = new java.util.ArrayList<FingerPrint>();
+      this.fingerPrints = new ArrayList<FingerPrint>();
     }
     this.fingerPrints.add(fingerPrintsItem);
     return this;
@@ -111,22 +113,22 @@ public class BiometricData {
    * @return fingerPrints
   **/
   @ApiModelProperty(value = "")
-  public java.util.List<FingerPrint> getFingerPrints() {
+  public List<FingerPrint> getFingerPrints() {
     return fingerPrints;
   }
 
-  public void setFingerPrints(java.util.List<FingerPrint> fingerPrints) {
+  public void setFingerPrints(List<FingerPrint> fingerPrints) {
     this.fingerPrints = fingerPrints;
   }
 
-  public BiometricData voices(java.util.List<Voice> voices) {
+  public BiometricData voices(List<Voice> voices) {
     this.voices = voices;
     return this;
   }
 
   public BiometricData addVoicesItem(Voice voicesItem) {
     if (this.voices == null) {
-      this.voices = new java.util.ArrayList<Voice>();
+      this.voices = new ArrayList<Voice>();
     }
     this.voices.add(voicesItem);
     return this;
@@ -137,11 +139,11 @@ public class BiometricData {
    * @return voices
   **/
   @ApiModelProperty(value = "")
-  public java.util.List<Voice> getVoices() {
+  public List<Voice> getVoices() {
     return voices;
   }
 
-  public void setVoices(java.util.List<Voice> voices) {
+  public void setVoices(List<Voice> voices) {
     this.voices = voices;
   }
 

@@ -23,7 +23,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * EnrollResult
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-25T13:07:38.915-03:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-26T11:28:18.014-03:00")
 public class EnrollResult {
   @JsonProperty("auditId")
   private Long auditId = null;

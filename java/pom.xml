@@ -6,7 +6,7 @@
 	<artifactId>sobio-api-client</artifactId>
 	<packaging>jar</packaging>
 	<name>sobio-api-client</name>
-	<version>20181025.0df63e9</version>
+	<version>20181026.5e3d11f</version>
 	<distributionManagement>
 		<repository>
 			<id>releases</id>
@@ -19,6 +19,40 @@
 			<url>http://repo/repository/maven-snapshots/</url>
 		</snapshotRepository>
 	</distributionManagement>
+	<profiles>
+		<profile>
+			<id>swagger-codegen</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>io.swagger</groupId>
+						<artifactId>swagger-codegen-maven-plugin</artifactId>
+						<version>2.3.1</version>
+						<executions>
+							<execution>
+								<goals>
+									<goal>generate</goal>
+								</goals>
+								<configuration>
+									<inputSpec>http://127.0.0.1:8081/v2/api-docs</inputSpec>
+									<language>java</language>
+									<output>${project.basedir}</output>
+									<apiPackage>ar.com.sdc.sobio.api.v1</apiPackage>
+									<modelPackage>ar.com.sdc.sobio.model.v1</modelPackage>
+									<invokerPackage>ar.com.sdc.sobio.client.v1</invokerPackage>
+									<generateApiTests>false</generateApiTests>
+									<configOptions>
+										<dateLibrary>joda</dateLibrary>
+									</configOptions>
+									<library>jersey2</library>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
 	<build>
 		<plugins>
 			<plugin>
