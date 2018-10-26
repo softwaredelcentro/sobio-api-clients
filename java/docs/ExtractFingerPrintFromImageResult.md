@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **auditId** | **Long** |  |  [optional]
-**estado** | [**EstadoEnum**](#EstadoEnum) |  |  [optional]
 **exception** | **Boolean** |  |  [optional]
-**huella** | [**FingerPrint**](FingerPrint.md) |  |  [optional]
-**propiedadesHuella** | [**FingerPrintProperties**](FingerPrintProperties.md) |  |  [optional]
+**fingerPrint** | [**FingerPrint**](FingerPrint.md) |  |  [optional]
+**properties** | [**FingerPrintProperties**](FingerPrintProperties.md) |  |  [optional]
+**status** | [**StatusEnum**](#StatusEnum) |  |  [optional]
 
 
-<a name="EstadoEnum"></a>
-## Enum: EstadoEnum
+<a name="StatusEnum"></a>
+## Enum: StatusEnum
 Name | Value
 ---- | -----
 OK | &quot;OK&quot;

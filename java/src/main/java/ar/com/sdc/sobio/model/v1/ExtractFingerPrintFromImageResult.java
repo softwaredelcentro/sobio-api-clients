@@ -25,15 +25,24 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * ExtractFingerPrintFromImageResult
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-26T11:28:18.014-03:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-26T12:55:02.459-03:00")
 public class ExtractFingerPrintFromImageResult {
   @JsonProperty("auditId")
   private Long auditId = null;
 
+  @JsonProperty("exception")
+  private Boolean exception = null;
+
+  @JsonProperty("fingerPrint")
+  private FingerPrint fingerPrint = null;
+
+  @JsonProperty("properties")
+  private FingerPrintProperties properties = null;
+
   /**
-   * Gets or Sets estado
+   * Gets or Sets status
    */
-  public enum EstadoEnum {
+  public enum StatusEnum {
     OK("OK"),
     
     LOW_QUALITY("LOW_QUALITY"),
@@ -42,7 +51,7 @@ public class ExtractFingerPrintFromImageResult {
 
     private String value;
 
-    EstadoEnum(String value) {
+    StatusEnum(String value) {
       this.value = value;
     }
 
@@ -57,8 +66,8 @@ public class ExtractFingerPrintFromImageResult {
     }
 
     @JsonCreator
-    public static EstadoEnum fromValue(String text) {
-      for (EstadoEnum b : EstadoEnum.values()) {
+    public static StatusEnum fromValue(String text) {
+      for (StatusEnum b : StatusEnum.values()) {
         if (String.valueOf(b.value).equals(text)) {
           return b;
         }
@@ -67,17 +76,8 @@ public class ExtractFingerPrintFromImageResult {
     }
   }
 
-  @JsonProperty("estado")
-  private EstadoEnum estado = null;
-
-  @JsonProperty("exception")
-  private Boolean exception = null;
-
-  @JsonProperty("huella")
-  private FingerPrint huella = null;
-
-  @JsonProperty("propiedadesHuella")
-  private FingerPrintProperties propiedadesHuella = null;
+  @JsonProperty("status")
+  private StatusEnum status = null;
 
   public ExtractFingerPrintFromImageResult auditId(Long auditId) {
     this.auditId = auditId;
@@ -95,24 +95,6 @@ public class ExtractFingerPrintFromImageResult {
 
   public void setAuditId(Long auditId) {
     this.auditId = auditId;
-  }
-
-  public ExtractFingerPrintFromImageResult estado(EstadoEnum estado) {
-    this.estado = estado;
-    return this;
-  }
-
-   /**
-   * Get estado
-   * @return estado
-  **/
-  @ApiModelProperty(value = "")
-  public EstadoEnum getEstado() {
-    return estado;
-  }
-
-  public void setEstado(EstadoEnum estado) {
-    this.estado = estado;
   }
 
   public ExtractFingerPrintFromImageResult exception(Boolean exception) {
@@ -133,40 +115,58 @@ public class ExtractFingerPrintFromImageResult {
     this.exception = exception;
   }
 
-  public ExtractFingerPrintFromImageResult huella(FingerPrint huella) {
-    this.huella = huella;
+  public ExtractFingerPrintFromImageResult fingerPrint(FingerPrint fingerPrint) {
+    this.fingerPrint = fingerPrint;
     return this;
   }
 
    /**
-   * Get huella
-   * @return huella
+   * Get fingerPrint
+   * @return fingerPrint
   **/
   @ApiModelProperty(value = "")
-  public FingerPrint getHuella() {
-    return huella;
+  public FingerPrint getFingerPrint() {
+    return fingerPrint;
   }
 
-  public void setHuella(FingerPrint huella) {
-    this.huella = huella;
+  public void setFingerPrint(FingerPrint fingerPrint) {
+    this.fingerPrint = fingerPrint;
   }
 
-  public ExtractFingerPrintFromImageResult propiedadesHuella(FingerPrintProperties propiedadesHuella) {
-    this.propiedadesHuella = propiedadesHuella;
+  public ExtractFingerPrintFromImageResult properties(FingerPrintProperties properties) {
+    this.properties = properties;
     return this;
   }
 
    /**
-   * Get propiedadesHuella
-   * @return propiedadesHuella
+   * Get properties
+   * @return properties
   **/
   @ApiModelProperty(value = "")
-  public FingerPrintProperties getPropiedadesHuella() {
-    return propiedadesHuella;
+  public FingerPrintProperties getProperties() {
+    return properties;
   }
 
-  public void setPropiedadesHuella(FingerPrintProperties propiedadesHuella) {
-    this.propiedadesHuella = propiedadesHuella;
+  public void setProperties(FingerPrintProperties properties) {
+    this.properties = properties;
+  }
+
+  public ExtractFingerPrintFromImageResult status(StatusEnum status) {
+    this.status = status;
+    return this;
+  }
+
+   /**
+   * Get status
+   * @return status
+  **/
+  @ApiModelProperty(value = "")
+  public StatusEnum getStatus() {
+    return status;
+  }
+
+  public void setStatus(StatusEnum status) {
+    this.status = status;
   }
 
 
@@ -180,15 +180,15 @@ public class ExtractFingerPrintFromImageResult {
     }
     ExtractFingerPrintFromImageResult extractFingerPrintFromImageResult = (ExtractFingerPrintFromImageResult) o;
     return Objects.equals(this.auditId, extractFingerPrintFromImageResult.auditId) &&
-        Objects.equals(this.estado, extractFingerPrintFromImageResult.estado) &&
         Objects.equals(this.exception, extractFingerPrintFromImageResult.exception) &&
-        Objects.equals(this.huella, extractFingerPrintFromImageResult.huella) &&
-        Objects.equals(this.propiedadesHuella, extractFingerPrintFromImageResult.propiedadesHuella);
+        Objects.equals(this.fingerPrint, extractFingerPrintFromImageResult.fingerPrint) &&
+        Objects.equals(this.properties, extractFingerPrintFromImageResult.properties) &&
+        Objects.equals(this.status, extractFingerPrintFromImageResult.status);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(auditId, estado, exception, huella, propiedadesHuella);
+    return Objects.hash(auditId, exception, fingerPrint, properties, status);
   }
 
 
@@ -198,10 +198,10 @@ public class ExtractFingerPrintFromImageResult {
     sb.append("class ExtractFingerPrintFromImageResult {\n");
     
     sb.append("    auditId: ").append(toIndentedString(auditId)).append("\n");
-    sb.append("    estado: ").append(toIndentedString(estado)).append("\n");
     sb.append("    exception: ").append(toIndentedString(exception)).append("\n");
-    sb.append("    huella: ").append(toIndentedString(huella)).append("\n");
-    sb.append("    propiedadesHuella: ").append(toIndentedString(propiedadesHuella)).append("\n");
+    sb.append("    fingerPrint: ").append(toIndentedString(fingerPrint)).append("\n");
+    sb.append("    properties: ").append(toIndentedString(properties)).append("\n");
+    sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("}");
     return sb.toString();
   }

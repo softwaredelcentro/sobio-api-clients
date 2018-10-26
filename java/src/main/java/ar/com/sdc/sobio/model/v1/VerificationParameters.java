@@ -26,7 +26,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * VerificationParameters
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-26T11:28:18.014-03:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-26T12:55:02.459-03:00")
 public class VerificationParameters {
   @JsonProperty("faceMatchingParams")
   private FaceMatchingParameters faceMatchingParams = null;

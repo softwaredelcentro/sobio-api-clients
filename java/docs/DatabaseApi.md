@@ -5,7 +5,7 @@ All URIs are relative to *https://127.0.0.1:8081*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**delete**](DatabaseApi.md#delete) | **POST** /v1/bio/delete | Deletes an enrolled subject from biometric engine
-[**downloadZippedBiodata**](DatabaseApi.md#downloadZippedBiodata) | **GET** /v1/bio/subject-biodata/{subjectId} | Download zipped subject biometric data for supplied subject id
+[**downloadZippedBiodata**](DatabaseApi.md#downloadZippedBiodata) | **GET** /v1/bio/download-zipped-biodata/{subjectId} | Download zipped subject biometric data for supplied subject id
 [**enroll**](DatabaseApi.md#enroll) | **POST** /v1/bio/enroll | Performs a biometric enrollment supplied biometric data which is associated with supplied enrolled subject id
 [**subjectData**](DatabaseApi.md#subjectData) | **POST** /v1/bio/subject-data | Obtain biometric enrolled data from supplied subject id
 [**subjectInfo**](DatabaseApi.md#subjectInfo) | **POST** /v1/bio/subject-info | Obtain information of supplied subject id
@@ -143,7 +143,7 @@ No authorization required
 
 <a name="subjectData"></a>
 # **subjectData**
-> SubjectBiometricDataResult subjectData(auditToken, subjectId)
+> SubjectBiometricDataResult subjectData(input)
 
 Obtain biometric enrolled data from supplied subject id
 
@@ -155,10 +155,9 @@ Obtain biometric enrolled data from supplied subject id
 
 
 DatabaseApi apiInstance = new DatabaseApi();
-String auditToken = "auditToken_example"; // String | Audit token trail
-String subjectId = "subjectId_example"; // String | Id of enrolled subject
+ObtainSubjectBiometricData input = new ObtainSubjectBiometricData(); // ObtainSubjectBiometricData | input
 try {
-    SubjectBiometricDataResult result = apiInstance.subjectData(auditToken, subjectId);
+    SubjectBiometricDataResult result = apiInstance.subjectData(input);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling DatabaseApi#subjectData");
@@ -170,8 +169,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **auditToken** | **String**| Audit token trail |
- **subjectId** | **String**| Id of enrolled subject |
+ **input** | [**ObtainSubjectBiometricData**](ObtainSubjectBiometricData.md)| input |
 
 ### Return type
 

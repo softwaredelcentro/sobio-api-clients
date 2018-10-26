@@ -11,6 +11,7 @@ import ar.com.sdc.sobio.model.v1.DeleteInput;
 import ar.com.sdc.sobio.model.v1.DeleteResult;
 import ar.com.sdc.sobio.model.v1.EnrollInput;
 import ar.com.sdc.sobio.model.v1.EnrollResult;
+import ar.com.sdc.sobio.model.v1.ObtainSubjectBiometricData;
 import ar.com.sdc.sobio.model.v1.ObtainSubjectInfo;
 import ar.com.sdc.sobio.model.v1.Resource;
 import ar.com.sdc.sobio.model.v1.SubjectBiometricDataResult;
@@ -23,7 +24,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-26T11:28:18.014-03:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-26T12:55:02.459-03:00")
 public class DatabaseApi {
   private ApiClient apiClient;
 
@@ -100,7 +101,7 @@ public class DatabaseApi {
     }
     
     // create path and map variables
-    String localVarPath = "/v1/bio/subject-biodata/{subjectId}"
+    String localVarPath = "/v1/bio/download-zipped-biodata/{subjectId}"
       .replaceAll("\\{" + "subjectId" + "\\}", apiClient.escapeString(subjectId.toString()));
 
     // query params
@@ -170,22 +171,16 @@ public class DatabaseApi {
   /**
    * Obtain biometric enrolled data from supplied subject id
    * 
-   * @param auditToken Audit token trail (required)
-   * @param subjectId Id of enrolled subject (required)
+   * @param input input (required)
    * @return SubjectBiometricDataResult
    * @throws ApiException if fails to make API call
    */
-  public SubjectBiometricDataResult subjectData(String auditToken, String subjectId) throws ApiException {
-    Object localVarPostBody = null;
+  public SubjectBiometricDataResult subjectData(ObtainSubjectBiometricData input) throws ApiException {
+    Object localVarPostBody = input;
     
-    // verify the required parameter 'auditToken' is set
-    if (auditToken == null) {
-      throw new ApiException(400, "Missing the required parameter 'auditToken' when calling subjectData");
-    }
-    
-    // verify the required parameter 'subjectId' is set
-    if (subjectId == null) {
-      throw new ApiException(400, "Missing the required parameter 'subjectId' when calling subjectData");
+    // verify the required parameter 'input' is set
+    if (input == null) {
+      throw new ApiException(400, "Missing the required parameter 'input' when calling subjectData");
     }
     
     // create path and map variables
@@ -196,8 +191,6 @@ public class DatabaseApi {
     Map<String, String> localVarHeaderParams = new HashMap<String, String>();
     Map<String, Object> localVarFormParams = new HashMap<String, Object>();
 
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "auditToken", auditToken));
-    localVarQueryParams.addAll(apiClient.parameterToPairs("", "subjectId", subjectId));
 
     
     

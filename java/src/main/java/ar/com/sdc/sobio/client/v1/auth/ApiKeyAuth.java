@@ -18,7 +18,7 @@ import ar.com.sdc.sobio.client.v1.Pair;
 import java.util.Map;
 import java.util.List;
 
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-26T11:28:18.014-03:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-26T12:55:02.459-03:00")
 public class ApiKeyAuth implements Authentication {
   private final String location;
   private final String paramName;
