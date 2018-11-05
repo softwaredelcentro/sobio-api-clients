@@ -24,6 +24,7 @@ import java.util.List;
 import org.apache.commons.io.IOUtils;
 import org.junit.Test;
 
+import ar.com.sdc.sobio.client.v1.ApiClient;
 import ar.com.sdc.sobio.client.v1.ApiException;
 import ar.com.sdc.sobio.model.v1.BiometricData;
 import ar.com.sdc.sobio.model.v1.DetectedAction;
@@ -47,10 +48,16 @@ public class SOBIOClienteApiV1Test {
 		fis.close();
 		return cnt;
 	}
+	
+	public ApiClient createApiClient() {
+		ApiClient api = new ApiClient();
+		api.setBasePath("");
+		return api;
+	}
 
 	@Test
 	public void extractFaceWithGenderFromImage01() throws ApiException, IOException {
-		ExtractionApi api = new ExtractionApi();
+		ExtractionApi api = new ExtractionApi(createApiClient());
 		ExtractFaceFromImageInput input = new ExtractFaceFromImageInput();
 		input.setAuditToken("tok123");
 		input.setImage(cargar("paul-1.jpg"));
@@ -65,8 +72,8 @@ public class SOBIOClienteApiV1Test {
 
 	@Test
 	public void match2Faces() throws ApiException, IOException {
-		ExtractionApi apiExtraction = new ExtractionApi();
-		MatchingApi apiMatching = new MatchingApi();
+		ExtractionApi apiExtraction = new ExtractionApi(createApiClient());
+		MatchingApi apiMatching = new MatchingApi(createApiClient());
 		ExtractFaceFromImageInput input = new ExtractFaceFromImageInput();
 		input.setAuditToken("tok123");
 		input.setImage(cargar("paul-1.jpg"));
@@ -92,7 +99,7 @@ public class SOBIOClienteApiV1Test {
 
 	@Test
 	public void extractFaceFromVideo01() throws ApiException, IOException {
-		ExtractionApi api = new ExtractionApi();
+		ExtractionApi api = new ExtractionApi(createApiClient());
 		ExtractFaceFromVideoInput input = new ExtractFaceFromVideoInput();
 		FaceExtractionParams params = new FaceExtractionParams();
 		params.setDetectGender(true);
@@ -106,7 +113,7 @@ public class SOBIOClienteApiV1Test {
 
 	@Test
 	public void matchFaceFromVideo2FaceFromImage() throws ApiException, IOException {
-		ExtractionApi apiExtraction = new ExtractionApi();
+		ExtractionApi apiExtraction = new ExtractionApi(createApiClient());
 		ExtractFaceFromVideoInput inputVideo = new ExtractFaceFromVideoInput();
 		inputVideo.setAuditToken("tok123");
 		inputVideo.setVideo(cargar("paul-3.mp4"));// Extracted from https://www.youtube.com/watch?v=ui4at87SCB0
@@ -125,15 +132,15 @@ public class SOBIOClienteApiV1Test {
 		verifyInput.setParams(verifyParams);
 		verifyInput.bioInfo1(subject1BioInfo);
 		verifyInput.bioInfo2(subject2BioInfo);
-		MatchingApi apiMatching = new MatchingApi();
+		MatchingApi apiMatching = new MatchingApi(createApiClient());
 		VerifyResult verifyOutput = apiMatching.verifyT2t(verifyInput);
 		assertEquals(verifyOutput.getStatus(), VerifyResult.StatusEnum.VERIFY_OK);
 	}
 	
 	@Test
 	public void matchIDCardImage2SelfieImage01() throws ApiException, IOException {
-		ExtractionApi apiExtraction = new ExtractionApi();
-		MatchingApi apiMatching = new MatchingApi();
+		ExtractionApi apiExtraction = new ExtractionApi(createApiClient());
+		MatchingApi apiMatching = new MatchingApi(createApiClient());
 		ExtractFaceFromImageInput inputIDCard = new ExtractFaceFromImageInput();
 		inputIDCard.setAuditToken("tok123");
 		inputIDCard.setImage(cargar("idcard-01.jpg"));
@@ -159,8 +166,8 @@ public class SOBIOClienteApiV1Test {
 
 	@Test
 	public void matchIDCardImage2SelfieVideo01() throws ApiException, IOException {
-		ExtractionApi apiExtraction = new ExtractionApi();
-		MatchingApi apiMatching = new MatchingApi();
+		ExtractionApi apiExtraction = new ExtractionApi(createApiClient());
+		MatchingApi apiMatching = new MatchingApi(createApiClient());
 		ExtractFaceFromImageInput inputIDCard = new ExtractFaceFromImageInput();
 		inputIDCard.setAuditToken("tok123");
 		inputIDCard.setImage(cargar("idcard-01.jpg"));
@@ -186,7 +193,7 @@ public class SOBIOClienteApiV1Test {
 	
 	@Test
 	public void extractAndAssertVideoActions() throws IOException, ApiException {
-		ExtractionApi apiExtraction = new ExtractionApi();
+		ExtractionApi apiExtraction = new ExtractionApi(createApiClient());
 		ExtractFaceFromVideoInput inputSelfieVideo = new ExtractFaceFromVideoInput();
 		inputSelfieVideo.setAuditToken("tok123");
 		inputSelfieVideo.setVideo(cargar("selfie-vid-01.mp4"));
