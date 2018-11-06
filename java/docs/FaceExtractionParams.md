@@ -22,6 +22,7 @@ Name | Type | Description | Notes
 **scaleH** | **Integer** |  |  [optional]
 **thumbnailWidth** | **Integer** |  |  [optional]
 **useCLAHE** | **Boolean** |  |  [optional]
+**useCache** | **Boolean** |  |  [optional]
 **videoFramesSeq** | **Integer** |  |  [optional]
 
 

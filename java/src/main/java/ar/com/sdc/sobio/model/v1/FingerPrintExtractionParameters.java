@@ -23,7 +23,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * FingerPrintExtractionParameters
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-26T12:55:02.459-03:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-11-06T15:59:21.589-03:00")
 public class FingerPrintExtractionParameters {
   @JsonProperty("determinePatternClass")
   private Boolean determinePatternClass = null;
@@ -31,11 +31,110 @@ public class FingerPrintExtractionParameters {
   @JsonProperty("evaluateNFIQ")
   private Boolean evaluateNFIQ = null;
 
+  /**
+   * Gets or Sets imageSource
+   */
+  public enum ImageSourceEnum {
+    LIVE_FINGERPRINT("LIVE_FINGERPRINT"),
+    
+    SCANNED_FINGERPRINT_IMAGE("SCANNED_FINGERPRINT_IMAGE"),
+    
+    UNKNOWN("UNKNOWN");
+
+    private String value;
+
+    ImageSourceEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonValue
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    @JsonCreator
+    public static ImageSourceEnum fromValue(String text) {
+      for (ImageSourceEnum b : ImageSourceEnum.values()) {
+        if (String.valueOf(b.value).equals(text)) {
+          return b;
+        }
+      }
+      return null;
+    }
+  }
+
+  @JsonProperty("imageSource")
+  private ImageSourceEnum imageSource = null;
+
   @JsonProperty("maxRotation")
   private Float maxRotation = null;
 
   @JsonProperty("minQuality")
   private Integer minQuality = null;
+
+  /**
+   * Gets or Sets position
+   */
+  public enum PositionEnum {
+    RIGHT_THUMB("RIGHT_THUMB"),
+    
+    LEFT_THUMB("LEFT_THUMB"),
+    
+    RIGHT_INDEX_FINGER("RIGHT_INDEX_FINGER"),
+    
+    LEFT_INDEX_FINGER("LEFT_INDEX_FINGER"),
+    
+    RIGHT_MIDDLE_FINGER("RIGHT_MIDDLE_FINGER"),
+    
+    LEFT_MIDDLE_FINGER("LEFT_MIDDLE_FINGER"),
+    
+    LEFT_RING_FINGER("LEFT_RING_FINGER"),
+    
+    RIGHT_RING_FINGER("RIGHT_RING_FINGER"),
+    
+    LEFT_LITTLE_FINGER("LEFT_LITTLE_FINGER"),
+    
+    RIGHT_LITTLE_FINGER("RIGHT_LITTLE_FINGER"),
+    
+    UNKNOWN("UNKNOWN");
+
+    private String value;
+
+    PositionEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonValue
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    @JsonCreator
+    public static PositionEnum fromValue(String text) {
+      for (PositionEnum b : PositionEnum.values()) {
+        if (String.valueOf(b.value).equals(text)) {
+          return b;
+        }
+      }
+      return null;
+    }
+  }
+
+  @JsonProperty("position")
+  private PositionEnum position = null;
+
+  @JsonProperty("useCache")
+  private Boolean useCache = null;
 
   @JsonProperty("useOnlyAnsi378")
   private Boolean useOnlyAnsi378 = null;
@@ -76,6 +175,24 @@ public class FingerPrintExtractionParameters {
     this.evaluateNFIQ = evaluateNFIQ;
   }
 
+  public FingerPrintExtractionParameters imageSource(ImageSourceEnum imageSource) {
+    this.imageSource = imageSource;
+    return this;
+  }
+
+   /**
+   * Get imageSource
+   * @return imageSource
+  **/
+  @ApiModelProperty(value = "")
+  public ImageSourceEnum getImageSource() {
+    return imageSource;
+  }
+
+  public void setImageSource(ImageSourceEnum imageSource) {
+    this.imageSource = imageSource;
+  }
+
   public FingerPrintExtractionParameters maxRotation(Float maxRotation) {
     this.maxRotation = maxRotation;
     return this;
@@ -114,6 +231,42 @@ public class FingerPrintExtractionParameters {
     this.minQuality = minQuality;
   }
 
+  public FingerPrintExtractionParameters position(PositionEnum position) {
+    this.position = position;
+    return this;
+  }
+
+   /**
+   * Get position
+   * @return position
+  **/
+  @ApiModelProperty(value = "")
+  public PositionEnum getPosition() {
+    return position;
+  }
+
+  public void setPosition(PositionEnum position) {
+    this.position = position;
+  }
+
+  public FingerPrintExtractionParameters useCache(Boolean useCache) {
+    this.useCache = useCache;
+    return this;
+  }
+
+   /**
+   * Get useCache
+   * @return useCache
+  **/
+  @ApiModelProperty(value = "")
+  public Boolean isUseCache() {
+    return useCache;
+  }
+
+  public void setUseCache(Boolean useCache) {
+    this.useCache = useCache;
+  }
+
   public FingerPrintExtractionParameters useOnlyAnsi378(Boolean useOnlyAnsi378) {
     this.useOnlyAnsi378 = useOnlyAnsi378;
     return this;
@@ -144,14 +297,17 @@ public class FingerPrintExtractionParameters {
     FingerPrintExtractionParameters fingerPrintExtractionParameters = (FingerPrintExtractionParameters) o;
     return Objects.equals(this.determinePatternClass, fingerPrintExtractionParameters.determinePatternClass) &&
         Objects.equals(this.evaluateNFIQ, fingerPrintExtractionParameters.evaluateNFIQ) &&
+        Objects.equals(this.imageSource, fingerPrintExtractionParameters.imageSource) &&
         Objects.equals(this.maxRotation, fingerPrintExtractionParameters.maxRotation) &&
         Objects.equals(this.minQuality, fingerPrintExtractionParameters.minQuality) &&
+        Objects.equals(this.position, fingerPrintExtractionParameters.position) &&
+        Objects.equals(this.useCache, fingerPrintExtractionParameters.useCache) &&
         Objects.equals(this.useOnlyAnsi378, fingerPrintExtractionParameters.useOnlyAnsi378);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(determinePatternClass, evaluateNFIQ, maxRotation, minQuality, useOnlyAnsi378);
+    return Objects.hash(determinePatternClass, evaluateNFIQ, imageSource, maxRotation, minQuality, position, useCache, useOnlyAnsi378);
   }
 
 
@@ -162,8 +318,11 @@ public class FingerPrintExtractionParameters {
     
     sb.append("    determinePatternClass: ").append(toIndentedString(determinePatternClass)).append("\n");
     sb.append("    evaluateNFIQ: ").append(toIndentedString(evaluateNFIQ)).append("\n");
+    sb.append("    imageSource: ").append(toIndentedString(imageSource)).append("\n");
     sb.append("    maxRotation: ").append(toIndentedString(maxRotation)).append("\n");
     sb.append("    minQuality: ").append(toIndentedString(minQuality)).append("\n");
+    sb.append("    position: ").append(toIndentedString(position)).append("\n");
+    sb.append("    useCache: ").append(toIndentedString(useCache)).append("\n");
     sb.append("    useOnlyAnsi378: ").append(toIndentedString(useOnlyAnsi378)).append("\n");
     sb.append("}");
     return sb.toString();

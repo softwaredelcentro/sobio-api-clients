@@ -24,7 +24,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * FaceExtractionParams
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-26T12:55:02.459-03:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-11-06T15:59:21.589-03:00")
 public class FaceExtractionParams {
   @JsonProperty("blinkSensibility")
   private Double blinkSensibility = null;
@@ -79,6 +79,9 @@ public class FaceExtractionParams {
 
   @JsonProperty("useCLAHE")
   private Boolean useCLAHE = null;
+
+  @JsonProperty("useCache")
+  private Boolean useCache = null;
 
   @JsonProperty("videoFramesSeq")
   private Integer videoFramesSeq = null;
@@ -411,6 +414,24 @@ public class FaceExtractionParams {
     this.useCLAHE = useCLAHE;
   }
 
+  public FaceExtractionParams useCache(Boolean useCache) {
+    this.useCache = useCache;
+    return this;
+  }
+
+   /**
+   * Get useCache
+   * @return useCache
+  **/
+  @ApiModelProperty(value = "")
+  public Boolean isUseCache() {
+    return useCache;
+  }
+
+  public void setUseCache(Boolean useCache) {
+    this.useCache = useCache;
+  }
+
   public FaceExtractionParams videoFramesSeq(Integer videoFramesSeq) {
     this.videoFramesSeq = videoFramesSeq;
     return this;
@@ -457,12 +478,13 @@ public class FaceExtractionParams {
         Objects.equals(this.scaleH, faceExtractionParams.scaleH) &&
         Objects.equals(this.thumbnailWidth, faceExtractionParams.thumbnailWidth) &&
         Objects.equals(this.useCLAHE, faceExtractionParams.useCLAHE) &&
+        Objects.equals(this.useCache, faceExtractionParams.useCache) &&
         Objects.equals(this.videoFramesSeq, faceExtractionParams.videoFramesSeq);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(blinkSensibility, detectAge, detectEmotion, detectExpression, detectGender, detectOnlyMajorFace, detectTraitsAndActions, facePoseSensibility, maxCLAHE, maxRoll, maxYaw, minCLAHE, minConfidence, minIOD, minQuality, scaleH, thumbnailWidth, useCLAHE, videoFramesSeq);
+    return Objects.hash(blinkSensibility, detectAge, detectEmotion, detectExpression, detectGender, detectOnlyMajorFace, detectTraitsAndActions, facePoseSensibility, maxCLAHE, maxRoll, maxYaw, minCLAHE, minConfidence, minIOD, minQuality, scaleH, thumbnailWidth, useCLAHE, useCache, videoFramesSeq);
   }
 
 
@@ -489,6 +511,7 @@ public class FaceExtractionParams {
     sb.append("    scaleH: ").append(toIndentedString(scaleH)).append("\n");
     sb.append("    thumbnailWidth: ").append(toIndentedString(thumbnailWidth)).append("\n");
     sb.append("    useCLAHE: ").append(toIndentedString(useCLAHE)).append("\n");
+    sb.append("    useCache: ").append(toIndentedString(useCache)).append("\n");
     sb.append("    videoFramesSeq: ").append(toIndentedString(videoFramesSeq)).append("\n");
     sb.append("}");
     return sb.toString();

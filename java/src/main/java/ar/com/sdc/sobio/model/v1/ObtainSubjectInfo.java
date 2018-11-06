@@ -23,7 +23,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * ObtainSubjectInfo
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-26T12:55:02.459-03:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-11-06T15:59:21.589-03:00")
 public class ObtainSubjectInfo {
   @JsonProperty("auditToken")
   private String auditToken = null;

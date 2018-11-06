@@ -4,9 +4,9 @@ All URIs are relative to *https://127.0.0.1:8081*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**downloadId**](AuditApi.md#downloadId) | **GET** /v1/audit/audit-id/{auditId} | Download zipped activity log for supplied audit id
-[**downloadId1**](AuditApi.md#downloadId1) | **GET** /v1/audit/subject-id/{subjectId} | Download zipped activity log for supplied subject id
-[**downloadId2**](AuditApi.md#downloadId2) | **GET** /v1/audit/audit-token/{auditToken} | Downloads zipped activity log for supplied audit token
+[**downloadId**](AuditApi.md#downloadId) | **GET** /v1/audit/by-audit-id/{auditId} | Download zipped activity log for supplied audit id
+[**downloadId1**](AuditApi.md#downloadId1) | **GET** /v1/audit/by-subject-id/{subjectId} | Download zipped activity log for supplied subject id
+[**downloadId2**](AuditApi.md#downloadId2) | **GET** /v1/audit/by-audit-token/{auditToken} | Downloads zipped activity log for supplied audit token
 
 
 <a name="downloadId"></a>
@@ -37,7 +37,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **auditId** | **String**| auditId | [optional]
+ **auditId** | **String**| auditId |
 
 ### Return type
 
@@ -80,7 +80,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **subjectId** | **String**| subjectId | [optional]
+ **subjectId** | **String**| subjectId |
 
 ### Return type
 
@@ -123,7 +123,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **auditToken** | **String**| auditToken | [optional]
+ **auditToken** | **String**| auditToken |
 
 ### Return type
 

@@ -24,7 +24,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * ExtractFingerPrintFromImageInput
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-26T12:55:02.459-03:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-11-06T15:59:21.589-03:00")
 public class ExtractFingerPrintFromImageInput {
   @JsonProperty("auditToken")
   private String auditToken = null;
@@ -32,104 +32,8 @@ public class ExtractFingerPrintFromImageInput {
   @JsonProperty("image")
   private byte[] image = null;
 
-  /**
-   * Gets or Sets imageSource
-   */
-  public enum ImageSourceEnum {
-    LIVE_FINGERPRINT("LIVE_FINGERPRINT"),
-    
-    SCANNED_FINGERPRINT_IMAGE("SCANNED_FINGERPRINT_IMAGE"),
-    
-    UNKNOWN("UNKNOWN");
-
-    private String value;
-
-    ImageSourceEnum(String value) {
-      this.value = value;
-    }
-
-    @JsonValue
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    @JsonCreator
-    public static ImageSourceEnum fromValue(String text) {
-      for (ImageSourceEnum b : ImageSourceEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-  }
-
-  @JsonProperty("imageSource")
-  private ImageSourceEnum imageSource = null;
-
   @JsonProperty("params")
   private FingerPrintExtractionParameters params = null;
-
-  /**
-   * Gets or Sets position
-   */
-  public enum PositionEnum {
-    RIGHT_THUMB("RIGHT_THUMB"),
-    
-    LEFT_THUMB("LEFT_THUMB"),
-    
-    RIGHT_INDEX_FINGER("RIGHT_INDEX_FINGER"),
-    
-    LEFT_INDEX_FINGER("LEFT_INDEX_FINGER"),
-    
-    RIGHT_MIDDLE_FINGER("RIGHT_MIDDLE_FINGER"),
-    
-    LEFT_MIDDLE_FINGER("LEFT_MIDDLE_FINGER"),
-    
-    LEFT_RING_FINGER("LEFT_RING_FINGER"),
-    
-    RIGHT_RING_FINGER("RIGHT_RING_FINGER"),
-    
-    LEFT_LITTLE_FINGER("LEFT_LITTLE_FINGER"),
-    
-    RIGHT_LITTLE_FINGER("RIGHT_LITTLE_FINGER"),
-    
-    UNKNOWN("UNKNOWN");
-
-    private String value;
-
-    PositionEnum(String value) {
-      this.value = value;
-    }
-
-    @JsonValue
-    public String getValue() {
-      return value;
-    }
-
-    @Override
-    public String toString() {
-      return String.valueOf(value);
-    }
-
-    @JsonCreator
-    public static PositionEnum fromValue(String text) {
-      for (PositionEnum b : PositionEnum.values()) {
-        if (String.valueOf(b.value).equals(text)) {
-          return b;
-        }
-      }
-      return null;
-    }
-  }
-
-  @JsonProperty("position")
-  private PositionEnum position = null;
 
   public ExtractFingerPrintFromImageInput auditToken(String auditToken) {
     this.auditToken = auditToken;
@@ -167,24 +71,6 @@ public class ExtractFingerPrintFromImageInput {
     this.image = image;
   }
 
-  public ExtractFingerPrintFromImageInput imageSource(ImageSourceEnum imageSource) {
-    this.imageSource = imageSource;
-    return this;
-  }
-
-   /**
-   * Get imageSource
-   * @return imageSource
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public ImageSourceEnum getImageSource() {
-    return imageSource;
-  }
-
-  public void setImageSource(ImageSourceEnum imageSource) {
-    this.imageSource = imageSource;
-  }
-
   public ExtractFingerPrintFromImageInput params(FingerPrintExtractionParameters params) {
     this.params = params;
     return this;
@@ -194,31 +80,13 @@ public class ExtractFingerPrintFromImageInput {
    * Get params
    * @return params
   **/
-  @ApiModelProperty(value = "")
+  @ApiModelProperty(required = true, value = "")
   public FingerPrintExtractionParameters getParams() {
     return params;
   }
 
   public void setParams(FingerPrintExtractionParameters params) {
     this.params = params;
-  }
-
-  public ExtractFingerPrintFromImageInput position(PositionEnum position) {
-    this.position = position;
-    return this;
-  }
-
-   /**
-   * Get position
-   * @return position
-  **/
-  @ApiModelProperty(required = true, value = "")
-  public PositionEnum getPosition() {
-    return position;
-  }
-
-  public void setPosition(PositionEnum position) {
-    this.position = position;
   }
 
 
@@ -233,14 +101,12 @@ public class ExtractFingerPrintFromImageInput {
     ExtractFingerPrintFromImageInput extractFingerPrintFromImageInput = (ExtractFingerPrintFromImageInput) o;
     return Objects.equals(this.auditToken, extractFingerPrintFromImageInput.auditToken) &&
         Objects.equals(this.image, extractFingerPrintFromImageInput.image) &&
-        Objects.equals(this.imageSource, extractFingerPrintFromImageInput.imageSource) &&
-        Objects.equals(this.params, extractFingerPrintFromImageInput.params) &&
-        Objects.equals(this.position, extractFingerPrintFromImageInput.position);
+        Objects.equals(this.params, extractFingerPrintFromImageInput.params);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(auditToken, image, imageSource, params, position);
+    return Objects.hash(auditToken, image, params);
   }
 
 
@@ -251,9 +117,7 @@ public class ExtractFingerPrintFromImageInput {
     
     sb.append("    auditToken: ").append(toIndentedString(auditToken)).append("\n");
     sb.append("    image: ").append(toIndentedString(image)).append("\n");
-    sb.append("    imageSource: ").append(toIndentedString(imageSource)).append("\n");
     sb.append("    params: ").append(toIndentedString(params)).append("\n");
-    sb.append("    position: ").append(toIndentedString(position)).append("\n");
     sb.append("}");
     return sb.toString();
   }

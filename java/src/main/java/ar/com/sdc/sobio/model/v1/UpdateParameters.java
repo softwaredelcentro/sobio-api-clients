@@ -25,13 +25,10 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * UpdateParameters
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-26T12:55:02.459-03:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-11-06T15:59:21.589-03:00")
 public class UpdateParameters {
   @JsonProperty("conditions")
   private Conditions conditions = null;
-
-  @JsonProperty("duplicateSearch")
-  private Boolean duplicateSearch = null;
 
   @JsonProperty("duplicateSearchParameters")
   private IdentifyParameters duplicateSearchParameters = null;
@@ -52,24 +49,6 @@ public class UpdateParameters {
 
   public void setConditions(Conditions conditions) {
     this.conditions = conditions;
-  }
-
-  public UpdateParameters duplicateSearch(Boolean duplicateSearch) {
-    this.duplicateSearch = duplicateSearch;
-    return this;
-  }
-
-   /**
-   * Get duplicateSearch
-   * @return duplicateSearch
-  **/
-  @ApiModelProperty(value = "")
-  public Boolean isDuplicateSearch() {
-    return duplicateSearch;
-  }
-
-  public void setDuplicateSearch(Boolean duplicateSearch) {
-    this.duplicateSearch = duplicateSearch;
   }
 
   public UpdateParameters duplicateSearchParameters(IdentifyParameters duplicateSearchParameters) {
@@ -101,13 +80,12 @@ public class UpdateParameters {
     }
     UpdateParameters updateParameters = (UpdateParameters) o;
     return Objects.equals(this.conditions, updateParameters.conditions) &&
-        Objects.equals(this.duplicateSearch, updateParameters.duplicateSearch) &&
         Objects.equals(this.duplicateSearchParameters, updateParameters.duplicateSearchParameters);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(conditions, duplicateSearch, duplicateSearchParameters);
+    return Objects.hash(conditions, duplicateSearchParameters);
   }
 
 
@@ -117,7 +95,6 @@ public class UpdateParameters {
     sb.append("class UpdateParameters {\n");
     
     sb.append("    conditions: ").append(toIndentedString(conditions)).append("\n");
-    sb.append("    duplicateSearch: ").append(toIndentedString(duplicateSearch)).append("\n");
     sb.append("    duplicateSearchParameters: ").append(toIndentedString(duplicateSearchParameters)).append("\n");
     sb.append("}");
     return sb.toString();

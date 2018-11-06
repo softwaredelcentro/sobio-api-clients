@@ -20,6 +20,7 @@ import java.io.FileInputStream;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 import org.apache.commons.io.IOUtils;
 import org.junit.Test;
@@ -27,14 +28,20 @@ import org.junit.Test;
 import ar.com.sdc.sobio.client.v1.ApiClient;
 import ar.com.sdc.sobio.client.v1.ApiException;
 import ar.com.sdc.sobio.model.v1.BiometricData;
+import ar.com.sdc.sobio.model.v1.DeleteInput;
 import ar.com.sdc.sobio.model.v1.DetectedAction;
+import ar.com.sdc.sobio.model.v1.EnrollInput;
+import ar.com.sdc.sobio.model.v1.EnrollResult;
+import ar.com.sdc.sobio.model.v1.Expresion;
 import ar.com.sdc.sobio.model.v1.ExtractFaceFromImageInput;
 import ar.com.sdc.sobio.model.v1.ExtractFaceFromImageResult;
 import ar.com.sdc.sobio.model.v1.ExtractFaceFromVideoInput;
 import ar.com.sdc.sobio.model.v1.ExtractFaceFromVideoResult;
+import ar.com.sdc.sobio.model.v1.Face;
 import ar.com.sdc.sobio.model.v1.FaceExtractionParams;
 import ar.com.sdc.sobio.model.v1.Gender;
 import ar.com.sdc.sobio.model.v1.VerificationParameters;
+import ar.com.sdc.sobio.model.v1.VerifyInput;
 import ar.com.sdc.sobio.model.v1.VerifyResult;
 import ar.com.sdc.sobio.model.v1.VerifyT2TInput;
 
@@ -218,8 +225,122 @@ public class SOBIOClienteApiV1Test {
 				idxEsperada++;
 			}
 		}
+	}
+	
+	@Test
+	public void completeOnboardingExample01() throws ApiException, IOException {
+		//Takes id Card and selfie video, matches them and make an enrollment
+		//Perform a verification against enrollement with id
+		ExtractionApi apiExtraction = new ExtractionApi(createApiClient());
+		MatchingApi apiMatching = new MatchingApi(createApiClient());
+		DatabaseApi dbApi=new DatabaseApi(createApiClient());
+		ExtractFaceFromImageInput inputIDCard = new ExtractFaceFromImageInput();
+		inputIDCard.setAuditToken("tok123");
+		inputIDCard.setImage(cargar("idcard-01.jpg"));
+		ExtractFaceFromImageResult outputIDCard = apiExtraction.extractFaceImage(inputIDCard);
+		ExtractFaceFromVideoInput inputSelfieVideo = new ExtractFaceFromVideoInput();
+		inputSelfieVideo.setAuditToken("tok123");
+		inputSelfieVideo.setVideo(cargar("selfie-vid-01.mp4"));
+		ExtractFaceFromVideoResult outputSelfieVideo = apiExtraction.extractFaceVideo(inputSelfieVideo);
+		BiometricData subject1BioInfo = new BiometricData();
+		subject1BioInfo.addFacesItem(outputIDCard.getExtractedFaces().get(0).getFace());
+		BiometricData subject2BioInfo = new BiometricData();
+		subject2BioInfo.addFacesItem(outputSelfieVideo.getFace());
+		VerifyT2TInput verifyT2TInput = new VerifyT2TInput();
+		VerificationParameters verifyT2TParams = new VerificationParameters();
+		verifyT2TParams.setFar(0.007);// sets to accept valid a 0.7% False Acceptance Rate
+		verifyT2TInput.setParams(verifyT2TParams);
+		verifyT2TInput.bioInfo1(subject1BioInfo);
+		verifyT2TInput.bioInfo2(subject2BioInfo);
+		VerifyResult verifyOutput = apiMatching.verifyT2t(verifyT2TInput);
+		assertEquals(verifyOutput.getStatus(), VerifyResult.StatusEnum.VERIFY_OK);
+		assertTrue(verifyOutput.getFaP() < 0.007d);// Assess that matched probability is below accepted rate
+		//Enrollment
+		String subjectId=UUID.randomUUID().toString();//Random subjectId
+		BiometricData enrollmentBioData=new BiometricData();
+		//Put 2 biometric faces from previous steps into the same enrollment template (we previously verified that are from the same person)
+		enrollmentBioData.setFaces(subject1BioInfo.getFaces());
+		enrollmentBioData.getFaces().addAll(subject2BioInfo.getFaces());
+		EnrollInput enrollInput=new EnrollInput();
+		enrollInput.setSubjectId(subjectId);
+		enrollInput.setBioInfo(enrollmentBioData);
+		enrollInput.setAuditToken("tok123");
+		//Now perform enrollment
+		EnrollResult enrollOutput = dbApi.enroll(enrollInput);
+		//Assert enrollment Ok
+		assertEquals(enrollOutput.getStatus(), EnrollResult.StatusEnum.ENROLL_OK);
+		//Now perform verification against another subject selfie
+		ExtractFaceFromImageInput inputSelfieImg= new ExtractFaceFromImageInput();
+		inputSelfieImg.setAuditToken("tok123");
+		inputSelfieImg.setImage(cargar("selfie-01.jpg"));
+		ExtractFaceFromImageResult outputSelfieImg = apiExtraction.extractFaceImage(inputSelfieImg);
+		BiometricData verifyBioData=new BiometricData();
+		verifyBioData.setFaces(new ArrayList<Face>());
+		verifyBioData.getFaces().add(outputSelfieImg.getExtractedFaces().get(0).getFace());
+		VerifyInput verifyInput = new VerifyInput();
+		VerificationParameters verifyParams = new VerificationParameters();
+		verifyParams.setFar(0.007);// sets to accept valid a 0.7% False Acceptance Rate
+		verifyInput.setAuditToken("tok123");
+		verifyInput.setParams(verifyParams);
+		verifyInput.setSubjectId(subjectId);
+		verifyInput.setBioInfo(verifyBioData);
+		verifyOutput=apiMatching.verify(verifyInput);
+		assertEquals(verifyOutput.getStatus(), VerifyResult.StatusEnum.VERIFY_OK);
+		DeleteInput deleteInput=new DeleteInput();
+		deleteInput.setSubjectId(subjectId);
+		deleteInput.setAuditToken("tok123");
+		//Clean enrollment to clean test environment
+		dbApi.delete(deleteInput);
+	}
 
-		
+	@Test
+	public void faceTraitDetection01() throws ApiException, IOException {
+		ExtractionApi apiExtraction = new ExtractionApi(createApiClient());
+		ExtractFaceFromImageInput input = new ExtractFaceFromImageInput();
+		input.setAuditToken("tok123");
+		input.setImage(cargar("paul-3.jpg"));
+		FaceExtractionParams params=new FaceExtractionParams();
+		params.detectTraitsAndActions(true);
+		input.setParams(params);
+		ExtractFaceFromImageResult output = apiExtraction.extractFaceImage(input);
+		assertTrue(output.getExtractedFaces().get(0).getProperties().getTraits().getOpenMouth()>=50);//50% or more is a good confidence value
+		assertTrue(!output.getExtractedFaces().get(0).getProperties().getTraits().isRightEyeClosed());
+		assertTrue(!output.getExtractedFaces().get(0).getProperties().getTraits().isLeftEyeClosed());
+	}
+	
+	@Test
+	public void faceEmotionDetection01() throws ApiException, IOException {
+		//A single face can have different emotion confidence values (ie. neutral - 60% , disgust - 45%) 
+		ExtractionApi apiExtraction = new ExtractionApi(createApiClient());
+		ExtractFaceFromImageInput input = new ExtractFaceFromImageInput();
+		input.setAuditToken("tok123");
+		input.setImage(cargar("emotion-01.jpg"));
+		FaceExtractionParams params=new FaceExtractionParams();
+		params.detectEmotion(true);
+		input.setParams(params);
+		ExtractFaceFromImageResult output = apiExtraction.extractFaceImage(input);
+		assertTrue(output.getExtractedFaces().get(0).getProperties().getEmotion().getSurprise()>=50);//50% or more is a good confidence value
+		input = new ExtractFaceFromImageInput();
+		input.setAuditToken("tok123");
+		input.setImage(cargar("emotion-02.jpg"));
+		params.detectEmotion(true);
+		input.setParams(params);
+		output = apiExtraction.extractFaceImage(input);
+		assertTrue(output.getExtractedFaces().get(0).getProperties().getEmotion().getFear()>=50);//50% or more is a good confidence value
+	}
+
+	@Test
+	public void faceExpressionDetection01() throws ApiException, IOException {
+		ExtractionApi apiExtraction = new ExtractionApi(createApiClient());
+		ExtractFaceFromImageInput input = new ExtractFaceFromImageInput();
+		input.setAuditToken("tok123");
+		input.setImage(cargar("expression-01.jpg"));
+		FaceExtractionParams params=new FaceExtractionParams();
+		params.detectExpression(true);
+		input.setParams(params);
+		ExtractFaceFromImageResult output = apiExtraction.extractFaceImage(input);
+		assertTrue(output.getExtractedFaces().get(0).getProperties().getExpression().getConfidence()>=50);//[50-100] or more is a good value for confidence
+		assertEquals(output.getExtractedFaces().get(0).getProperties().getExpression().getType(),Expresion.TypeEnum.SMILE);
 	}
 
 }
