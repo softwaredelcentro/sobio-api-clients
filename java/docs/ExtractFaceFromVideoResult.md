@@ -4,12 +4,12 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**auditId** | **Long** |  |  [optional]
 **detectedActions** | [**List&lt;DetectedAction&gt;**](DetectedAction.md) |  |  [optional]
 **exception** | **Boolean** |  |  [optional]
 **face** | [**Face**](Face.md) |  |  [optional]
 **properties** | [**FaceProperties**](FaceProperties.md) |  |  [optional]
 **status** | [**StatusEnum**](#StatusEnum) |  |  [optional]
+**txId** | **String** |  |  [optional]
 
 
 <a name="StatusEnum"></a>

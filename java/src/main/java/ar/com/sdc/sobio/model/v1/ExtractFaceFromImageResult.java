@@ -26,34 +26,16 @@ import java.util.List;
 /**
  * ExtractFaceFromImageResult
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-11-06T15:59:21.589-03:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-03-12T14:38:20.209-03:00")
 public class ExtractFaceFromImageResult {
-  @JsonProperty("auditId")
-  private Long auditId = null;
-
   @JsonProperty("exception")
   private Boolean exception = null;
 
   @JsonProperty("extractedFaces")
   private List<ExtractedFace> extractedFaces = null;
 
-  public ExtractFaceFromImageResult auditId(Long auditId) {
-    this.auditId = auditId;
-    return this;
-  }
-
-   /**
-   * Get auditId
-   * @return auditId
-  **/
-  @ApiModelProperty(value = "")
-  public Long getAuditId() {
-    return auditId;
-  }
-
-  public void setAuditId(Long auditId) {
-    this.auditId = auditId;
-  }
+  @JsonProperty("txId")
+  private String txId = null;
 
   public ExtractFaceFromImageResult exception(Boolean exception) {
     this.exception = exception;
@@ -99,6 +81,24 @@ public class ExtractFaceFromImageResult {
     this.extractedFaces = extractedFaces;
   }
 
+  public ExtractFaceFromImageResult txId(String txId) {
+    this.txId = txId;
+    return this;
+  }
+
+   /**
+   * Get txId
+   * @return txId
+  **/
+  @ApiModelProperty(value = "")
+  public String getTxId() {
+    return txId;
+  }
+
+  public void setTxId(String txId) {
+    this.txId = txId;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -109,14 +109,14 @@ public class ExtractFaceFromImageResult {
       return false;
     }
     ExtractFaceFromImageResult extractFaceFromImageResult = (ExtractFaceFromImageResult) o;
-    return Objects.equals(this.auditId, extractFaceFromImageResult.auditId) &&
-        Objects.equals(this.exception, extractFaceFromImageResult.exception) &&
-        Objects.equals(this.extractedFaces, extractFaceFromImageResult.extractedFaces);
+    return Objects.equals(this.exception, extractFaceFromImageResult.exception) &&
+        Objects.equals(this.extractedFaces, extractFaceFromImageResult.extractedFaces) &&
+        Objects.equals(this.txId, extractFaceFromImageResult.txId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(auditId, exception, extractedFaces);
+    return Objects.hash(exception, extractedFaces, txId);
   }
 
 
@@ -125,9 +125,9 @@ public class ExtractFaceFromImageResult {
     StringBuilder sb = new StringBuilder();
     sb.append("class ExtractFaceFromImageResult {\n");
     
-    sb.append("    auditId: ").append(toIndentedString(auditId)).append("\n");
     sb.append("    exception: ").append(toIndentedString(exception)).append("\n");
     sb.append("    extractedFaces: ").append(toIndentedString(extractedFaces)).append("\n");
+    sb.append("    txId: ").append(toIndentedString(txId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -7,19 +7,25 @@ import ar.com.sdc.sobio.client.v1.Pair;
 
 import javax.ws.rs.core.GenericType;
 
+import ar.com.sdc.sobio.model.v1.ConcatAudioStreamsInput;
+import ar.com.sdc.sobio.model.v1.ConcatAudioStreamsResult;
 import ar.com.sdc.sobio.model.v1.ExtractFaceFromImageInput;
 import ar.com.sdc.sobio.model.v1.ExtractFaceFromImageResult;
 import ar.com.sdc.sobio.model.v1.ExtractFaceFromVideoInput;
 import ar.com.sdc.sobio.model.v1.ExtractFaceFromVideoResult;
 import ar.com.sdc.sobio.model.v1.ExtractFingerPrintFromImageInput;
 import ar.com.sdc.sobio.model.v1.ExtractFingerPrintFromImageResult;
+import ar.com.sdc.sobio.model.v1.ExtractTextDependentVoiceFromAudioInput;
+import ar.com.sdc.sobio.model.v1.ExtractTextDependentVoiceFromAudioResult;
+import ar.com.sdc.sobio.model.v1.ExtractTextIndependentVoiceFromAudioInput;
+import ar.com.sdc.sobio.model.v1.ExtractTextIndependentVoiceFromAudioResult;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-11-06T15:59:21.589-03:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-03-12T14:38:20.209-03:00")
 public class ExtractionApi {
   private ApiClient apiClient;
 
@@ -39,6 +45,47 @@ public class ExtractionApi {
     this.apiClient = apiClient;
   }
 
+  /**
+   * Concats multiple audio-streams
+   * 
+   * @param input input (required)
+   * @return ConcatAudioStreamsResult
+   * @throws ApiException if fails to make API call
+   */
+  public ConcatAudioStreamsResult concatAudioStream(ConcatAudioStreamsInput input) throws ApiException {
+    Object localVarPostBody = input;
+    
+    // verify the required parameter 'input' is set
+    if (input == null) {
+      throw new ApiException(400, "Missing the required parameter 'input' when calling concatAudioStream");
+    }
+    
+    // create path and map variables
+    String localVarPath = "/v1/bio/concat-audio-stream";
+
+    // query params
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+
+    
+    
+    final String[] localVarAccepts = {
+      "application/json"
+    };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      "application/json"
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] {  };
+
+    GenericType<ConcatAudioStreamsResult> localVarReturnType = new GenericType<ConcatAudioStreamsResult>() {};
+    return apiClient.invokeAPI(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+      }
   /**
    * Extracts face biometric data (template) from a supplied image
    * 
@@ -160,6 +207,88 @@ public class ExtractionApi {
     String[] localVarAuthNames = new String[] {  };
 
     GenericType<ExtractFingerPrintFromImageResult> localVarReturnType = new GenericType<ExtractFingerPrintFromImageResult>() {};
+    return apiClient.invokeAPI(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+      }
+  /**
+   * Extracts text-dependent voice biometric data (template) from a supplied audio
+   * 
+   * @param input input (required)
+   * @return ExtractTextDependentVoiceFromAudioResult
+   * @throws ApiException if fails to make API call
+   */
+  public ExtractTextDependentVoiceFromAudioResult extractTextDependentVoice(ExtractTextDependentVoiceFromAudioInput input) throws ApiException {
+    Object localVarPostBody = input;
+    
+    // verify the required parameter 'input' is set
+    if (input == null) {
+      throw new ApiException(400, "Missing the required parameter 'input' when calling extractTextDependentVoice");
+    }
+    
+    // create path and map variables
+    String localVarPath = "/v1/bio/extract-text-dependent-voice";
+
+    // query params
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+
+    
+    
+    final String[] localVarAccepts = {
+      "application/json"
+    };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      "application/json"
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] {  };
+
+    GenericType<ExtractTextDependentVoiceFromAudioResult> localVarReturnType = new GenericType<ExtractTextDependentVoiceFromAudioResult>() {};
+    return apiClient.invokeAPI(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+      }
+  /**
+   * Extracts text-independent voice biometric data (template) from a supplied audio
+   * 
+   * @param input input (required)
+   * @return ExtractTextIndependentVoiceFromAudioResult
+   * @throws ApiException if fails to make API call
+   */
+  public ExtractTextIndependentVoiceFromAudioResult extractTextIndependentVoice(ExtractTextIndependentVoiceFromAudioInput input) throws ApiException {
+    Object localVarPostBody = input;
+    
+    // verify the required parameter 'input' is set
+    if (input == null) {
+      throw new ApiException(400, "Missing the required parameter 'input' when calling extractTextIndependentVoice");
+    }
+    
+    // create path and map variables
+    String localVarPath = "/v1/bio/extract-text-independent-voice";
+
+    // query params
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+
+    
+    
+    final String[] localVarAccepts = {
+      "application/json"
+    };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      "application/json"
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] {  };
+
+    GenericType<ExtractTextIndependentVoiceFromAudioResult> localVarReturnType = new GenericType<ExtractTextIndependentVoiceFromAudioResult>() {};
     return apiClient.invokeAPI(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
       }
 }

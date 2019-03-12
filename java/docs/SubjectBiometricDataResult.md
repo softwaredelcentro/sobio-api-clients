@@ -4,10 +4,10 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**auditId** | **Long** |  |  [optional]
 **exception** | **Boolean** |  |  [optional]
 **status** | [**StatusEnum**](#StatusEnum) |  |  [optional]
 **template** | [**BiometricData**](BiometricData.md) |  |  [optional]
+**txId** | **String** |  |  [optional]
 
 
 <a name="StatusEnum"></a>

@@ -4,10 +4,56 @@ All URIs are relative to *https://127.0.0.1:8081*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**concatAudioStream**](ExtractionApi.md#concatAudioStream) | **POST** /v1/bio/concat-audio-stream | Concats multiple audio-streams
 [**extractFaceImage**](ExtractionApi.md#extractFaceImage) | **POST** /v1/bio/extract-face-image | Extracts face biometric data (template) from a supplied image
 [**extractFaceVideo**](ExtractionApi.md#extractFaceVideo) | **POST** /v1/bio/extract-face-video | Extracts face biometric data (template) from a supplied video
 [**extractFingerprintImage**](ExtractionApi.md#extractFingerprintImage) | **POST** /v1/bio/extract-fingerprint-image | Extracts finger biometric data (template) from a supplied image
+[**extractTextDependentVoice**](ExtractionApi.md#extractTextDependentVoice) | **POST** /v1/bio/extract-text-dependent-voice | Extracts text-dependent voice biometric data (template) from a supplied audio
+[**extractTextIndependentVoice**](ExtractionApi.md#extractTextIndependentVoice) | **POST** /v1/bio/extract-text-independent-voice | Extracts text-independent voice biometric data (template) from a supplied audio
 
+
+<a name="concatAudioStream"></a>
+# **concatAudioStream**
+> ConcatAudioStreamsResult concatAudioStream(input)
+
+Concats multiple audio-streams
+
+### Example
+```java
+// Import classes:
+//import ar.com.sdc.sobio.client.v1.ApiException;
+//import ar.com.sdc.sobio.api.v1.ExtractionApi;
+
+
+ExtractionApi apiInstance = new ExtractionApi();
+ConcatAudioStreamsInput input = new ConcatAudioStreamsInput(); // ConcatAudioStreamsInput | input
+try {
+    ConcatAudioStreamsResult result = apiInstance.concatAudioStream(input);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ExtractionApi#concatAudioStream");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **input** | [**ConcatAudioStreamsInput**](ConcatAudioStreamsInput.md)| input |
+
+### Return type
+
+[**ConcatAudioStreamsResult**](ConcatAudioStreamsResult.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
 
 <a name="extractFaceImage"></a>
 # **extractFaceImage**
@@ -128,6 +174,92 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ExtractFingerPrintFromImageResult**](ExtractFingerPrintFromImageResult.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="extractTextDependentVoice"></a>
+# **extractTextDependentVoice**
+> ExtractTextDependentVoiceFromAudioResult extractTextDependentVoice(input)
+
+Extracts text-dependent voice biometric data (template) from a supplied audio
+
+### Example
+```java
+// Import classes:
+//import ar.com.sdc.sobio.client.v1.ApiException;
+//import ar.com.sdc.sobio.api.v1.ExtractionApi;
+
+
+ExtractionApi apiInstance = new ExtractionApi();
+ExtractTextDependentVoiceFromAudioInput input = new ExtractTextDependentVoiceFromAudioInput(); // ExtractTextDependentVoiceFromAudioInput | input
+try {
+    ExtractTextDependentVoiceFromAudioResult result = apiInstance.extractTextDependentVoice(input);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ExtractionApi#extractTextDependentVoice");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **input** | [**ExtractTextDependentVoiceFromAudioInput**](ExtractTextDependentVoiceFromAudioInput.md)| input |
+
+### Return type
+
+[**ExtractTextDependentVoiceFromAudioResult**](ExtractTextDependentVoiceFromAudioResult.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="extractTextIndependentVoice"></a>
+# **extractTextIndependentVoice**
+> ExtractTextIndependentVoiceFromAudioResult extractTextIndependentVoice(input)
+
+Extracts text-independent voice biometric data (template) from a supplied audio
+
+### Example
+```java
+// Import classes:
+//import ar.com.sdc.sobio.client.v1.ApiException;
+//import ar.com.sdc.sobio.api.v1.ExtractionApi;
+
+
+ExtractionApi apiInstance = new ExtractionApi();
+ExtractTextIndependentVoiceFromAudioInput input = new ExtractTextIndependentVoiceFromAudioInput(); // ExtractTextIndependentVoiceFromAudioInput | input
+try {
+    ExtractTextIndependentVoiceFromAudioResult result = apiInstance.extractTextIndependentVoice(input);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling ExtractionApi#extractTextIndependentVoice");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **input** | [**ExtractTextIndependentVoiceFromAudioInput**](ExtractTextIndependentVoiceFromAudioInput.md)| input |
+
+### Return type
+
+[**ExtractTextIndependentVoiceFromAudioResult**](ExtractTextIndependentVoiceFromAudioResult.md)
 
 ### Authorization
 

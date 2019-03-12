@@ -24,11 +24,8 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * SubjectBiometricDataResult
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-11-06T15:59:21.589-03:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-03-12T14:38:20.209-03:00")
 public class SubjectBiometricDataResult {
-  @JsonProperty("auditId")
-  private Long auditId = null;
-
   @JsonProperty("exception")
   private Boolean exception = null;
 
@@ -73,23 +70,8 @@ public class SubjectBiometricDataResult {
   @JsonProperty("template")
   private BiometricData template = null;
 
-  public SubjectBiometricDataResult auditId(Long auditId) {
-    this.auditId = auditId;
-    return this;
-  }
-
-   /**
-   * Get auditId
-   * @return auditId
-  **/
-  @ApiModelProperty(value = "")
-  public Long getAuditId() {
-    return auditId;
-  }
-
-  public void setAuditId(Long auditId) {
-    this.auditId = auditId;
-  }
+  @JsonProperty("txId")
+  private String txId = null;
 
   public SubjectBiometricDataResult exception(Boolean exception) {
     this.exception = exception;
@@ -145,6 +127,24 @@ public class SubjectBiometricDataResult {
     this.template = template;
   }
 
+  public SubjectBiometricDataResult txId(String txId) {
+    this.txId = txId;
+    return this;
+  }
+
+   /**
+   * Get txId
+   * @return txId
+  **/
+  @ApiModelProperty(value = "")
+  public String getTxId() {
+    return txId;
+  }
+
+  public void setTxId(String txId) {
+    this.txId = txId;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -155,15 +155,15 @@ public class SubjectBiometricDataResult {
       return false;
     }
     SubjectBiometricDataResult subjectBiometricDataResult = (SubjectBiometricDataResult) o;
-    return Objects.equals(this.auditId, subjectBiometricDataResult.auditId) &&
-        Objects.equals(this.exception, subjectBiometricDataResult.exception) &&
+    return Objects.equals(this.exception, subjectBiometricDataResult.exception) &&
         Objects.equals(this.status, subjectBiometricDataResult.status) &&
-        Objects.equals(this.template, subjectBiometricDataResult.template);
+        Objects.equals(this.template, subjectBiometricDataResult.template) &&
+        Objects.equals(this.txId, subjectBiometricDataResult.txId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(auditId, exception, status, template);
+    return Objects.hash(exception, status, template, txId);
   }
 
 
@@ -172,10 +172,10 @@ public class SubjectBiometricDataResult {
     StringBuilder sb = new StringBuilder();
     sb.append("class SubjectBiometricDataResult {\n");
     
-    sb.append("    auditId: ").append(toIndentedString(auditId)).append("\n");
     sb.append("    exception: ").append(toIndentedString(exception)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    template: ").append(toIndentedString(template)).append("\n");
+    sb.append("    txId: ").append(toIndentedString(txId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

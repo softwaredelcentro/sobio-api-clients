@@ -23,11 +23,8 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * IdentifyResult
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-11-06T15:59:21.589-03:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-03-12T14:38:20.209-03:00")
 public class IdentifyResult {
-  @JsonProperty("auditId")
-  private Long auditId = null;
-
   @JsonProperty("exception")
   private Boolean exception = null;
 
@@ -43,13 +40,13 @@ public class IdentifyResult {
   public enum StatusEnum {
     IDENTIFY_OK("IDENTIFY_OK"),
     
-    NOT_IDENTIFIED_HIGH_FAR("NOT_IDENTIFIED_HIGH_FAR"),
-    
     NOT_IDENTIFIED("NOT_IDENTIFIED"),
     
     MATCHING_NODE_UNAVAILABLE("MATCHING_NODE_UNAVAILABLE"),
     
-    WITHOUT_TEMPLATE("WITHOUT_TEMPLATE");
+    WITHOUT_TEMPLATE("WITHOUT_TEMPLATE"),
+    
+    IDENTIFY_UNSUPPORTED("IDENTIFY_UNSUPPORTED");
 
     private String value;
 
@@ -84,23 +81,8 @@ public class IdentifyResult {
   @JsonProperty("subjectId")
   private String subjectId = null;
 
-  public IdentifyResult auditId(Long auditId) {
-    this.auditId = auditId;
-    return this;
-  }
-
-   /**
-   * Get auditId
-   * @return auditId
-  **/
-  @ApiModelProperty(value = "")
-  public Long getAuditId() {
-    return auditId;
-  }
-
-  public void setAuditId(Long auditId) {
-    this.auditId = auditId;
-  }
+  @JsonProperty("txId")
+  private String txId = null;
 
   public IdentifyResult exception(Boolean exception) {
     this.exception = exception;
@@ -192,6 +174,24 @@ public class IdentifyResult {
     this.subjectId = subjectId;
   }
 
+  public IdentifyResult txId(String txId) {
+    this.txId = txId;
+    return this;
+  }
+
+   /**
+   * Get txId
+   * @return txId
+  **/
+  @ApiModelProperty(value = "")
+  public String getTxId() {
+    return txId;
+  }
+
+  public void setTxId(String txId) {
+    this.txId = txId;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -202,17 +202,17 @@ public class IdentifyResult {
       return false;
     }
     IdentifyResult identifyResult = (IdentifyResult) o;
-    return Objects.equals(this.auditId, identifyResult.auditId) &&
-        Objects.equals(this.exception, identifyResult.exception) &&
+    return Objects.equals(this.exception, identifyResult.exception) &&
         Objects.equals(this.faP, identifyResult.faP) &&
         Objects.equals(this.score, identifyResult.score) &&
         Objects.equals(this.status, identifyResult.status) &&
-        Objects.equals(this.subjectId, identifyResult.subjectId);
+        Objects.equals(this.subjectId, identifyResult.subjectId) &&
+        Objects.equals(this.txId, identifyResult.txId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(auditId, exception, faP, score, status, subjectId);
+    return Objects.hash(exception, faP, score, status, subjectId, txId);
   }
 
 
@@ -221,12 +221,12 @@ public class IdentifyResult {
     StringBuilder sb = new StringBuilder();
     sb.append("class IdentifyResult {\n");
     
-    sb.append("    auditId: ").append(toIndentedString(auditId)).append("\n");
     sb.append("    exception: ").append(toIndentedString(exception)).append("\n");
     sb.append("    faP: ").append(toIndentedString(faP)).append("\n");
     sb.append("    score: ").append(toIndentedString(score)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    subjectId: ").append(toIndentedString(subjectId)).append("\n");
+    sb.append("    txId: ").append(toIndentedString(txId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

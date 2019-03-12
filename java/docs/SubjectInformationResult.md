@@ -4,7 +4,6 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**auditId** | **Long** |  |  [optional]
 **compositeFingerCount** | **Integer** |  |  [optional]
 **enrollmentDate** | [**DateTime**](DateTime.md) |  |  [optional]
 **exception** | **Boolean** |  |  [optional]
@@ -26,6 +25,7 @@ Name | Type | Description | Notes
 **s5** | **String** |  |  [optional]
 **status** | [**StatusEnum**](#StatusEnum) |  |  [optional]
 **textDependentVoiceCount** | **Integer** |  |  [optional]
+**txId** | **String** |  |  [optional]
 
 
 <a name="StatusEnum"></a>

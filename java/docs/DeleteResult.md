@@ -4,9 +4,9 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**auditId** | **Long** |  |  [optional]
 **exception** | **Boolean** |  |  [optional]
 **status** | [**StatusEnum**](#StatusEnum) |  |  [optional]
+**txId** | **String** |  |  [optional]
 
 
 <a name="StatusEnum"></a>

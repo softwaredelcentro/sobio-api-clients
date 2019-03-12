@@ -24,11 +24,8 @@ import org.joda.time.DateTime;
 /**
  * SubjectInformationResult
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-11-06T15:59:21.589-03:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-03-12T14:38:20.209-03:00")
 public class SubjectInformationResult {
-  @JsonProperty("auditId")
-  private Long auditId = null;
-
   @JsonProperty("compositeFingerCount")
   private Integer compositeFingerCount = null;
 
@@ -127,23 +124,8 @@ public class SubjectInformationResult {
   @JsonProperty("textDependentVoiceCount")
   private Integer textDependentVoiceCount = null;
 
-  public SubjectInformationResult auditId(Long auditId) {
-    this.auditId = auditId;
-    return this;
-  }
-
-   /**
-   * Get auditId
-   * @return auditId
-  **/
-  @ApiModelProperty(value = "")
-  public Long getAuditId() {
-    return auditId;
-  }
-
-  public void setAuditId(Long auditId) {
-    this.auditId = auditId;
-  }
+  @JsonProperty("txId")
+  private String txId = null;
 
   public SubjectInformationResult compositeFingerCount(Integer compositeFingerCount) {
     this.compositeFingerCount = compositeFingerCount;
@@ -523,6 +505,24 @@ public class SubjectInformationResult {
     this.textDependentVoiceCount = textDependentVoiceCount;
   }
 
+  public SubjectInformationResult txId(String txId) {
+    this.txId = txId;
+    return this;
+  }
+
+   /**
+   * Get txId
+   * @return txId
+  **/
+  @ApiModelProperty(value = "")
+  public String getTxId() {
+    return txId;
+  }
+
+  public void setTxId(String txId) {
+    this.txId = txId;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -533,8 +533,7 @@ public class SubjectInformationResult {
       return false;
     }
     SubjectInformationResult subjectInformationResult = (SubjectInformationResult) o;
-    return Objects.equals(this.auditId, subjectInformationResult.auditId) &&
-        Objects.equals(this.compositeFingerCount, subjectInformationResult.compositeFingerCount) &&
+    return Objects.equals(this.compositeFingerCount, subjectInformationResult.compositeFingerCount) &&
         Objects.equals(this.enrollmentDate, subjectInformationResult.enrollmentDate) &&
         Objects.equals(this.exception, subjectInformationResult.exception) &&
         Objects.equals(this.faceCount, subjectInformationResult.faceCount) &&
@@ -554,12 +553,13 @@ public class SubjectInformationResult {
         Objects.equals(this.s4, subjectInformationResult.s4) &&
         Objects.equals(this.s5, subjectInformationResult.s5) &&
         Objects.equals(this.status, subjectInformationResult.status) &&
-        Objects.equals(this.textDependentVoiceCount, subjectInformationResult.textDependentVoiceCount);
+        Objects.equals(this.textDependentVoiceCount, subjectInformationResult.textDependentVoiceCount) &&
+        Objects.equals(this.txId, subjectInformationResult.txId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(auditId, compositeFingerCount, enrollmentDate, exception, faceCount, fingerCount, hasTextIndependentVoice, i1, i2, i3, i4, i5, lastIdentifyDate, lastUpdateDate, lastVerifyDate, s1, s2, s3, s4, s5, status, textDependentVoiceCount);
+    return Objects.hash(compositeFingerCount, enrollmentDate, exception, faceCount, fingerCount, hasTextIndependentVoice, i1, i2, i3, i4, i5, lastIdentifyDate, lastUpdateDate, lastVerifyDate, s1, s2, s3, s4, s5, status, textDependentVoiceCount, txId);
   }
 
 
@@ -568,7 +568,6 @@ public class SubjectInformationResult {
     StringBuilder sb = new StringBuilder();
     sb.append("class SubjectInformationResult {\n");
     
-    sb.append("    auditId: ").append(toIndentedString(auditId)).append("\n");
     sb.append("    compositeFingerCount: ").append(toIndentedString(compositeFingerCount)).append("\n");
     sb.append("    enrollmentDate: ").append(toIndentedString(enrollmentDate)).append("\n");
     sb.append("    exception: ").append(toIndentedString(exception)).append("\n");
@@ -590,6 +589,7 @@ public class SubjectInformationResult {
     sb.append("    s5: ").append(toIndentedString(s5)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    textDependentVoiceCount: ").append(toIndentedString(textDependentVoiceCount)).append("\n");
+    sb.append("    txId: ").append(toIndentedString(txId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

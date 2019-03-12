@@ -17,7 +17,8 @@ import java.util.Objects;
 import ar.com.sdc.sobio.model.v1.CompositeFingerPrint;
 import ar.com.sdc.sobio.model.v1.Face;
 import ar.com.sdc.sobio.model.v1.FingerPrint;
-import ar.com.sdc.sobio.model.v1.Voice;
+import ar.com.sdc.sobio.model.v1.TextDependentVoice;
+import ar.com.sdc.sobio.model.v1.TextIndependentVoice;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -29,7 +30,7 @@ import java.util.List;
 /**
  * BiometricData
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-11-06T15:59:21.589-03:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-03-12T14:38:20.209-03:00")
 public class BiometricData {
   @JsonProperty("compositeFingerPrints")
   private List<CompositeFingerPrint> compositeFingerPrints = null;
@@ -40,8 +41,11 @@ public class BiometricData {
   @JsonProperty("fingerPrints")
   private List<FingerPrint> fingerPrints = null;
 
-  @JsonProperty("voices")
-  private List<Voice> voices = null;
+  @JsonProperty("textDependentVoices")
+  private List<TextDependentVoice> textDependentVoices = null;
+
+  @JsonProperty("textIndependentVoice")
+  private TextIndependentVoice textIndependentVoice = null;
 
   public BiometricData compositeFingerPrints(List<CompositeFingerPrint> compositeFingerPrints) {
     this.compositeFingerPrints = compositeFingerPrints;
@@ -121,30 +125,48 @@ public class BiometricData {
     this.fingerPrints = fingerPrints;
   }
 
-  public BiometricData voices(List<Voice> voices) {
-    this.voices = voices;
+  public BiometricData textDependentVoices(List<TextDependentVoice> textDependentVoices) {
+    this.textDependentVoices = textDependentVoices;
     return this;
   }
 
-  public BiometricData addVoicesItem(Voice voicesItem) {
-    if (this.voices == null) {
-      this.voices = new ArrayList<Voice>();
+  public BiometricData addTextDependentVoicesItem(TextDependentVoice textDependentVoicesItem) {
+    if (this.textDependentVoices == null) {
+      this.textDependentVoices = new ArrayList<TextDependentVoice>();
     }
-    this.voices.add(voicesItem);
+    this.textDependentVoices.add(textDependentVoicesItem);
     return this;
   }
 
    /**
-   * Get voices
-   * @return voices
+   * Get textDependentVoices
+   * @return textDependentVoices
   **/
   @ApiModelProperty(value = "")
-  public List<Voice> getVoices() {
-    return voices;
+  public List<TextDependentVoice> getTextDependentVoices() {
+    return textDependentVoices;
   }
 
-  public void setVoices(List<Voice> voices) {
-    this.voices = voices;
+  public void setTextDependentVoices(List<TextDependentVoice> textDependentVoices) {
+    this.textDependentVoices = textDependentVoices;
+  }
+
+  public BiometricData textIndependentVoice(TextIndependentVoice textIndependentVoice) {
+    this.textIndependentVoice = textIndependentVoice;
+    return this;
+  }
+
+   /**
+   * Get textIndependentVoice
+   * @return textIndependentVoice
+  **/
+  @ApiModelProperty(value = "")
+  public TextIndependentVoice getTextIndependentVoice() {
+    return textIndependentVoice;
+  }
+
+  public void setTextIndependentVoice(TextIndependentVoice textIndependentVoice) {
+    this.textIndependentVoice = textIndependentVoice;
   }
 
 
@@ -160,12 +182,13 @@ public class BiometricData {
     return Objects.equals(this.compositeFingerPrints, biometricData.compositeFingerPrints) &&
         Objects.equals(this.faces, biometricData.faces) &&
         Objects.equals(this.fingerPrints, biometricData.fingerPrints) &&
-        Objects.equals(this.voices, biometricData.voices);
+        Objects.equals(this.textDependentVoices, biometricData.textDependentVoices) &&
+        Objects.equals(this.textIndependentVoice, biometricData.textIndependentVoice);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(compositeFingerPrints, faces, fingerPrints, voices);
+    return Objects.hash(compositeFingerPrints, faces, fingerPrints, textDependentVoices, textIndependentVoice);
   }
 
 
@@ -177,7 +200,8 @@ public class BiometricData {
     sb.append("    compositeFingerPrints: ").append(toIndentedString(compositeFingerPrints)).append("\n");
     sb.append("    faces: ").append(toIndentedString(faces)).append("\n");
     sb.append("    fingerPrints: ").append(toIndentedString(fingerPrints)).append("\n");
-    sb.append("    voices: ").append(toIndentedString(voices)).append("\n");
+    sb.append("    textDependentVoices: ").append(toIndentedString(textDependentVoices)).append("\n");
+    sb.append("    textIndependentVoice: ").append(toIndentedString(textIndependentVoice)).append("\n");
     sb.append("}");
     return sb.toString();
   }

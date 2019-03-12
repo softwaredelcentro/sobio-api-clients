@@ -23,11 +23,8 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * EnrollResult
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-11-06T15:59:21.589-03:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-03-12T14:38:20.209-03:00")
 public class EnrollResult {
-  @JsonProperty("auditId")
-  private Long auditId = null;
-
   @JsonProperty("duplicatedSubjectId")
   private String duplicatedSubjectId = null;
 
@@ -48,7 +45,9 @@ public class EnrollResult {
     
     WITHOUT_TEMPLATE("WITHOUT_TEMPLATE"),
     
-    MATCHING_NODE_UNAVAILABLE("MATCHING_NODE_UNAVAILABLE");
+    MATCHING_NODE_UNAVAILABLE("MATCHING_NODE_UNAVAILABLE"),
+    
+    DUPLICATE_SEARCH_UNSUPPORTED("DUPLICATE_SEARCH_UNSUPPORTED");
 
     private String value;
 
@@ -80,23 +79,8 @@ public class EnrollResult {
   @JsonProperty("status")
   private StatusEnum status = null;
 
-  public EnrollResult auditId(Long auditId) {
-    this.auditId = auditId;
-    return this;
-  }
-
-   /**
-   * Get auditId
-   * @return auditId
-  **/
-  @ApiModelProperty(value = "")
-  public Long getAuditId() {
-    return auditId;
-  }
-
-  public void setAuditId(Long auditId) {
-    this.auditId = auditId;
-  }
+  @JsonProperty("txId")
+  private String txId = null;
 
   public EnrollResult duplicatedSubjectId(String duplicatedSubjectId) {
     this.duplicatedSubjectId = duplicatedSubjectId;
@@ -152,6 +136,24 @@ public class EnrollResult {
     this.status = status;
   }
 
+  public EnrollResult txId(String txId) {
+    this.txId = txId;
+    return this;
+  }
+
+   /**
+   * Get txId
+   * @return txId
+  **/
+  @ApiModelProperty(value = "")
+  public String getTxId() {
+    return txId;
+  }
+
+  public void setTxId(String txId) {
+    this.txId = txId;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -162,15 +164,15 @@ public class EnrollResult {
       return false;
     }
     EnrollResult enrollResult = (EnrollResult) o;
-    return Objects.equals(this.auditId, enrollResult.auditId) &&
-        Objects.equals(this.duplicatedSubjectId, enrollResult.duplicatedSubjectId) &&
+    return Objects.equals(this.duplicatedSubjectId, enrollResult.duplicatedSubjectId) &&
         Objects.equals(this.exception, enrollResult.exception) &&
-        Objects.equals(this.status, enrollResult.status);
+        Objects.equals(this.status, enrollResult.status) &&
+        Objects.equals(this.txId, enrollResult.txId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(auditId, duplicatedSubjectId, exception, status);
+    return Objects.hash(duplicatedSubjectId, exception, status, txId);
   }
 
 
@@ -179,10 +181,10 @@ public class EnrollResult {
     StringBuilder sb = new StringBuilder();
     sb.append("class EnrollResult {\n");
     
-    sb.append("    auditId: ").append(toIndentedString(auditId)).append("\n");
     sb.append("    duplicatedSubjectId: ").append(toIndentedString(duplicatedSubjectId)).append("\n");
     sb.append("    exception: ").append(toIndentedString(exception)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
+    sb.append("    txId: ").append(toIndentedString(txId)).append("\n");
     sb.append("}");
     return sb.toString();
   }
