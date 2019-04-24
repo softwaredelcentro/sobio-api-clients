@@ -4,6 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
+**confidence** | **Double** |  |  [optional]
 **exception** | **Boolean** |  |  [optional]
 **faP** | **Double** |  |  [optional]
 **score** | **Integer** |  |  [optional]

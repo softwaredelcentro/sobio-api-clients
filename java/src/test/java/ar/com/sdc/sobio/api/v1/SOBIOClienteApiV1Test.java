@@ -33,8 +33,8 @@ import ar.com.sdc.sobio.model.v1.DetectedAction;
 import ar.com.sdc.sobio.model.v1.EnrollInput;
 import ar.com.sdc.sobio.model.v1.EnrollResult;
 import ar.com.sdc.sobio.model.v1.Expresion;
-import ar.com.sdc.sobio.model.v1.ExtractDocumentInformationInput;
-import ar.com.sdc.sobio.model.v1.ExtractDocumentInformationResult;
+import ar.com.sdc.sobio.model.v1.ExtractDNIARInput;
+import ar.com.sdc.sobio.model.v1.ExtractDNIARResult;
 import ar.com.sdc.sobio.model.v1.ExtractFaceFromImageInput;
 import ar.com.sdc.sobio.model.v1.ExtractFaceFromImageResult;
 import ar.com.sdc.sobio.model.v1.ExtractFaceFromVideoInput;
@@ -60,7 +60,7 @@ public class SOBIOClienteApiV1Test {
 	
 	public ApiClient createApiClient() {
 		ApiClient api = new ApiClient();
-		api.setBasePath("http://127.0.0.1:8081/");
+		api.setBasePath("http://127.0.0.1:8081");
 		return api;
 	}
 
@@ -74,7 +74,7 @@ public class SOBIOClienteApiV1Test {
 		params.setDetectGender(true);
 		input.setParams(params);
 		ExtractFaceFromImageResult output = api.extractFaceImage(input);
-		assertEquals(output.getExtractedFaces().size(), 1);
+		assertTrue(output.getExtractedFaces().size()>0);
 		assertEquals(output.getExtractedFaces().get(0).getProperties().getGender().getType(), Gender.TypeEnum.MALE);
 
 	}
@@ -348,12 +348,12 @@ public class SOBIOClienteApiV1Test {
 	@Test
 	public void extractFromIDArgentinaV2_01() throws IOException, ApiException {
 		DocumentExtractionApi eapi = new DocumentExtractionApi(createApiClient());
-		ExtractDocumentInformationInput input = new ExtractDocumentInformationInput();
+		ExtractDNIARInput input = new ExtractDNIARInput();
 		input.setAuditToken("tok123");
 		input.setFrontImage(cargar("dni_argentino_front.jpg"));
 		input.setBackImage(cargar("dni_argentino_back.jpg"));
-		ExtractDocumentInformationResult o = eapi.extractDniArDocInfo(input);
-		assertEquals(o.getStatus(), ExtractDocumentInformationResult.StatusEnum.OK);
+		ExtractDNIARResult o = eapi.extractDniArDocInfo(input);
+		assertEquals(o.getStatus(), ExtractDNIARResult.StatusEnum.OK);
 		assertEquals(o.getDocumentInfo().getDocumentNumber(), "99999999");
 		assertEquals(o.getDocumentInfo().getNationality(), "ARG");
 		assertEquals(o.getDocumentInfo().getSurname(), "VILLAREAL");

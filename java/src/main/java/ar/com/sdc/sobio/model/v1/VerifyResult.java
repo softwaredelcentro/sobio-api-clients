@@ -23,8 +23,11 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * VerifyResult
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-03-12T14:38:20.209-03:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-04-24T14:47:31.932-03:00")
 public class VerifyResult {
+  @JsonProperty("confidence")
+  private Double confidence = null;
+
   @JsonProperty("exception")
   private Boolean exception = null;
 
@@ -80,6 +83,24 @@ public class VerifyResult {
 
   @JsonProperty("txId")
   private String txId = null;
+
+  public VerifyResult confidence(Double confidence) {
+    this.confidence = confidence;
+    return this;
+  }
+
+   /**
+   * Get confidence
+   * @return confidence
+  **/
+  @ApiModelProperty(value = "")
+  public Double getConfidence() {
+    return confidence;
+  }
+
+  public void setConfidence(Double confidence) {
+    this.confidence = confidence;
+  }
 
   public VerifyResult exception(Boolean exception) {
     this.exception = exception;
@@ -181,7 +202,8 @@ public class VerifyResult {
       return false;
     }
     VerifyResult verifyResult = (VerifyResult) o;
-    return Objects.equals(this.exception, verifyResult.exception) &&
+    return Objects.equals(this.confidence, verifyResult.confidence) &&
+        Objects.equals(this.exception, verifyResult.exception) &&
         Objects.equals(this.faP, verifyResult.faP) &&
         Objects.equals(this.score, verifyResult.score) &&
         Objects.equals(this.status, verifyResult.status) &&
@@ -190,7 +212,7 @@ public class VerifyResult {
 
   @Override
   public int hashCode() {
-    return Objects.hash(exception, faP, score, status, txId);
+    return Objects.hash(confidence, exception, faP, score, status, txId);
   }
 
 
@@ -199,6 +221,7 @@ public class VerifyResult {
     StringBuilder sb = new StringBuilder();
     sb.append("class VerifyResult {\n");
     
+    sb.append("    confidence: ").append(toIndentedString(confidence)).append("\n");
     sb.append("    exception: ").append(toIndentedString(exception)).append("\n");
     sb.append("    faP: ").append(toIndentedString(faP)).append("\n");
     sb.append("    score: ").append(toIndentedString(score)).append("\n");

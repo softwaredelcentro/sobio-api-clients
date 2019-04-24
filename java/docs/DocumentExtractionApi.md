@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="extractDniArDocInfo"></a>
 # **extractDniArDocInfo**
-> ExtractDocumentInformationResult extractDniArDocInfo(input)
+> ExtractDNIARResult extractDniArDocInfo(input)
 
 Extracts ARGENTINA ID Card document information
 
@@ -21,9 +21,9 @@ Extracts ARGENTINA ID Card document information
 
 
 DocumentExtractionApi apiInstance = new DocumentExtractionApi();
-ExtractDocumentInformationInput input = new ExtractDocumentInformationInput(); // ExtractDocumentInformationInput | input
+ExtractDNIARInput input = new ExtractDNIARInput(); // ExtractDNIARInput | input
 try {
-    ExtractDocumentInformationResult result = apiInstance.extractDniArDocInfo(input);
+    ExtractDNIARResult result = apiInstance.extractDniArDocInfo(input);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling DocumentExtractionApi#extractDniArDocInfo");
@@ -35,11 +35,11 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **input** | [**ExtractDocumentInformationInput**](ExtractDocumentInformationInput.md)| input |
+ **input** | [**ExtractDNIARInput**](ExtractDNIARInput.md)| input |
 
 ### Return type
 
-[**ExtractDocumentInformationResult**](ExtractDocumentInformationResult.md)
+[**ExtractDNIARResult**](ExtractDNIARResult.md)
 
 ### Authorization
 

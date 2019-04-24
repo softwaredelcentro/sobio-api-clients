@@ -14,19 +14,34 @@
 package ar.com.sdc.sobio.model.v1;
 
 import java.util.Objects;
+import ar.com.sdc.sobio.model.v1.Point;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * DetectedAction
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-03-12T14:38:20.209-03:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-04-24T14:47:31.932-03:00")
 public class DetectedAction {
   @JsonProperty("frameNum")
   private Integer frameNum = null;
+
+  @JsonProperty("pitch")
+  private Float pitch = null;
+
+  @JsonProperty("points")
+  private List<Point> points = null;
+
+  @JsonProperty("roll")
+  private Float roll = null;
+
+  @JsonProperty("thumbnail")
+  private byte[] thumbnail = null;
 
   /**
    * Gets or Sets type
@@ -76,6 +91,9 @@ public class DetectedAction {
   @JsonProperty("type")
   private TypeEnum type = null;
 
+  @JsonProperty("yaw")
+  private Float yaw = null;
+
   public DetectedAction frameNum(Integer frameNum) {
     this.frameNum = frameNum;
     return this;
@@ -92,6 +110,86 @@ public class DetectedAction {
 
   public void setFrameNum(Integer frameNum) {
     this.frameNum = frameNum;
+  }
+
+  public DetectedAction pitch(Float pitch) {
+    this.pitch = pitch;
+    return this;
+  }
+
+   /**
+   * Get pitch
+   * @return pitch
+  **/
+  @ApiModelProperty(value = "")
+  public Float getPitch() {
+    return pitch;
+  }
+
+  public void setPitch(Float pitch) {
+    this.pitch = pitch;
+  }
+
+  public DetectedAction points(List<Point> points) {
+    this.points = points;
+    return this;
+  }
+
+  public DetectedAction addPointsItem(Point pointsItem) {
+    if (this.points == null) {
+      this.points = new ArrayList<Point>();
+    }
+    this.points.add(pointsItem);
+    return this;
+  }
+
+   /**
+   * Get points
+   * @return points
+  **/
+  @ApiModelProperty(value = "")
+  public List<Point> getPoints() {
+    return points;
+  }
+
+  public void setPoints(List<Point> points) {
+    this.points = points;
+  }
+
+  public DetectedAction roll(Float roll) {
+    this.roll = roll;
+    return this;
+  }
+
+   /**
+   * Get roll
+   * @return roll
+  **/
+  @ApiModelProperty(value = "")
+  public Float getRoll() {
+    return roll;
+  }
+
+  public void setRoll(Float roll) {
+    this.roll = roll;
+  }
+
+  public DetectedAction thumbnail(byte[] thumbnail) {
+    this.thumbnail = thumbnail;
+    return this;
+  }
+
+   /**
+   * Get thumbnail
+   * @return thumbnail
+  **/
+  @ApiModelProperty(value = "")
+  public byte[] getThumbnail() {
+    return thumbnail;
+  }
+
+  public void setThumbnail(byte[] thumbnail) {
+    this.thumbnail = thumbnail;
   }
 
   public DetectedAction type(TypeEnum type) {
@@ -112,6 +210,24 @@ public class DetectedAction {
     this.type = type;
   }
 
+  public DetectedAction yaw(Float yaw) {
+    this.yaw = yaw;
+    return this;
+  }
+
+   /**
+   * Get yaw
+   * @return yaw
+  **/
+  @ApiModelProperty(value = "")
+  public Float getYaw() {
+    return yaw;
+  }
+
+  public void setYaw(Float yaw) {
+    this.yaw = yaw;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -123,12 +239,17 @@ public class DetectedAction {
     }
     DetectedAction detectedAction = (DetectedAction) o;
     return Objects.equals(this.frameNum, detectedAction.frameNum) &&
-        Objects.equals(this.type, detectedAction.type);
+        Objects.equals(this.pitch, detectedAction.pitch) &&
+        Objects.equals(this.points, detectedAction.points) &&
+        Objects.equals(this.roll, detectedAction.roll) &&
+        Objects.equals(this.thumbnail, detectedAction.thumbnail) &&
+        Objects.equals(this.type, detectedAction.type) &&
+        Objects.equals(this.yaw, detectedAction.yaw);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(frameNum, type);
+    return Objects.hash(frameNum, pitch, points, roll, thumbnail, type, yaw);
   }
 
 
@@ -138,7 +259,12 @@ public class DetectedAction {
     sb.append("class DetectedAction {\n");
     
     sb.append("    frameNum: ").append(toIndentedString(frameNum)).append("\n");
+    sb.append("    pitch: ").append(toIndentedString(pitch)).append("\n");
+    sb.append("    points: ").append(toIndentedString(points)).append("\n");
+    sb.append("    roll: ").append(toIndentedString(roll)).append("\n");
+    sb.append("    thumbnail: ").append(toIndentedString(thumbnail)).append("\n");
     sb.append("    type: ").append(toIndentedString(type)).append("\n");
+    sb.append("    yaw: ").append(toIndentedString(yaw)).append("\n");
     sb.append("}");
     return sb.toString();
   }

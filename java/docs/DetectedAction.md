@@ -5,7 +5,12 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **frameNum** | **Integer** |  |  [optional]
+**pitch** | **Float** |  |  [optional]
+**points** | [**List&lt;Point&gt;**](Point.md) |  |  [optional]
+**roll** | **Float** |  |  [optional]
+**thumbnail** | **byte[]** |  |  [optional]
 **type** | [**TypeEnum**](#TypeEnum) |  |  [optional]
+**yaw** | **Float** |  |  [optional]
 
 
 <a name="TypeEnum"></a>

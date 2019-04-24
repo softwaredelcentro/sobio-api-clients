@@ -22,10 +22,10 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 /**
- * ExtractDocumentInformationResult
+ * ExtractDNIARResult
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-03-12T14:38:20.209-03:00")
-public class ExtractDocumentInformationResult {
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-04-24T14:47:31.932-03:00")
+public class ExtractDNIARResult {
   @JsonProperty("additionalInfo")
   private String additionalInfo = null;
 
@@ -136,7 +136,7 @@ public class ExtractDocumentInformationResult {
   @JsonProperty("txId")
   private String txId = null;
 
-  public ExtractDocumentInformationResult additionalInfo(String additionalInfo) {
+  public ExtractDNIARResult additionalInfo(String additionalInfo) {
     this.additionalInfo = additionalInfo;
     return this;
   }
@@ -154,7 +154,7 @@ public class ExtractDocumentInformationResult {
     this.additionalInfo = additionalInfo;
   }
 
-  public ExtractDocumentInformationResult documentInfo(DocumentInformation documentInfo) {
+  public ExtractDNIARResult documentInfo(DocumentInformation documentInfo) {
     this.documentInfo = documentInfo;
     return this;
   }
@@ -172,7 +172,7 @@ public class ExtractDocumentInformationResult {
     this.documentInfo = documentInfo;
   }
 
-  public ExtractDocumentInformationResult exception(Boolean exception) {
+  public ExtractDNIARResult exception(Boolean exception) {
     this.exception = exception;
     return this;
   }
@@ -190,7 +190,7 @@ public class ExtractDocumentInformationResult {
     this.exception = exception;
   }
 
-  public ExtractDocumentInformationResult mrzDetected(Boolean mrzDetected) {
+  public ExtractDNIARResult mrzDetected(Boolean mrzDetected) {
     this.mrzDetected = mrzDetected;
     return this;
   }
@@ -208,7 +208,7 @@ public class ExtractDocumentInformationResult {
     this.mrzDetected = mrzDetected;
   }
 
-  public ExtractDocumentInformationResult pdf417Detected(Boolean pdf417Detected) {
+  public ExtractDNIARResult pdf417Detected(Boolean pdf417Detected) {
     this.pdf417Detected = pdf417Detected;
     return this;
   }
@@ -226,7 +226,7 @@ public class ExtractDocumentInformationResult {
     this.pdf417Detected = pdf417Detected;
   }
 
-  public ExtractDocumentInformationResult status(StatusEnum status) {
+  public ExtractDNIARResult status(StatusEnum status) {
     this.status = status;
     return this;
   }
@@ -244,7 +244,7 @@ public class ExtractDocumentInformationResult {
     this.status = status;
   }
 
-  public ExtractDocumentInformationResult suggestedAction(SuggestedActionEnum suggestedAction) {
+  public ExtractDNIARResult suggestedAction(SuggestedActionEnum suggestedAction) {
     this.suggestedAction = suggestedAction;
     return this;
   }
@@ -262,7 +262,7 @@ public class ExtractDocumentInformationResult {
     this.suggestedAction = suggestedAction;
   }
 
-  public ExtractDocumentInformationResult txId(String txId) {
+  public ExtractDNIARResult txId(String txId) {
     this.txId = txId;
     return this;
   }
@@ -289,15 +289,15 @@ public class ExtractDocumentInformationResult {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ExtractDocumentInformationResult extractDocumentInformationResult = (ExtractDocumentInformationResult) o;
-    return Objects.equals(this.additionalInfo, extractDocumentInformationResult.additionalInfo) &&
-        Objects.equals(this.documentInfo, extractDocumentInformationResult.documentInfo) &&
-        Objects.equals(this.exception, extractDocumentInformationResult.exception) &&
-        Objects.equals(this.mrzDetected, extractDocumentInformationResult.mrzDetected) &&
-        Objects.equals(this.pdf417Detected, extractDocumentInformationResult.pdf417Detected) &&
-        Objects.equals(this.status, extractDocumentInformationResult.status) &&
-        Objects.equals(this.suggestedAction, extractDocumentInformationResult.suggestedAction) &&
-        Objects.equals(this.txId, extractDocumentInformationResult.txId);
+    ExtractDNIARResult extractDNIARResult = (ExtractDNIARResult) o;
+    return Objects.equals(this.additionalInfo, extractDNIARResult.additionalInfo) &&
+        Objects.equals(this.documentInfo, extractDNIARResult.documentInfo) &&
+        Objects.equals(this.exception, extractDNIARResult.exception) &&
+        Objects.equals(this.mrzDetected, extractDNIARResult.mrzDetected) &&
+        Objects.equals(this.pdf417Detected, extractDNIARResult.pdf417Detected) &&
+        Objects.equals(this.status, extractDNIARResult.status) &&
+        Objects.equals(this.suggestedAction, extractDNIARResult.suggestedAction) &&
+        Objects.equals(this.txId, extractDNIARResult.txId);
   }
 
   @Override
@@ -309,7 +309,7 @@ public class ExtractDocumentInformationResult {
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ExtractDocumentInformationResult {\n");
+    sb.append("class ExtractDNIARResult {\n");
     
     sb.append("    additionalInfo: ").append(toIndentedString(additionalInfo)).append("\n");
     sb.append("    documentInfo: ").append(toIndentedString(documentInfo)).append("\n");

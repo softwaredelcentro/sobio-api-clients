@@ -7,15 +7,15 @@ import ar.com.sdc.sobio.client.v1.Pair;
 
 import javax.ws.rs.core.GenericType;
 
-import ar.com.sdc.sobio.model.v1.ExtractDocumentInformationInput;
-import ar.com.sdc.sobio.model.v1.ExtractDocumentInformationResult;
+import ar.com.sdc.sobio.model.v1.ExtractDNIARInput;
+import ar.com.sdc.sobio.model.v1.ExtractDNIARResult;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-03-12T14:38:20.209-03:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-04-24T14:47:31.932-03:00")
 public class DocumentExtractionApi {
   private ApiClient apiClient;
 
@@ -39,10 +39,10 @@ public class DocumentExtractionApi {
    * Extracts ARGENTINA ID Card document information
    * 
    * @param input input (required)
-   * @return ExtractDocumentInformationResult
+   * @return ExtractDNIARResult
    * @throws ApiException if fails to make API call
    */
-  public ExtractDocumentInformationResult extractDniArDocInfo(ExtractDocumentInformationInput input) throws ApiException {
+  public ExtractDNIARResult extractDniArDocInfo(ExtractDNIARInput input) throws ApiException {
     Object localVarPostBody = input;
     
     // verify the required parameter 'input' is set
@@ -73,7 +73,7 @@ public class DocumentExtractionApi {
 
     String[] localVarAuthNames = new String[] {  };
 
-    GenericType<ExtractDocumentInformationResult> localVarReturnType = new GenericType<ExtractDocumentInformationResult>() {};
+    GenericType<ExtractDNIARResult> localVarReturnType = new GenericType<ExtractDNIARResult>() {};
     return apiClient.invokeAPI(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
       }
 }

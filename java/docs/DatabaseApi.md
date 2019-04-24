@@ -7,6 +7,7 @@ Method | HTTP request | Description
 [**delete**](DatabaseApi.md#delete) | **POST** /v1/bio/delete | Deletes an enrolled subject from biometric engine
 [**downloadZippedBiodata**](DatabaseApi.md#downloadZippedBiodata) | **GET** /v1/bio/download-zipped-biodata/{subjectId} | Download zipped subject biometric data for supplied subject id
 [**enroll**](DatabaseApi.md#enroll) | **POST** /v1/bio/enroll | Performs a biometric enrollment supplied biometric data which is associated with supplied enrolled subject id
+[**list**](DatabaseApi.md#list) | **POST** /v1/bio/list | List enrolled Subject ID&#39;s
 [**subjectData**](DatabaseApi.md#subjectData) | **POST** /v1/bio/subject-data | Obtain biometric enrolled data from supplied subject id
 [**subjectInfo**](DatabaseApi.md#subjectInfo) | **POST** /v1/bio/subject-info | Obtain information of supplied subject id
 [**update**](DatabaseApi.md#update) | **POST** /v1/bio/update | Updates biometric data of an already enrolled subject
@@ -131,6 +132,49 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**EnrollResult**](EnrollResult.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="list"></a>
+# **list**
+> ListOutput list(input)
+
+List enrolled Subject ID&#39;s
+
+### Example
+```java
+// Import classes:
+//import ar.com.sdc.sobio.client.v1.ApiException;
+//import ar.com.sdc.sobio.api.v1.DatabaseApi;
+
+
+DatabaseApi apiInstance = new DatabaseApi();
+ListInput input = new ListInput(); // ListInput | input
+try {
+    ListOutput result = apiInstance.list(input);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling DatabaseApi#list");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **input** | [**ListInput**](ListInput.md)| input |
+
+### Return type
+
+[**ListOutput**](ListOutput.md)
 
 ### Authorization
 

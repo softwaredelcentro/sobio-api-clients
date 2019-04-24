@@ -11,6 +11,8 @@ import ar.com.sdc.sobio.model.v1.DeleteInput;
 import ar.com.sdc.sobio.model.v1.DeleteResult;
 import ar.com.sdc.sobio.model.v1.EnrollInput;
 import ar.com.sdc.sobio.model.v1.EnrollResult;
+import ar.com.sdc.sobio.model.v1.ListInput;
+import ar.com.sdc.sobio.model.v1.ListOutput;
 import ar.com.sdc.sobio.model.v1.ObtainSubjectBiometricData;
 import ar.com.sdc.sobio.model.v1.ObtainSubjectInfo;
 import ar.com.sdc.sobio.model.v1.Resource;
@@ -24,7 +26,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-03-12T14:38:20.209-03:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-04-24T14:47:31.932-03:00")
 public class DatabaseApi {
   private ApiClient apiClient;
 
@@ -166,6 +168,47 @@ public class DatabaseApi {
     String[] localVarAuthNames = new String[] {  };
 
     GenericType<EnrollResult> localVarReturnType = new GenericType<EnrollResult>() {};
+    return apiClient.invokeAPI(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+      }
+  /**
+   * List enrolled Subject ID&#39;s
+   * 
+   * @param input input (required)
+   * @return ListOutput
+   * @throws ApiException if fails to make API call
+   */
+  public ListOutput list(ListInput input) throws ApiException {
+    Object localVarPostBody = input;
+    
+    // verify the required parameter 'input' is set
+    if (input == null) {
+      throw new ApiException(400, "Missing the required parameter 'input' when calling list");
+    }
+    
+    // create path and map variables
+    String localVarPath = "/v1/bio/list";
+
+    // query params
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+
+    
+    
+    final String[] localVarAccepts = {
+      "application/json"
+    };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      "application/json"
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] {  };
+
+    GenericType<ListOutput> localVarReturnType = new GenericType<ListOutput>() {};
     return apiClient.invokeAPI(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
       }
   /**

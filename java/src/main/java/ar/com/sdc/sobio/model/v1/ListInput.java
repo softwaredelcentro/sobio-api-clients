@@ -14,7 +14,7 @@
 package ar.com.sdc.sobio.model.v1;
 
 import java.util.Objects;
-import ar.com.sdc.sobio.model.v1.FaceExtractionParams;
+import ar.com.sdc.sobio.model.v1.Conditions;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -22,20 +22,17 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 /**
- * ExtractFaceFromVideoInput
+ * ListInput
  */
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-04-24T14:47:31.932-03:00")
-public class ExtractFaceFromVideoInput {
+public class ListInput {
   @JsonProperty("auditToken")
   private String auditToken = null;
 
-  @JsonProperty("params")
-  private FaceExtractionParams params = null;
+  @JsonProperty("conditions")
+  private Conditions conditions = null;
 
-  @JsonProperty("video")
-  private byte[] video = null;
-
-  public ExtractFaceFromVideoInput auditToken(String auditToken) {
+  public ListInput auditToken(String auditToken) {
     this.auditToken = auditToken;
     return this;
   }
@@ -53,40 +50,22 @@ public class ExtractFaceFromVideoInput {
     this.auditToken = auditToken;
   }
 
-  public ExtractFaceFromVideoInput params(FaceExtractionParams params) {
-    this.params = params;
+  public ListInput conditions(Conditions conditions) {
+    this.conditions = conditions;
     return this;
   }
 
    /**
-   * Get params
-   * @return params
-  **/
-  @ApiModelProperty(value = "")
-  public FaceExtractionParams getParams() {
-    return params;
-  }
-
-  public void setParams(FaceExtractionParams params) {
-    this.params = params;
-  }
-
-  public ExtractFaceFromVideoInput video(byte[] video) {
-    this.video = video;
-    return this;
-  }
-
-   /**
-   * Get video
-   * @return video
+   * Get conditions
+   * @return conditions
   **/
   @ApiModelProperty(required = true, value = "")
-  public byte[] getVideo() {
-    return video;
+  public Conditions getConditions() {
+    return conditions;
   }
 
-  public void setVideo(byte[] video) {
-    this.video = video;
+  public void setConditions(Conditions conditions) {
+    this.conditions = conditions;
   }
 
 
@@ -98,26 +77,24 @@ public class ExtractFaceFromVideoInput {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ExtractFaceFromVideoInput extractFaceFromVideoInput = (ExtractFaceFromVideoInput) o;
-    return Objects.equals(this.auditToken, extractFaceFromVideoInput.auditToken) &&
-        Objects.equals(this.params, extractFaceFromVideoInput.params) &&
-        Objects.equals(this.video, extractFaceFromVideoInput.video);
+    ListInput listInput = (ListInput) o;
+    return Objects.equals(this.auditToken, listInput.auditToken) &&
+        Objects.equals(this.conditions, listInput.conditions);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(auditToken, params, video);
+    return Objects.hash(auditToken, conditions);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ExtractFaceFromVideoInput {\n");
+    sb.append("class ListInput {\n");
     
     sb.append("    auditToken: ").append(toIndentedString(auditToken)).append("\n");
-    sb.append("    params: ").append(toIndentedString(params)).append("\n");
-    sb.append("    video: ").append(toIndentedString(video)).append("\n");
+    sb.append("    conditions: ").append(toIndentedString(conditions)).append("\n");
     sb.append("}");
     return sb.toString();
   }

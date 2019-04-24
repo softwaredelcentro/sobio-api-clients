@@ -25,7 +25,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * DocumentInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-03-12T14:38:20.209-03:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-04-24T14:47:31.932-03:00")
 public class DocumentInformation {
   @JsonProperty("address")
   private String address = null;
@@ -146,6 +146,9 @@ public class DocumentInformation {
 
   @JsonProperty("issuingCountry")
   private String issuingCountry = null;
+
+  @JsonProperty("issuingDate")
+  private DocumentDate issuingDate = null;
 
   @JsonProperty("nationality")
   private String nationality = null;
@@ -427,6 +430,24 @@ public class DocumentInformation {
     this.issuingCountry = issuingCountry;
   }
 
+  public DocumentInformation issuingDate(DocumentDate issuingDate) {
+    this.issuingDate = issuingDate;
+    return this;
+  }
+
+   /**
+   * Get issuingDate
+   * @return issuingDate
+  **/
+  @ApiModelProperty(value = "")
+  public DocumentDate getIssuingDate() {
+    return issuingDate;
+  }
+
+  public void setIssuingDate(DocumentDate issuingDate) {
+    this.issuingDate = issuingDate;
+  }
+
   public DocumentInformation nationality(String nationality) {
     this.nationality = nationality;
     return this;
@@ -611,6 +632,7 @@ public class DocumentInformation {
         Objects.equals(this.face, documentInformation.face) &&
         Objects.equals(this.givenNames, documentInformation.givenNames) &&
         Objects.equals(this.issuingCountry, documentInformation.issuingCountry) &&
+        Objects.equals(this.issuingDate, documentInformation.issuingDate) &&
         Objects.equals(this.nationality, documentInformation.nationality) &&
         Objects.equals(this.order, documentInformation.order) &&
         Objects.equals(this.sequence, documentInformation.sequence) &&
@@ -624,7 +646,7 @@ public class DocumentInformation {
 
   @Override
   public int hashCode() {
-    return Objects.hash(address, addressConfidence, code1, code2, dateOfBirth, documentNumber, documentType, documentVersion, expirationDate, face, givenNames, issuingCountry, nationality, order, sequence, sex, surname, validComposite, validDateOfBirth, validDocumentNumber, validExpirationDate);
+    return Objects.hash(address, addressConfidence, code1, code2, dateOfBirth, documentNumber, documentType, documentVersion, expirationDate, face, givenNames, issuingCountry, issuingDate, nationality, order, sequence, sex, surname, validComposite, validDateOfBirth, validDocumentNumber, validExpirationDate);
   }
 
 
@@ -645,6 +667,7 @@ public class DocumentInformation {
     sb.append("    face: ").append(toIndentedString(face)).append("\n");
     sb.append("    givenNames: ").append(toIndentedString(givenNames)).append("\n");
     sb.append("    issuingCountry: ").append(toIndentedString(issuingCountry)).append("\n");
+    sb.append("    issuingDate: ").append(toIndentedString(issuingDate)).append("\n");
     sb.append("    nationality: ").append(toIndentedString(nationality)).append("\n");
     sb.append("    order: ").append(toIndentedString(order)).append("\n");
     sb.append("    sequence: ").append(toIndentedString(sequence)).append("\n");

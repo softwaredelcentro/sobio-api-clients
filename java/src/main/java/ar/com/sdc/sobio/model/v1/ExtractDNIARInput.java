@@ -14,6 +14,7 @@
 package ar.com.sdc.sobio.model.v1;
 
 import java.util.Objects;
+import ar.com.sdc.sobio.model.v1.ExtractDNIARParameters;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -21,10 +22,10 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 /**
- * ExtractDocumentInformationInput
+ * ExtractDNIARInput
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-03-12T14:38:20.209-03:00")
-public class ExtractDocumentInformationInput {
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-04-24T14:47:31.932-03:00")
+public class ExtractDNIARInput {
   @JsonProperty("auditToken")
   private String auditToken = null;
 
@@ -34,7 +35,10 @@ public class ExtractDocumentInformationInput {
   @JsonProperty("frontImage")
   private byte[] frontImage = null;
 
-  public ExtractDocumentInformationInput auditToken(String auditToken) {
+  @JsonProperty("params")
+  private ExtractDNIARParameters params = null;
+
+  public ExtractDNIARInput auditToken(String auditToken) {
     this.auditToken = auditToken;
     return this;
   }
@@ -52,7 +56,7 @@ public class ExtractDocumentInformationInput {
     this.auditToken = auditToken;
   }
 
-  public ExtractDocumentInformationInput backImage(byte[] backImage) {
+  public ExtractDNIARInput backImage(byte[] backImage) {
     this.backImage = backImage;
     return this;
   }
@@ -70,7 +74,7 @@ public class ExtractDocumentInformationInput {
     this.backImage = backImage;
   }
 
-  public ExtractDocumentInformationInput frontImage(byte[] frontImage) {
+  public ExtractDNIARInput frontImage(byte[] frontImage) {
     this.frontImage = frontImage;
     return this;
   }
@@ -88,6 +92,24 @@ public class ExtractDocumentInformationInput {
     this.frontImage = frontImage;
   }
 
+  public ExtractDNIARInput params(ExtractDNIARParameters params) {
+    this.params = params;
+    return this;
+  }
+
+   /**
+   * Get params
+   * @return params
+  **/
+  @ApiModelProperty(value = "")
+  public ExtractDNIARParameters getParams() {
+    return params;
+  }
+
+  public void setParams(ExtractDNIARParameters params) {
+    this.params = params;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -97,26 +119,28 @@ public class ExtractDocumentInformationInput {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ExtractDocumentInformationInput extractDocumentInformationInput = (ExtractDocumentInformationInput) o;
-    return Objects.equals(this.auditToken, extractDocumentInformationInput.auditToken) &&
-        Objects.equals(this.backImage, extractDocumentInformationInput.backImage) &&
-        Objects.equals(this.frontImage, extractDocumentInformationInput.frontImage);
+    ExtractDNIARInput extractDNIARInput = (ExtractDNIARInput) o;
+    return Objects.equals(this.auditToken, extractDNIARInput.auditToken) &&
+        Objects.equals(this.backImage, extractDNIARInput.backImage) &&
+        Objects.equals(this.frontImage, extractDNIARInput.frontImage) &&
+        Objects.equals(this.params, extractDNIARInput.params);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(auditToken, backImage, frontImage);
+    return Objects.hash(auditToken, backImage, frontImage, params);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ExtractDocumentInformationInput {\n");
+    sb.append("class ExtractDNIARInput {\n");
     
     sb.append("    auditToken: ").append(toIndentedString(auditToken)).append("\n");
     sb.append("    backImage: ").append(toIndentedString(backImage)).append("\n");
     sb.append("    frontImage: ").append(toIndentedString(frontImage)).append("\n");
+    sb.append("    params: ").append(toIndentedString(params)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **face** | [**Face**](Face.md) |  |  [optional]
 **givenNames** | **String** |  |  [optional]
 **issuingCountry** | **String** |  |  [optional]
+**issuingDate** | [**DocumentDate**](DocumentDate.md) |  |  [optional]
 **nationality** | **String** |  |  [optional]
 **order** | **String** |  |  [optional]
 **sequence** | **String** |  |  [optional]

@@ -14,7 +14,6 @@
 package ar.com.sdc.sobio.model.v1;
 
 import java.util.Objects;
-import ar.com.sdc.sobio.model.v1.ExtractedFace;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -24,20 +23,20 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * ExtractFaceFromImageResult
+ * ListOutput
  */
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-04-24T14:47:31.932-03:00")
-public class ExtractFaceFromImageResult {
+public class ListOutput {
   @JsonProperty("exception")
   private Boolean exception = null;
 
-  @JsonProperty("extractedFaces")
-  private List<ExtractedFace> extractedFaces = null;
+  @JsonProperty("ids")
+  private List<String> ids = null;
 
   @JsonProperty("txId")
   private String txId = null;
 
-  public ExtractFaceFromImageResult exception(Boolean exception) {
+  public ListOutput exception(Boolean exception) {
     this.exception = exception;
     return this;
   }
@@ -55,33 +54,33 @@ public class ExtractFaceFromImageResult {
     this.exception = exception;
   }
 
-  public ExtractFaceFromImageResult extractedFaces(List<ExtractedFace> extractedFaces) {
-    this.extractedFaces = extractedFaces;
+  public ListOutput ids(List<String> ids) {
+    this.ids = ids;
     return this;
   }
 
-  public ExtractFaceFromImageResult addExtractedFacesItem(ExtractedFace extractedFacesItem) {
-    if (this.extractedFaces == null) {
-      this.extractedFaces = new ArrayList<ExtractedFace>();
+  public ListOutput addIdsItem(String idsItem) {
+    if (this.ids == null) {
+      this.ids = new ArrayList<String>();
     }
-    this.extractedFaces.add(extractedFacesItem);
+    this.ids.add(idsItem);
     return this;
   }
 
    /**
-   * Get extractedFaces
-   * @return extractedFaces
+   * Get ids
+   * @return ids
   **/
   @ApiModelProperty(value = "")
-  public List<ExtractedFace> getExtractedFaces() {
-    return extractedFaces;
+  public List<String> getIds() {
+    return ids;
   }
 
-  public void setExtractedFaces(List<ExtractedFace> extractedFaces) {
-    this.extractedFaces = extractedFaces;
+  public void setIds(List<String> ids) {
+    this.ids = ids;
   }
 
-  public ExtractFaceFromImageResult txId(String txId) {
+  public ListOutput txId(String txId) {
     this.txId = txId;
     return this;
   }
@@ -108,25 +107,25 @@ public class ExtractFaceFromImageResult {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ExtractFaceFromImageResult extractFaceFromImageResult = (ExtractFaceFromImageResult) o;
-    return Objects.equals(this.exception, extractFaceFromImageResult.exception) &&
-        Objects.equals(this.extractedFaces, extractFaceFromImageResult.extractedFaces) &&
-        Objects.equals(this.txId, extractFaceFromImageResult.txId);
+    ListOutput listOutput = (ListOutput) o;
+    return Objects.equals(this.exception, listOutput.exception) &&
+        Objects.equals(this.ids, listOutput.ids) &&
+        Objects.equals(this.txId, listOutput.txId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(exception, extractedFaces, txId);
+    return Objects.hash(exception, ids, txId);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ExtractFaceFromImageResult {\n");
+    sb.append("class ListOutput {\n");
     
     sb.append("    exception: ").append(toIndentedString(exception)).append("\n");
-    sb.append("    extractedFaces: ").append(toIndentedString(extractedFaces)).append("\n");
+    sb.append("    ids: ").append(toIndentedString(ids)).append("\n");
     sb.append("    txId: ").append(toIndentedString(txId)).append("\n");
     sb.append("}");
     return sb.toString();

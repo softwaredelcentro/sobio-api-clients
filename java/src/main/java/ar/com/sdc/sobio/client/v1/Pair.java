@@ -13,7 +13,7 @@
 
 package ar.com.sdc.sobio.client.v1;
 
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-03-12T14:38:20.209-03:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-04-24T14:47:31.932-03:00")
 public class Pair {
     private String name = "";
     private String value = "";
