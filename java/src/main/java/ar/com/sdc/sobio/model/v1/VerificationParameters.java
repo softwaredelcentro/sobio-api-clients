@@ -26,13 +26,10 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * VerificationParameters
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-04-24T14:47:31.932-03:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-05-17T13:38:33.176-03:00")
 public class VerificationParameters {
   @JsonProperty("faceMatchingParams")
   private FaceMatchingParameters faceMatchingParams = null;
-
-  @JsonProperty("far")
-  private Double far = null;
 
   @JsonProperty("fingerPrintMatchingParams")
   private FingerPrintMatchingParameters fingerPrintMatchingParams = null;
@@ -56,24 +53,6 @@ public class VerificationParameters {
 
   public void setFaceMatchingParams(FaceMatchingParameters faceMatchingParams) {
     this.faceMatchingParams = faceMatchingParams;
-  }
-
-  public VerificationParameters far(Double far) {
-    this.far = far;
-    return this;
-  }
-
-   /**
-   * Get far
-   * @return far
-  **/
-  @ApiModelProperty(value = "")
-  public Double getFar() {
-    return far;
-  }
-
-  public void setFar(Double far) {
-    this.far = far;
   }
 
   public VerificationParameters fingerPrintMatchingParams(FingerPrintMatchingParameters fingerPrintMatchingParams) {
@@ -123,14 +102,13 @@ public class VerificationParameters {
     }
     VerificationParameters verificationParameters = (VerificationParameters) o;
     return Objects.equals(this.faceMatchingParams, verificationParameters.faceMatchingParams) &&
-        Objects.equals(this.far, verificationParameters.far) &&
         Objects.equals(this.fingerPrintMatchingParams, verificationParameters.fingerPrintMatchingParams) &&
         Objects.equals(this.voiceMatchingParams, verificationParameters.voiceMatchingParams);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(faceMatchingParams, far, fingerPrintMatchingParams, voiceMatchingParams);
+    return Objects.hash(faceMatchingParams, fingerPrintMatchingParams, voiceMatchingParams);
   }
 
 
@@ -140,7 +118,6 @@ public class VerificationParameters {
     sb.append("class VerificationParameters {\n");
     
     sb.append("    faceMatchingParams: ").append(toIndentedString(faceMatchingParams)).append("\n");
-    sb.append("    far: ").append(toIndentedString(far)).append("\n");
     sb.append("    fingerPrintMatchingParams: ").append(toIndentedString(fingerPrintMatchingParams)).append("\n");
     sb.append("    voiceMatchingParams: ").append(toIndentedString(voiceMatchingParams)).append("\n");
     sb.append("}");

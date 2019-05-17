@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 Name | Value
 ---- | -----
 INEXISTENT | &quot;INEXISTENT&quot;
-VERIFY_OK | &quot;VERIFY_OK&quot;
+CHECK_CONFIDENCE | &quot;CHECK_CONFIDENCE&quot;
 NOT_VERIFIED | &quot;NOT_VERIFIED&quot;
 WITHOUT_TEMPLATE | &quot;WITHOUT_TEMPLATE&quot;
 MATCHING_NODE_UNAVAILABLE | &quot;MATCHING_NODE_UNAVAILABLE&quot;

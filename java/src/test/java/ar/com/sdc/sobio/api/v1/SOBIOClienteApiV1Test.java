@@ -97,13 +97,12 @@ public class SOBIOClienteApiV1Test {
 		subject2BioInfo.addFacesItem(output2.getExtractedFaces().get(0).getFace());
 		VerifyT2TInput verifyInput = new VerifyT2TInput();
 		VerificationParameters verifyParams = new VerificationParameters();
-		verifyParams.setFar(0.0005);// sets to accept valid a 0.05% False Acceptance Rate
 		verifyInput.setParams(verifyParams);
 		verifyInput.bioInfo1(subject1BioInfo);
 		verifyInput.bioInfo2(subject2BioInfo);
 		VerifyResult verifyOutput = apiMatching.verifyT2t(verifyInput);
-		assertEquals(verifyOutput.getStatus(), VerifyResult.StatusEnum.VERIFY_OK);
-		assertTrue(verifyOutput.getFaP() < 0.0005d);// Assess that matched probability is below accepted rate
+		assertEquals(verifyOutput.getStatus(), VerifyResult.StatusEnum.CHECK_CONFIDENCE);
+		assertTrue(verifyOutput.getConfidence()>0.995);// Assess that matched probability is above accepted rate (99.5%)
 	}
 
 	@Test
@@ -137,13 +136,13 @@ public class SOBIOClienteApiV1Test {
 		subject2BioInfo.addFacesItem(outputImage.getExtractedFaces().get(0).getFace());
 		VerifyT2TInput verifyInput = new VerifyT2TInput();
 		VerificationParameters verifyParams = new VerificationParameters();
-		verifyParams.setFar(0.085); 
 		verifyInput.setParams(verifyParams);
 		verifyInput.bioInfo1(subject1BioInfo);
 		verifyInput.bioInfo2(subject2BioInfo);
 		MatchingApi apiMatching = new MatchingApi(createApiClient());
 		VerifyResult verifyOutput = apiMatching.verifyT2t(verifyInput);
-		assertEquals(verifyOutput.getStatus(), VerifyResult.StatusEnum.VERIFY_OK);
+		assertEquals(verifyOutput.getStatus(), VerifyResult.StatusEnum.CHECK_CONFIDENCE);
+		assertTrue(verifyOutput.getConfidence()>0.995);// Assess that matched probability is above accepted rate (99.5%)
 	}
 	
 	@Test
@@ -164,13 +163,12 @@ public class SOBIOClienteApiV1Test {
 		subject2BioInfo.addFacesItem(outputSelfie.getExtractedFaces().get(0).getFace());
 		VerifyT2TInput verifyInput = new VerifyT2TInput();
 		VerificationParameters verifyParams = new VerificationParameters();
-		verifyParams.setFar(0.009);// sets to accept valid a 0.09% False Acceptance Rate
 		verifyInput.setParams(verifyParams);
 		verifyInput.bioInfo1(subject1BioInfo);
 		verifyInput.bioInfo2(subject2BioInfo);
 		VerifyResult verifyOutput = apiMatching.verifyT2t(verifyInput);
-		assertEquals(verifyOutput.getStatus(), VerifyResult.StatusEnum.VERIFY_OK);
-		assertTrue(verifyOutput.getFaP() < 0.009d);// Assess that matched probability is below accepted rate
+		assertEquals(verifyOutput.getStatus(), VerifyResult.StatusEnum.CHECK_CONFIDENCE);
+		assertTrue(verifyOutput.getConfidence()>0.993);// Assess that matched probability is above accepted rate (99.5%)
 	}
 
 	@Test
@@ -191,13 +189,12 @@ public class SOBIOClienteApiV1Test {
 		subject2BioInfo.addFacesItem(outputSelfieVideo.getFace());
 		VerifyT2TInput verifyInput = new VerifyT2TInput();
 		VerificationParameters verifyParams = new VerificationParameters();
-		verifyParams.setFar(0.007);// sets to accept valid a 0.7% False Acceptance Rate
 		verifyInput.setParams(verifyParams);
 		verifyInput.bioInfo1(subject1BioInfo);
 		verifyInput.bioInfo2(subject2BioInfo);
 		VerifyResult verifyOutput = apiMatching.verifyT2t(verifyInput);
-		assertEquals(verifyOutput.getStatus(), VerifyResult.StatusEnum.VERIFY_OK);
-		assertTrue(verifyOutput.getFaP() < 0.007d);// Assess that matched probability is below accepted rate
+		assertEquals(verifyOutput.getStatus(), VerifyResult.StatusEnum.CHECK_CONFIDENCE);
+		assertTrue(verifyOutput.getConfidence()>0.993);// Assess that matched probability is above accepted rate (99.5%)
 	}
 	
 	@Test
@@ -250,13 +247,12 @@ public class SOBIOClienteApiV1Test {
 		subject2BioInfo.addFacesItem(outputSelfieVideo.getFace());
 		VerifyT2TInput verifyT2TInput = new VerifyT2TInput();
 		VerificationParameters verifyT2TParams = new VerificationParameters();
-		verifyT2TParams.setFar(0.007);// sets to accept valid a 0.7% False Acceptance Rate
 		verifyT2TInput.setParams(verifyT2TParams);
 		verifyT2TInput.bioInfo1(subject1BioInfo);
 		verifyT2TInput.bioInfo2(subject2BioInfo);
 		VerifyResult verifyOutput = apiMatching.verifyT2t(verifyT2TInput);
-		assertEquals(verifyOutput.getStatus(), VerifyResult.StatusEnum.VERIFY_OK);
-		assertTrue(verifyOutput.getFaP() < 0.007d);// Assess that matched probability is below accepted rate
+		assertEquals(verifyOutput.getStatus(), VerifyResult.StatusEnum.CHECK_CONFIDENCE);
+		assertTrue(verifyOutput.getConfidence()>0.993);// Assess that matched probability is above accepted rate (99.5%)
 		//Enrollment
 		String subjectId=UUID.randomUUID().toString();//Random subjectId
 		BiometricData enrollmentBioData=new BiometricData();
@@ -281,13 +277,13 @@ public class SOBIOClienteApiV1Test {
 		verifyBioData.getFaces().add(outputSelfieImg.getExtractedFaces().get(0).getFace());
 		VerifyInput verifyInput = new VerifyInput();
 		VerificationParameters verifyParams = new VerificationParameters();
-		verifyParams.setFar(0.007);// sets to accept valid a 0.7% False Acceptance Rate
 		verifyInput.setAuditToken("tok123");
 		verifyInput.setParams(verifyParams);
 		verifyInput.setSubjectId(subjectId);
 		verifyInput.setBioInfo(verifyBioData);
 		verifyOutput=apiMatching.verify(verifyInput);
-		assertEquals(verifyOutput.getStatus(), VerifyResult.StatusEnum.VERIFY_OK);
+		assertEquals(verifyOutput.getStatus(), VerifyResult.StatusEnum.CHECK_CONFIDENCE);
+		assertTrue(verifyOutput.getConfidence()>0.993);// Assess that matched probability is above accepted rate (99.5%)
 		DeleteInput deleteInput=new DeleteInput();
 		deleteInput.setSubjectId(subjectId);
 		deleteInput.setAuditToken("tok123");
