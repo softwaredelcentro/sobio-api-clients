@@ -18,7 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-05-17T13:38:33.176-03:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-10-02T11:05:26.582-03:00")
 public class MatchingApi {
   private ApiClient apiClient;
 
@@ -41,16 +41,16 @@ public class MatchingApi {
   /**
    * Performs an identification (1:N) of supplied biometric data against enrolled subjects (that match optionally supplied conditions)
    * 
-   * @param input input (required)
+   * @param param0 param0 (required)
    * @return IdentifyResult
    * @throws ApiException if fails to make API call
    */
-  public IdentifyResult identify(IdentifyInput input) throws ApiException {
-    Object localVarPostBody = input;
+  public IdentifyResult identify(IdentifyInput param0) throws ApiException {
+    Object localVarPostBody = param0;
     
-    // verify the required parameter 'input' is set
-    if (input == null) {
-      throw new ApiException(400, "Missing the required parameter 'input' when calling identify");
+    // verify the required parameter 'param0' is set
+    if (param0 == null) {
+      throw new ApiException(400, "Missing the required parameter 'param0' when calling identify");
     }
     
     // create path and map variables
@@ -82,16 +82,16 @@ public class MatchingApi {
   /**
    * Performs a verification (1:1) of supplied biometric data against a supplied enrolled subject id
    * 
-   * @param input input (required)
+   * @param param0 param0 (required)
    * @return VerifyResult
    * @throws ApiException if fails to make API call
    */
-  public VerifyResult verify(VerifyInput input) throws ApiException {
-    Object localVarPostBody = input;
+  public VerifyResult verify(VerifyInput param0) throws ApiException {
+    Object localVarPostBody = param0;
     
-    // verify the required parameter 'input' is set
-    if (input == null) {
-      throw new ApiException(400, "Missing the required parameter 'input' when calling verify");
+    // verify the required parameter 'param0' is set
+    if (param0 == null) {
+      throw new ApiException(400, "Missing the required parameter 'param0' when calling verify");
     }
     
     // create path and map variables
@@ -123,16 +123,16 @@ public class MatchingApi {
   /**
    * Performs a verification (1:1) of two supplied biometric subjects
    * 
-   * @param input input (required)
+   * @param param0 param0 (required)
    * @return VerifyResult
    * @throws ApiException if fails to make API call
    */
-  public VerifyResult verifyT2t(VerifyT2TInput input) throws ApiException {
-    Object localVarPostBody = input;
+  public VerifyResult verifyT2t(VerifyT2TInput param0) throws ApiException {
+    Object localVarPostBody = param0;
     
-    // verify the required parameter 'input' is set
-    if (input == null) {
-      throw new ApiException(400, "Missing the required parameter 'input' when calling verifyT2t");
+    // verify the required parameter 'param0' is set
+    if (param0 == null) {
+      throw new ApiException(400, "Missing the required parameter 'param0' when calling verifyT2t");
     }
     
     // create path and map variables

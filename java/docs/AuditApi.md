@@ -1,6 +1,6 @@
 # AuditApi
 
-All URIs are relative to *https://127.0.0.1:8083*
+All URIs are relative to *https://sobio-b76a.sdc.com.ar*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------

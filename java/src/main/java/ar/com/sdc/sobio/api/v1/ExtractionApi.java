@@ -9,6 +9,8 @@ import javax.ws.rs.core.GenericType;
 
 import ar.com.sdc.sobio.model.v1.ConcatAudioStreamsInput;
 import ar.com.sdc.sobio.model.v1.ConcatAudioStreamsResult;
+import ar.com.sdc.sobio.model.v1.ConvertFingerprintImageInput;
+import ar.com.sdc.sobio.model.v1.ConvertFingerprintImageOutput;
 import ar.com.sdc.sobio.model.v1.ExtractFaceFromImageInput;
 import ar.com.sdc.sobio.model.v1.ExtractFaceFromImageResult;
 import ar.com.sdc.sobio.model.v1.ExtractFaceFromVideoInput;
@@ -25,7 +27,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-05-17T13:38:33.176-03:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-10-02T11:05:26.582-03:00")
 public class ExtractionApi {
   private ApiClient apiClient;
 
@@ -48,16 +50,16 @@ public class ExtractionApi {
   /**
    * Concats multiple audio-streams
    * 
-   * @param input input (required)
+   * @param param0 param0 (required)
    * @return ConcatAudioStreamsResult
    * @throws ApiException if fails to make API call
    */
-  public ConcatAudioStreamsResult concatAudioStream(ConcatAudioStreamsInput input) throws ApiException {
-    Object localVarPostBody = input;
+  public ConcatAudioStreamsResult concatAudioStream(ConcatAudioStreamsInput param0) throws ApiException {
+    Object localVarPostBody = param0;
     
-    // verify the required parameter 'input' is set
-    if (input == null) {
-      throw new ApiException(400, "Missing the required parameter 'input' when calling concatAudioStream");
+    // verify the required parameter 'param0' is set
+    if (param0 == null) {
+      throw new ApiException(400, "Missing the required parameter 'param0' when calling concatAudioStream");
     }
     
     // create path and map variables
@@ -87,18 +89,100 @@ public class ExtractionApi {
     return apiClient.invokeAPI(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
       }
   /**
+   * Convert Fingerprint in PNG to WSQ format
+   * 
+   * @param param0 param0 (required)
+   * @return ConvertFingerprintImageOutput
+   * @throws ApiException if fails to make API call
+   */
+  public ConvertFingerprintImageOutput convertFingerprintImagePngToWsq(ConvertFingerprintImageInput param0) throws ApiException {
+    Object localVarPostBody = param0;
+    
+    // verify the required parameter 'param0' is set
+    if (param0 == null) {
+      throw new ApiException(400, "Missing the required parameter 'param0' when calling convertFingerprintImagePngToWsq");
+    }
+    
+    // create path and map variables
+    String localVarPath = "/v1/bio/convert-fingerprint-image-png-to-wsq";
+
+    // query params
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+
+    
+    
+    final String[] localVarAccepts = {
+      "application/json"
+    };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      "application/json"
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] {  };
+
+    GenericType<ConvertFingerprintImageOutput> localVarReturnType = new GenericType<ConvertFingerprintImageOutput>() {};
+    return apiClient.invokeAPI(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+      }
+  /**
+   * Convert Fingerprint in WSQ to PNG format
+   * 
+   * @param param0 param0 (required)
+   * @return ConvertFingerprintImageOutput
+   * @throws ApiException if fails to make API call
+   */
+  public ConvertFingerprintImageOutput convertFingerprintImageWsqToPng(ConvertFingerprintImageInput param0) throws ApiException {
+    Object localVarPostBody = param0;
+    
+    // verify the required parameter 'param0' is set
+    if (param0 == null) {
+      throw new ApiException(400, "Missing the required parameter 'param0' when calling convertFingerprintImageWsqToPng");
+    }
+    
+    // create path and map variables
+    String localVarPath = "/v1/bio/convert-fingerprint-image-wsq-to-png";
+
+    // query params
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+
+    
+    
+    final String[] localVarAccepts = {
+      "application/json"
+    };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      "application/json"
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] {  };
+
+    GenericType<ConvertFingerprintImageOutput> localVarReturnType = new GenericType<ConvertFingerprintImageOutput>() {};
+    return apiClient.invokeAPI(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+      }
+  /**
    * Extracts face biometric data (template) from a supplied image
    * 
-   * @param input input (required)
+   * @param param0 param0 (required)
    * @return ExtractFaceFromImageResult
    * @throws ApiException if fails to make API call
    */
-  public ExtractFaceFromImageResult extractFaceImage(ExtractFaceFromImageInput input) throws ApiException {
-    Object localVarPostBody = input;
+  public ExtractFaceFromImageResult extractFaceImage(ExtractFaceFromImageInput param0) throws ApiException {
+    Object localVarPostBody = param0;
     
-    // verify the required parameter 'input' is set
-    if (input == null) {
-      throw new ApiException(400, "Missing the required parameter 'input' when calling extractFaceImage");
+    // verify the required parameter 'param0' is set
+    if (param0 == null) {
+      throw new ApiException(400, "Missing the required parameter 'param0' when calling extractFaceImage");
     }
     
     // create path and map variables
@@ -130,16 +214,16 @@ public class ExtractionApi {
   /**
    * Extracts face biometric data (template) from a supplied video
    * 
-   * @param input input (required)
+   * @param param0 param0 (required)
    * @return ExtractFaceFromVideoResult
    * @throws ApiException if fails to make API call
    */
-  public ExtractFaceFromVideoResult extractFaceVideo(ExtractFaceFromVideoInput input) throws ApiException {
-    Object localVarPostBody = input;
+  public ExtractFaceFromVideoResult extractFaceVideo(ExtractFaceFromVideoInput param0) throws ApiException {
+    Object localVarPostBody = param0;
     
-    // verify the required parameter 'input' is set
-    if (input == null) {
-      throw new ApiException(400, "Missing the required parameter 'input' when calling extractFaceVideo");
+    // verify the required parameter 'param0' is set
+    if (param0 == null) {
+      throw new ApiException(400, "Missing the required parameter 'param0' when calling extractFaceVideo");
     }
     
     // create path and map variables
@@ -171,16 +255,16 @@ public class ExtractionApi {
   /**
    * Extracts finger biometric data (template) from a supplied image
    * 
-   * @param input input (required)
+   * @param param0 param0 (required)
    * @return ExtractFingerPrintFromImageResult
    * @throws ApiException if fails to make API call
    */
-  public ExtractFingerPrintFromImageResult extractFingerprintImage(ExtractFingerPrintFromImageInput input) throws ApiException {
-    Object localVarPostBody = input;
+  public ExtractFingerPrintFromImageResult extractFingerprintImage(ExtractFingerPrintFromImageInput param0) throws ApiException {
+    Object localVarPostBody = param0;
     
-    // verify the required parameter 'input' is set
-    if (input == null) {
-      throw new ApiException(400, "Missing the required parameter 'input' when calling extractFingerprintImage");
+    // verify the required parameter 'param0' is set
+    if (param0 == null) {
+      throw new ApiException(400, "Missing the required parameter 'param0' when calling extractFingerprintImage");
     }
     
     // create path and map variables
@@ -212,16 +296,16 @@ public class ExtractionApi {
   /**
    * Extracts text-dependent voice biometric data (template) from a supplied audio
    * 
-   * @param input input (required)
+   * @param param0 param0 (required)
    * @return ExtractTextDependentVoiceFromAudioResult
    * @throws ApiException if fails to make API call
    */
-  public ExtractTextDependentVoiceFromAudioResult extractTextDependentVoice(ExtractTextDependentVoiceFromAudioInput input) throws ApiException {
-    Object localVarPostBody = input;
+  public ExtractTextDependentVoiceFromAudioResult extractTextDependentVoice(ExtractTextDependentVoiceFromAudioInput param0) throws ApiException {
+    Object localVarPostBody = param0;
     
-    // verify the required parameter 'input' is set
-    if (input == null) {
-      throw new ApiException(400, "Missing the required parameter 'input' when calling extractTextDependentVoice");
+    // verify the required parameter 'param0' is set
+    if (param0 == null) {
+      throw new ApiException(400, "Missing the required parameter 'param0' when calling extractTextDependentVoice");
     }
     
     // create path and map variables
@@ -253,16 +337,16 @@ public class ExtractionApi {
   /**
    * Extracts text-independent voice biometric data (template) from a supplied audio
    * 
-   * @param input input (required)
+   * @param param0 param0 (required)
    * @return ExtractTextIndependentVoiceFromAudioResult
    * @throws ApiException if fails to make API call
    */
-  public ExtractTextIndependentVoiceFromAudioResult extractTextIndependentVoice(ExtractTextIndependentVoiceFromAudioInput input) throws ApiException {
-    Object localVarPostBody = input;
+  public ExtractTextIndependentVoiceFromAudioResult extractTextIndependentVoice(ExtractTextIndependentVoiceFromAudioInput param0) throws ApiException {
+    Object localVarPostBody = param0;
     
-    // verify the required parameter 'input' is set
-    if (input == null) {
-      throw new ApiException(400, "Missing the required parameter 'input' when calling extractTextIndependentVoice");
+    // verify the required parameter 'param0' is set
+    if (param0 == null) {
+      throw new ApiException(400, "Missing the required parameter 'param0' when calling extractTextIndependentVoice");
     }
     
     // create path and map variables

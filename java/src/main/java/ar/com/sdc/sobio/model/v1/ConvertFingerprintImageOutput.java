@@ -21,33 +21,23 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 /**
- * UpdateResult
+ * ConvertFingerprintImageOutput
  */
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-10-02T11:05:26.582-03:00")
-public class UpdateResult {
-  @JsonProperty("duplicatedSubjectId")
-  private String duplicatedSubjectId = null;
-
+public class ConvertFingerprintImageOutput {
   @JsonProperty("exception")
   private Boolean exception = null;
+
+  @JsonProperty("image")
+  private byte[] image = null;
 
   /**
    * Gets or Sets status
    */
   public enum StatusEnum {
-    UPDATE_OK("UPDATE_OK"),
+    OK("OK"),
     
-    DUPLICATED_FINGERPRINTS("DUPLICATED_FINGERPRINTS"),
-    
-    DUPLICATED_SUBJECT("DUPLICATED_SUBJECT"),
-    
-    INEXISTENT("INEXISTENT"),
-    
-    WITHOUT_TEMPLATE("WITHOUT_TEMPLATE"),
-    
-    MATCHING_NODE_UNAVAILABLE("MATCHING_NODE_UNAVAILABLE"),
-    
-    DUPLICATE_SEARCH_UNSUPPORTED("DUPLICATE_SEARCH_UNSUPPORTED");
+    ERROR("ERROR");
 
     private String value;
 
@@ -82,25 +72,7 @@ public class UpdateResult {
   @JsonProperty("txId")
   private String txId = null;
 
-  public UpdateResult duplicatedSubjectId(String duplicatedSubjectId) {
-    this.duplicatedSubjectId = duplicatedSubjectId;
-    return this;
-  }
-
-   /**
-   * Get duplicatedSubjectId
-   * @return duplicatedSubjectId
-  **/
-  @ApiModelProperty(value = "")
-  public String getDuplicatedSubjectId() {
-    return duplicatedSubjectId;
-  }
-
-  public void setDuplicatedSubjectId(String duplicatedSubjectId) {
-    this.duplicatedSubjectId = duplicatedSubjectId;
-  }
-
-  public UpdateResult exception(Boolean exception) {
+  public ConvertFingerprintImageOutput exception(Boolean exception) {
     this.exception = exception;
     return this;
   }
@@ -118,7 +90,25 @@ public class UpdateResult {
     this.exception = exception;
   }
 
-  public UpdateResult status(StatusEnum status) {
+  public ConvertFingerprintImageOutput image(byte[] image) {
+    this.image = image;
+    return this;
+  }
+
+   /**
+   * Get image
+   * @return image
+  **/
+  @ApiModelProperty(value = "")
+  public byte[] getImage() {
+    return image;
+  }
+
+  public void setImage(byte[] image) {
+    this.image = image;
+  }
+
+  public ConvertFingerprintImageOutput status(StatusEnum status) {
     this.status = status;
     return this;
   }
@@ -136,7 +126,7 @@ public class UpdateResult {
     this.status = status;
   }
 
-  public UpdateResult txId(String txId) {
+  public ConvertFingerprintImageOutput txId(String txId) {
     this.txId = txId;
     return this;
   }
@@ -163,26 +153,26 @@ public class UpdateResult {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    UpdateResult updateResult = (UpdateResult) o;
-    return Objects.equals(this.duplicatedSubjectId, updateResult.duplicatedSubjectId) &&
-        Objects.equals(this.exception, updateResult.exception) &&
-        Objects.equals(this.status, updateResult.status) &&
-        Objects.equals(this.txId, updateResult.txId);
+    ConvertFingerprintImageOutput convertFingerprintImageOutput = (ConvertFingerprintImageOutput) o;
+    return Objects.equals(this.exception, convertFingerprintImageOutput.exception) &&
+        Objects.equals(this.image, convertFingerprintImageOutput.image) &&
+        Objects.equals(this.status, convertFingerprintImageOutput.status) &&
+        Objects.equals(this.txId, convertFingerprintImageOutput.txId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(duplicatedSubjectId, exception, status, txId);
+    return Objects.hash(exception, image, status, txId);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class UpdateResult {\n");
+    sb.append("class ConvertFingerprintImageOutput {\n");
     
-    sb.append("    duplicatedSubjectId: ").append(toIndentedString(duplicatedSubjectId)).append("\n");
     sb.append("    exception: ").append(toIndentedString(exception)).append("\n");
+    sb.append("    image: ").append(toIndentedString(image)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    txId: ").append(toIndentedString(txId)).append("\n");
     sb.append("}");

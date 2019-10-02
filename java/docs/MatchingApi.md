@@ -1,6 +1,6 @@
 # MatchingApi
 
-All URIs are relative to *https://127.0.0.1:8083*
+All URIs are relative to *https://sobio-b76a.sdc.com.ar*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 <a name="identify"></a>
 # **identify**
-> IdentifyResult identify(input)
+> IdentifyResult identify(param0)
 
 Performs an identification (1:N) of supplied biometric data against enrolled subjects (that match optionally supplied conditions)
 
@@ -23,9 +23,9 @@ Performs an identification (1:N) of supplied biometric data against enrolled sub
 
 
 MatchingApi apiInstance = new MatchingApi();
-IdentifyInput input = new IdentifyInput(); // IdentifyInput | input
+IdentifyInput param0 = new IdentifyInput(); // IdentifyInput | param0
 try {
-    IdentifyResult result = apiInstance.identify(input);
+    IdentifyResult result = apiInstance.identify(param0);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling MatchingApi#identify");
@@ -37,7 +37,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **input** | [**IdentifyInput**](IdentifyInput.md)| input |
+ **param0** | [**IdentifyInput**](IdentifyInput.md)| param0 |
 
 ### Return type
 
@@ -54,7 +54,7 @@ No authorization required
 
 <a name="verify"></a>
 # **verify**
-> VerifyResult verify(input)
+> VerifyResult verify(param0)
 
 Performs a verification (1:1) of supplied biometric data against a supplied enrolled subject id
 
@@ -66,9 +66,9 @@ Performs a verification (1:1) of supplied biometric data against a supplied enro
 
 
 MatchingApi apiInstance = new MatchingApi();
-VerifyInput input = new VerifyInput(); // VerifyInput | input
+VerifyInput param0 = new VerifyInput(); // VerifyInput | param0
 try {
-    VerifyResult result = apiInstance.verify(input);
+    VerifyResult result = apiInstance.verify(param0);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling MatchingApi#verify");
@@ -80,7 +80,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **input** | [**VerifyInput**](VerifyInput.md)| input |
+ **param0** | [**VerifyInput**](VerifyInput.md)| param0 |
 
 ### Return type
 
@@ -97,7 +97,7 @@ No authorization required
 
 <a name="verifyT2t"></a>
 # **verifyT2t**
-> VerifyResult verifyT2t(input)
+> VerifyResult verifyT2t(param0)
 
 Performs a verification (1:1) of two supplied biometric subjects
 
@@ -109,9 +109,9 @@ Performs a verification (1:1) of two supplied biometric subjects
 
 
 MatchingApi apiInstance = new MatchingApi();
-VerifyT2TInput input = new VerifyT2TInput(); // VerifyT2TInput | input
+VerifyT2TInput param0 = new VerifyT2TInput(); // VerifyT2TInput | param0
 try {
-    VerifyResult result = apiInstance.verifyT2t(input);
+    VerifyResult result = apiInstance.verifyT2t(param0);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling MatchingApi#verifyT2t");
@@ -123,7 +123,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **input** | [**VerifyT2TInput**](VerifyT2TInput.md)| input |
+ **param0** | [**VerifyT2TInput**](VerifyT2TInput.md)| param0 |
 
 ### Return type
 
