@@ -7,7 +7,9 @@ Name | Type | Description | Notes
 **additionalInfo** | **String** |  |  [optional]
 **documentInfo** | [**DocumentInformation**](DocumentInformation.md) |  |  [optional]
 **exception** | **Boolean** |  |  [optional]
+**mrz** | [**MrzRecord**](MrzRecord.md) |  |  [optional]
 **mrzDetected** | **Boolean** |  |  [optional]
+**pdf417** | **List&lt;String&gt;** |  |  [optional]
 **pdf417Detected** | **Boolean** |  |  [optional]
 **status** | [**StatusEnum**](#StatusEnum) |  |  [optional]
 **suggestedAction** | [**SuggestedActionEnum**](#SuggestedActionEnum) |  |  [optional]
@@ -25,6 +27,7 @@ FRONT_FACE_NOT_FOUND | &quot;FRONT_FACE_NOT_FOUND&quot;
 FRONT_FACE_BAD_ILLUMINATION | &quot;FRONT_FACE_BAD_ILLUMINATION&quot;
 NEITHER_MRZ_NOR_PDF417_DETECTED | &quot;NEITHER_MRZ_NOR_PDF417_DETECTED&quot;
 NOT_ARGENTINA_ID | &quot;NOT_ARGENTINA_ID&quot;
+BAD_IMAGE_RESOLUTION | &quot;BAD_IMAGE_RESOLUTION&quot;
 
 
 <a name="SuggestedActionEnum"></a>

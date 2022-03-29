@@ -16,6 +16,7 @@ package ar.com.sdc.sobio.model.v1;
 import java.util.Objects;
 import ar.com.sdc.sobio.model.v1.DocumentDate;
 import ar.com.sdc.sobio.model.v1.Face;
+import ar.com.sdc.sobio.model.v1.FingerPrint;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -25,7 +26,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * DocumentInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-10-02T11:05:26.582-03:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-03-29T11:50:58.997-03:00")
 public class DocumentInformation {
   @JsonProperty("address")
   private String address = null;
@@ -140,6 +141,9 @@ public class DocumentInformation {
 
   @JsonProperty("face")
   private Face face = null;
+
+  @JsonProperty("fingerPrint")
+  private FingerPrint fingerPrint = null;
 
   @JsonProperty("givenNames")
   private String givenNames = null;
@@ -394,6 +398,24 @@ public class DocumentInformation {
     this.face = face;
   }
 
+  public DocumentInformation fingerPrint(FingerPrint fingerPrint) {
+    this.fingerPrint = fingerPrint;
+    return this;
+  }
+
+   /**
+   * Get fingerPrint
+   * @return fingerPrint
+  **/
+  @ApiModelProperty(value = "")
+  public FingerPrint getFingerPrint() {
+    return fingerPrint;
+  }
+
+  public void setFingerPrint(FingerPrint fingerPrint) {
+    this.fingerPrint = fingerPrint;
+  }
+
   public DocumentInformation givenNames(String givenNames) {
     this.givenNames = givenNames;
     return this;
@@ -630,6 +652,7 @@ public class DocumentInformation {
         Objects.equals(this.documentVersion, documentInformation.documentVersion) &&
         Objects.equals(this.expirationDate, documentInformation.expirationDate) &&
         Objects.equals(this.face, documentInformation.face) &&
+        Objects.equals(this.fingerPrint, documentInformation.fingerPrint) &&
         Objects.equals(this.givenNames, documentInformation.givenNames) &&
         Objects.equals(this.issuingCountry, documentInformation.issuingCountry) &&
         Objects.equals(this.issuingDate, documentInformation.issuingDate) &&
@@ -646,7 +669,7 @@ public class DocumentInformation {
 
   @Override
   public int hashCode() {
-    return Objects.hash(address, addressConfidence, code1, code2, dateOfBirth, documentNumber, documentType, documentVersion, expirationDate, face, givenNames, issuingCountry, issuingDate, nationality, order, sequence, sex, surname, validComposite, validDateOfBirth, validDocumentNumber, validExpirationDate);
+    return Objects.hash(address, addressConfidence, code1, code2, dateOfBirth, documentNumber, documentType, documentVersion, expirationDate, face, fingerPrint, givenNames, issuingCountry, issuingDate, nationality, order, sequence, sex, surname, validComposite, validDateOfBirth, validDocumentNumber, validExpirationDate);
   }
 
 
@@ -665,6 +688,7 @@ public class DocumentInformation {
     sb.append("    documentVersion: ").append(toIndentedString(documentVersion)).append("\n");
     sb.append("    expirationDate: ").append(toIndentedString(expirationDate)).append("\n");
     sb.append("    face: ").append(toIndentedString(face)).append("\n");
+    sb.append("    fingerPrint: ").append(toIndentedString(fingerPrint)).append("\n");
     sb.append("    givenNames: ").append(toIndentedString(givenNames)).append("\n");
     sb.append("    issuingCountry: ").append(toIndentedString(issuingCountry)).append("\n");
     sb.append("    issuingDate: ").append(toIndentedString(issuingDate)).append("\n");

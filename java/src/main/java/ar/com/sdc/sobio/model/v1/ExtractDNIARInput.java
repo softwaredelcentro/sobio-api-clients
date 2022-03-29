@@ -24,7 +24,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * ExtractDNIARInput
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-10-02T11:05:26.582-03:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-03-29T11:50:58.997-03:00")
 public class ExtractDNIARInput {
   @JsonProperty("auditToken")
   private String auditToken = null;
@@ -34,6 +34,52 @@ public class ExtractDNIARInput {
 
   @JsonProperty("frontImage")
   private byte[] frontImage = null;
+
+  /**
+   * Gets or Sets maxImageResolution
+   */
+  public enum MaxImageResolutionEnum {
+    MP_0_75("MP_0_75"),
+    
+    MP_1("MP_1"),
+    
+    MP_1_5("MP_1_5"),
+    
+    MP_2("MP_2"),
+    
+    MP_2_5("MP_2_5"),
+    
+    UNLIMITED("UNLIMITED");
+
+    private String value;
+
+    MaxImageResolutionEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonValue
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    @JsonCreator
+    public static MaxImageResolutionEnum fromValue(String text) {
+      for (MaxImageResolutionEnum b : MaxImageResolutionEnum.values()) {
+        if (String.valueOf(b.value).equals(text)) {
+          return b;
+        }
+      }
+      return null;
+    }
+  }
+
+  @JsonProperty("maxImageResolution")
+  private MaxImageResolutionEnum maxImageResolution = null;
 
   @JsonProperty("params")
   private ExtractDNIARParameters params = null;
@@ -92,6 +138,24 @@ public class ExtractDNIARInput {
     this.frontImage = frontImage;
   }
 
+  public ExtractDNIARInput maxImageResolution(MaxImageResolutionEnum maxImageResolution) {
+    this.maxImageResolution = maxImageResolution;
+    return this;
+  }
+
+   /**
+   * Get maxImageResolution
+   * @return maxImageResolution
+  **/
+  @ApiModelProperty(value = "")
+  public MaxImageResolutionEnum getMaxImageResolution() {
+    return maxImageResolution;
+  }
+
+  public void setMaxImageResolution(MaxImageResolutionEnum maxImageResolution) {
+    this.maxImageResolution = maxImageResolution;
+  }
+
   public ExtractDNIARInput params(ExtractDNIARParameters params) {
     this.params = params;
     return this;
@@ -123,12 +187,13 @@ public class ExtractDNIARInput {
     return Objects.equals(this.auditToken, extractDNIARInput.auditToken) &&
         Objects.equals(this.backImage, extractDNIARInput.backImage) &&
         Objects.equals(this.frontImage, extractDNIARInput.frontImage) &&
+        Objects.equals(this.maxImageResolution, extractDNIARInput.maxImageResolution) &&
         Objects.equals(this.params, extractDNIARInput.params);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(auditToken, backImage, frontImage, params);
+    return Objects.hash(auditToken, backImage, frontImage, maxImageResolution, params);
   }
 
 
@@ -140,6 +205,7 @@ public class ExtractDNIARInput {
     sb.append("    auditToken: ").append(toIndentedString(auditToken)).append("\n");
     sb.append("    backImage: ").append(toIndentedString(backImage)).append("\n");
     sb.append("    frontImage: ").append(toIndentedString(frontImage)).append("\n");
+    sb.append("    maxImageResolution: ").append(toIndentedString(maxImageResolution)).append("\n");
     sb.append("    params: ").append(toIndentedString(params)).append("\n");
     sb.append("}");
     return sb.toString();

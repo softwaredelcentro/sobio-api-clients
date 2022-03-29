@@ -15,16 +15,19 @@ package ar.com.sdc.sobio.model.v1;
 
 import java.util.Objects;
 import ar.com.sdc.sobio.model.v1.DocumentInformation;
+import ar.com.sdc.sobio.model.v1.MrzRecord;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * ExtractDNIARResult
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-10-02T11:05:26.582-03:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-03-29T11:50:58.997-03:00")
 public class ExtractDNIARResult {
   @JsonProperty("additionalInfo")
   private String additionalInfo = null;
@@ -35,8 +38,14 @@ public class ExtractDNIARResult {
   @JsonProperty("exception")
   private Boolean exception = null;
 
+  @JsonProperty("mrz")
+  private MrzRecord mrz = null;
+
   @JsonProperty("mrzDetected")
   private Boolean mrzDetected = null;
+
+  @JsonProperty("pdf417")
+  private List<String> pdf417 = null;
 
   @JsonProperty("pdf417Detected")
   private Boolean pdf417Detected = null;
@@ -57,7 +66,9 @@ public class ExtractDNIARResult {
     
     NEITHER_MRZ_NOR_PDF417_DETECTED("NEITHER_MRZ_NOR_PDF417_DETECTED"),
     
-    NOT_ARGENTINA_ID("NOT_ARGENTINA_ID");
+    NOT_ARGENTINA_ID("NOT_ARGENTINA_ID"),
+    
+    BAD_IMAGE_RESOLUTION("BAD_IMAGE_RESOLUTION");
 
     private String value;
 
@@ -190,6 +201,24 @@ public class ExtractDNIARResult {
     this.exception = exception;
   }
 
+  public ExtractDNIARResult mrz(MrzRecord mrz) {
+    this.mrz = mrz;
+    return this;
+  }
+
+   /**
+   * Get mrz
+   * @return mrz
+  **/
+  @ApiModelProperty(value = "")
+  public MrzRecord getMrz() {
+    return mrz;
+  }
+
+  public void setMrz(MrzRecord mrz) {
+    this.mrz = mrz;
+  }
+
   public ExtractDNIARResult mrzDetected(Boolean mrzDetected) {
     this.mrzDetected = mrzDetected;
     return this;
@@ -206,6 +235,32 @@ public class ExtractDNIARResult {
 
   public void setMrzDetected(Boolean mrzDetected) {
     this.mrzDetected = mrzDetected;
+  }
+
+  public ExtractDNIARResult pdf417(List<String> pdf417) {
+    this.pdf417 = pdf417;
+    return this;
+  }
+
+  public ExtractDNIARResult addPdf417Item(String pdf417Item) {
+    if (this.pdf417 == null) {
+      this.pdf417 = new ArrayList<String>();
+    }
+    this.pdf417.add(pdf417Item);
+    return this;
+  }
+
+   /**
+   * Get pdf417
+   * @return pdf417
+  **/
+  @ApiModelProperty(value = "")
+  public List<String> getPdf417() {
+    return pdf417;
+  }
+
+  public void setPdf417(List<String> pdf417) {
+    this.pdf417 = pdf417;
   }
 
   public ExtractDNIARResult pdf417Detected(Boolean pdf417Detected) {
@@ -293,7 +348,9 @@ public class ExtractDNIARResult {
     return Objects.equals(this.additionalInfo, extractDNIARResult.additionalInfo) &&
         Objects.equals(this.documentInfo, extractDNIARResult.documentInfo) &&
         Objects.equals(this.exception, extractDNIARResult.exception) &&
+        Objects.equals(this.mrz, extractDNIARResult.mrz) &&
         Objects.equals(this.mrzDetected, extractDNIARResult.mrzDetected) &&
+        Objects.equals(this.pdf417, extractDNIARResult.pdf417) &&
         Objects.equals(this.pdf417Detected, extractDNIARResult.pdf417Detected) &&
         Objects.equals(this.status, extractDNIARResult.status) &&
         Objects.equals(this.suggestedAction, extractDNIARResult.suggestedAction) &&
@@ -302,7 +359,7 @@ public class ExtractDNIARResult {
 
   @Override
   public int hashCode() {
-    return Objects.hash(additionalInfo, documentInfo, exception, mrzDetected, pdf417Detected, status, suggestedAction, txId);
+    return Objects.hash(additionalInfo, documentInfo, exception, mrz, mrzDetected, pdf417, pdf417Detected, status, suggestedAction, txId);
   }
 
 
@@ -314,7 +371,9 @@ public class ExtractDNIARResult {
     sb.append("    additionalInfo: ").append(toIndentedString(additionalInfo)).append("\n");
     sb.append("    documentInfo: ").append(toIndentedString(documentInfo)).append("\n");
     sb.append("    exception: ").append(toIndentedString(exception)).append("\n");
+    sb.append("    mrz: ").append(toIndentedString(mrz)).append("\n");
     sb.append("    mrzDetected: ").append(toIndentedString(mrzDetected)).append("\n");
+    sb.append("    pdf417: ").append(toIndentedString(pdf417)).append("\n");
     sb.append("    pdf417Detected: ").append(toIndentedString(pdf417Detected)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    suggestedAction: ").append(toIndentedString(suggestedAction)).append("\n");

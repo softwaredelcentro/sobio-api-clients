@@ -7,6 +7,12 @@ import ar.com.sdc.sobio.client.v1.Pair;
 
 import javax.ws.rs.core.GenericType;
 
+import ar.com.sdc.sobio.model.v1.AuditByDateInput;
+import ar.com.sdc.sobio.model.v1.AuditByDateOutput;
+import ar.com.sdc.sobio.model.v1.AuditDetailInput;
+import ar.com.sdc.sobio.model.v1.AuditDetailListInput;
+import ar.com.sdc.sobio.model.v1.AuditDetailListOutput;
+import ar.com.sdc.sobio.model.v1.AuditDetailOutput;
 import ar.com.sdc.sobio.model.v1.Resource;
 
 import java.util.ArrayList;
@@ -14,7 +20,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-10-02T11:05:26.582-03:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-03-29T11:50:58.997-03:00")
 public class AuditApi {
   private ApiClient apiClient;
 
@@ -34,6 +40,129 @@ public class AuditApi {
     this.apiClient = apiClient;
   }
 
+  /**
+   * Lists audit-data filtered by dates, and number of rows
+   * 
+   * @param input input (required)
+   * @return AuditByDateOutput
+   * @throws ApiException if fails to make API call
+   */
+  public AuditByDateOutput byDate(AuditByDateInput input) throws ApiException {
+    Object localVarPostBody = input;
+    
+    // verify the required parameter 'input' is set
+    if (input == null) {
+      throw new ApiException(400, "Missing the required parameter 'input' when calling byDate");
+    }
+    
+    // create path and map variables
+    String localVarPath = "/v1/audit/by-date";
+
+    // query params
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+
+    
+    
+    final String[] localVarAccepts = {
+      "application/json"
+    };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      "application/json"
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] {  };
+
+    GenericType<AuditByDateOutput> localVarReturnType = new GenericType<AuditByDateOutput>() {};
+    return apiClient.invokeAPI(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+      }
+  /**
+   * Lists filtered audit-details
+   * 
+   * @param input input (required)
+   * @return AuditDetailOutput
+   * @throws ApiException if fails to make API call
+   */
+  public AuditDetailOutput detailsList(AuditDetailInput input) throws ApiException {
+    Object localVarPostBody = input;
+    
+    // verify the required parameter 'input' is set
+    if (input == null) {
+      throw new ApiException(400, "Missing the required parameter 'input' when calling detailsList");
+    }
+    
+    // create path and map variables
+    String localVarPath = "/v1/audit/details-by-txid";
+
+    // query params
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+
+    
+    
+    final String[] localVarAccepts = {
+      "application/json"
+    };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      "application/json"
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] {  };
+
+    GenericType<AuditDetailOutput> localVarReturnType = new GenericType<AuditDetailOutput>() {};
+    return apiClient.invokeAPI(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+      }
+  /**
+   * Lists filtered audit-details
+   * 
+   * @param input input (required)
+   * @return AuditDetailListOutput
+   * @throws ApiException if fails to make API call
+   */
+  public AuditDetailListOutput detailsList1(AuditDetailListInput input) throws ApiException {
+    Object localVarPostBody = input;
+    
+    // verify the required parameter 'input' is set
+    if (input == null) {
+      throw new ApiException(400, "Missing the required parameter 'input' when calling detailsList1");
+    }
+    
+    // create path and map variables
+    String localVarPath = "/v1/audit/details-list";
+
+    // query params
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+
+    
+    
+    final String[] localVarAccepts = {
+      "application/json"
+    };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      "application/json"
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] {  };
+
+    GenericType<AuditDetailListOutput> localVarReturnType = new GenericType<AuditDetailListOutput>() {};
+    return apiClient.invokeAPI(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+      }
   /**
    * Download zipped activity log for supplied audit id
    * 

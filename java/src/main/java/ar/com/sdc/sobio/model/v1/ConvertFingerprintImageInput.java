@@ -23,10 +23,16 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * ConvertFingerprintImageInput
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-10-02T11:05:26.582-03:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-03-29T11:50:58.997-03:00")
 public class ConvertFingerprintImageInput {
   @JsonProperty("auditToken")
   private String auditToken = null;
+
+  @JsonProperty("flipH")
+  private Boolean flipH = null;
+
+  @JsonProperty("flipV")
+  private Boolean flipV = null;
 
   @JsonProperty("image")
   private String image = null;
@@ -47,6 +53,42 @@ public class ConvertFingerprintImageInput {
 
   public void setAuditToken(String auditToken) {
     this.auditToken = auditToken;
+  }
+
+  public ConvertFingerprintImageInput flipH(Boolean flipH) {
+    this.flipH = flipH;
+    return this;
+  }
+
+   /**
+   * Get flipH
+   * @return flipH
+  **/
+  @ApiModelProperty(value = "")
+  public Boolean isFlipH() {
+    return flipH;
+  }
+
+  public void setFlipH(Boolean flipH) {
+    this.flipH = flipH;
+  }
+
+  public ConvertFingerprintImageInput flipV(Boolean flipV) {
+    this.flipV = flipV;
+    return this;
+  }
+
+   /**
+   * Get flipV
+   * @return flipV
+  **/
+  @ApiModelProperty(value = "")
+  public Boolean isFlipV() {
+    return flipV;
+  }
+
+  public void setFlipV(Boolean flipV) {
+    this.flipV = flipV;
   }
 
   public ConvertFingerprintImageInput image(String image) {
@@ -78,12 +120,14 @@ public class ConvertFingerprintImageInput {
     }
     ConvertFingerprintImageInput convertFingerprintImageInput = (ConvertFingerprintImageInput) o;
     return Objects.equals(this.auditToken, convertFingerprintImageInput.auditToken) &&
+        Objects.equals(this.flipH, convertFingerprintImageInput.flipH) &&
+        Objects.equals(this.flipV, convertFingerprintImageInput.flipV) &&
         Objects.equals(this.image, convertFingerprintImageInput.image);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(auditToken, image);
+    return Objects.hash(auditToken, flipH, flipV, image);
   }
 
 
@@ -93,6 +137,8 @@ public class ConvertFingerprintImageInput {
     sb.append("class ConvertFingerprintImageInput {\n");
     
     sb.append("    auditToken: ").append(toIndentedString(auditToken)).append("\n");
+    sb.append("    flipH: ").append(toIndentedString(flipH)).append("\n");
+    sb.append("    flipV: ").append(toIndentedString(flipV)).append("\n");
     sb.append("    image: ").append(toIndentedString(image)).append("\n");
     sb.append("}");
     return sb.toString();

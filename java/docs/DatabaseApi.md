@@ -1,6 +1,6 @@
 # DatabaseApi
 
-All URIs are relative to *https://sobio-b76a.sdc.com.ar*
+All URIs are relative to *https://sobio*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 <a name="delete"></a>
 # **delete**
-> DeleteResult delete(param0)
+> DeleteResult delete(input)
 
 Deletes an enrolled subject from biometric engine
 
@@ -27,9 +27,9 @@ Deletes an enrolled subject from biometric engine
 
 
 DatabaseApi apiInstance = new DatabaseApi();
-DeleteInput param0 = new DeleteInput(); // DeleteInput | param0
+DeleteInput input = new DeleteInput(); // DeleteInput | input
 try {
-    DeleteResult result = apiInstance.delete(param0);
+    DeleteResult result = apiInstance.delete(input);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling DatabaseApi#delete");
@@ -41,7 +41,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **param0** | [**DeleteInput**](DeleteInput.md)| param0 |
+ **input** | [**DeleteInput**](DeleteInput.md)| input |
 
 ### Return type
 
@@ -101,7 +101,7 @@ No authorization required
 
 <a name="enroll"></a>
 # **enroll**
-> EnrollResult enroll(param0)
+> EnrollResult enroll(input)
 
 Performs a biometric enrollment supplied biometric data which is associated with supplied enrolled subject id
 
@@ -113,9 +113,9 @@ Performs a biometric enrollment supplied biometric data which is associated with
 
 
 DatabaseApi apiInstance = new DatabaseApi();
-EnrollInput param0 = new EnrollInput(); // EnrollInput | param0
+EnrollInput input = new EnrollInput(); // EnrollInput | input
 try {
-    EnrollResult result = apiInstance.enroll(param0);
+    EnrollResult result = apiInstance.enroll(input);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling DatabaseApi#enroll");
@@ -127,7 +127,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **param0** | [**EnrollInput**](EnrollInput.md)| param0 |
+ **input** | [**EnrollInput**](EnrollInput.md)| input |
 
 ### Return type
 
@@ -144,7 +144,7 @@ No authorization required
 
 <a name="list"></a>
 # **list**
-> ListOutput list(param0)
+> ListOutput list(input)
 
 List enrolled Subject ID&#39;s
 
@@ -156,9 +156,9 @@ List enrolled Subject ID&#39;s
 
 
 DatabaseApi apiInstance = new DatabaseApi();
-ListInput param0 = new ListInput(); // ListInput | param0
+ListInput input = new ListInput(); // ListInput | input
 try {
-    ListOutput result = apiInstance.list(param0);
+    ListOutput result = apiInstance.list(input);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling DatabaseApi#list");
@@ -170,7 +170,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **param0** | [**ListInput**](ListInput.md)| param0 |
+ **input** | [**ListInput**](ListInput.md)| input |
 
 ### Return type
 
@@ -187,7 +187,7 @@ No authorization required
 
 <a name="subjectData"></a>
 # **subjectData**
-> SubjectBiometricDataResult subjectData(param0)
+> SubjectBiometricDataResult subjectData(input)
 
 Obtain biometric enrolled data from supplied subject id
 
@@ -199,9 +199,9 @@ Obtain biometric enrolled data from supplied subject id
 
 
 DatabaseApi apiInstance = new DatabaseApi();
-ObtainSubjectBiometricData param0 = new ObtainSubjectBiometricData(); // ObtainSubjectBiometricData | param0
+ObtainSubjectBiometricData input = new ObtainSubjectBiometricData(); // ObtainSubjectBiometricData | input
 try {
-    SubjectBiometricDataResult result = apiInstance.subjectData(param0);
+    SubjectBiometricDataResult result = apiInstance.subjectData(input);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling DatabaseApi#subjectData");
@@ -213,7 +213,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **param0** | [**ObtainSubjectBiometricData**](ObtainSubjectBiometricData.md)| param0 |
+ **input** | [**ObtainSubjectBiometricData**](ObtainSubjectBiometricData.md)| input |
 
 ### Return type
 
@@ -230,7 +230,7 @@ No authorization required
 
 <a name="subjectInfo"></a>
 # **subjectInfo**
-> SubjectInformationResult subjectInfo(param0)
+> SubjectInformationResult subjectInfo(input)
 
 Obtain information of supplied subject id
 
@@ -242,9 +242,9 @@ Obtain information of supplied subject id
 
 
 DatabaseApi apiInstance = new DatabaseApi();
-ObtainSubjectInfo param0 = new ObtainSubjectInfo(); // ObtainSubjectInfo | param0
+ObtainSubjectInfo input = new ObtainSubjectInfo(); // ObtainSubjectInfo | input
 try {
-    SubjectInformationResult result = apiInstance.subjectInfo(param0);
+    SubjectInformationResult result = apiInstance.subjectInfo(input);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling DatabaseApi#subjectInfo");
@@ -256,7 +256,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **param0** | [**ObtainSubjectInfo**](ObtainSubjectInfo.md)| param0 |
+ **input** | [**ObtainSubjectInfo**](ObtainSubjectInfo.md)| input |
 
 ### Return type
 
@@ -273,7 +273,7 @@ No authorization required
 
 <a name="update"></a>
 # **update**
-> UpdateResult update(param0)
+> UpdateResult update(input)
 
 Updates biometric data of an already enrolled subject
 
@@ -285,9 +285,9 @@ Updates biometric data of an already enrolled subject
 
 
 DatabaseApi apiInstance = new DatabaseApi();
-UpdateInput param0 = new UpdateInput(); // UpdateInput | param0
+UpdateInput input = new UpdateInput(); // UpdateInput | input
 try {
-    UpdateResult result = apiInstance.update(param0);
+    UpdateResult result = apiInstance.update(input);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling DatabaseApi#update");
@@ -299,7 +299,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **param0** | [**UpdateInput**](UpdateInput.md)| param0 |
+ **input** | [**UpdateInput**](UpdateInput.md)| input |
 
 ### Return type
 

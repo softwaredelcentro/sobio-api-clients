@@ -15,7 +15,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-10-02T11:05:26.582-03:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-03-29T11:50:58.997-03:00")
 public class DocumentExtractionApi {
   private ApiClient apiClient;
 
@@ -38,16 +38,16 @@ public class DocumentExtractionApi {
   /**
    * Extracts ARGENTINA ID Card document information
    * 
-   * @param param0 param0 (required)
+   * @param input input (required)
    * @return ExtractDNIARResult
    * @throws ApiException if fails to make API call
    */
-  public ExtractDNIARResult extractDniArDocInfo(ExtractDNIARInput param0) throws ApiException {
-    Object localVarPostBody = param0;
+  public ExtractDNIARResult extractDniArDocInfo(ExtractDNIARInput input) throws ApiException {
+    Object localVarPostBody = input;
     
-    // verify the required parameter 'param0' is set
-    if (param0 == null) {
-      throw new ApiException(400, "Missing the required parameter 'param0' when calling extractDniArDocInfo");
+    // verify the required parameter 'input' is set
+    if (input == null) {
+      throw new ApiException(400, "Missing the required parameter 'input' when calling extractDniArDocInfo");
     }
     
     // create path and map variables
