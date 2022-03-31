@@ -1,6 +1,6 @@
 # ExtractionApi
 
-All URIs are relative to *https://sobio-b76a.sdc.com.ar*
+All URIs are relative to *https://sobio*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 <a name="concatAudioStream"></a>
 # **concatAudioStream**
-> ConcatAudioStreamsResult concatAudioStream(param0)
+> ConcatAudioStreamsResult concatAudioStream(input)
 
 Concats multiple audio-streams
 
@@ -28,9 +28,9 @@ Concats multiple audio-streams
 
 
 ExtractionApi apiInstance = new ExtractionApi();
-ConcatAudioStreamsInput param0 = new ConcatAudioStreamsInput(); // ConcatAudioStreamsInput | param0
+ConcatAudioStreamsInput input = new ConcatAudioStreamsInput(); // ConcatAudioStreamsInput | input
 try {
-    ConcatAudioStreamsResult result = apiInstance.concatAudioStream(param0);
+    ConcatAudioStreamsResult result = apiInstance.concatAudioStream(input);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ExtractionApi#concatAudioStream");
@@ -42,7 +42,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **param0** | [**ConcatAudioStreamsInput**](ConcatAudioStreamsInput.md)| param0 |
+ **input** | [**ConcatAudioStreamsInput**](ConcatAudioStreamsInput.md)| input |
 
 ### Return type
 
@@ -59,7 +59,7 @@ No authorization required
 
 <a name="convertFingerprintImagePngToWsq"></a>
 # **convertFingerprintImagePngToWsq**
-> ConvertFingerprintImageOutput convertFingerprintImagePngToWsq(param0)
+> ConvertFingerprintImageOutput convertFingerprintImagePngToWsq(input)
 
 Convert Fingerprint in PNG to WSQ format
 
@@ -71,9 +71,9 @@ Convert Fingerprint in PNG to WSQ format
 
 
 ExtractionApi apiInstance = new ExtractionApi();
-ConvertFingerprintImageInput param0 = new ConvertFingerprintImageInput(); // ConvertFingerprintImageInput | param0
+ConvertFingerprintImageInput input = new ConvertFingerprintImageInput(); // ConvertFingerprintImageInput | input
 try {
-    ConvertFingerprintImageOutput result = apiInstance.convertFingerprintImagePngToWsq(param0);
+    ConvertFingerprintImageOutput result = apiInstance.convertFingerprintImagePngToWsq(input);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ExtractionApi#convertFingerprintImagePngToWsq");
@@ -85,7 +85,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **param0** | [**ConvertFingerprintImageInput**](ConvertFingerprintImageInput.md)| param0 |
+ **input** | [**ConvertFingerprintImageInput**](ConvertFingerprintImageInput.md)| input |
 
 ### Return type
 
@@ -102,7 +102,7 @@ No authorization required
 
 <a name="convertFingerprintImageWsqToPng"></a>
 # **convertFingerprintImageWsqToPng**
-> ConvertFingerprintImageOutput convertFingerprintImageWsqToPng(param0)
+> ConvertFingerprintImageOutput convertFingerprintImageWsqToPng(input)
 
 Convert Fingerprint in WSQ to PNG format
 
@@ -114,9 +114,9 @@ Convert Fingerprint in WSQ to PNG format
 
 
 ExtractionApi apiInstance = new ExtractionApi();
-ConvertFingerprintImageInput param0 = new ConvertFingerprintImageInput(); // ConvertFingerprintImageInput | param0
+ConvertFingerprintImageInput input = new ConvertFingerprintImageInput(); // ConvertFingerprintImageInput | input
 try {
-    ConvertFingerprintImageOutput result = apiInstance.convertFingerprintImageWsqToPng(param0);
+    ConvertFingerprintImageOutput result = apiInstance.convertFingerprintImageWsqToPng(input);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ExtractionApi#convertFingerprintImageWsqToPng");
@@ -128,7 +128,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **param0** | [**ConvertFingerprintImageInput**](ConvertFingerprintImageInput.md)| param0 |
+ **input** | [**ConvertFingerprintImageInput**](ConvertFingerprintImageInput.md)| input |
 
 ### Return type
 
@@ -145,7 +145,7 @@ No authorization required
 
 <a name="extractFaceImage"></a>
 # **extractFaceImage**
-> ExtractFaceFromImageResult extractFaceImage(param0)
+> ExtractFaceFromImageResult extractFaceImage(input)
 
 Extracts face biometric data (template) from a supplied image
 
@@ -157,9 +157,9 @@ Extracts face biometric data (template) from a supplied image
 
 
 ExtractionApi apiInstance = new ExtractionApi();
-ExtractFaceFromImageInput param0 = new ExtractFaceFromImageInput(); // ExtractFaceFromImageInput | param0
+ExtractFaceFromImageInput input = new ExtractFaceFromImageInput(); // ExtractFaceFromImageInput | input
 try {
-    ExtractFaceFromImageResult result = apiInstance.extractFaceImage(param0);
+    ExtractFaceFromImageResult result = apiInstance.extractFaceImage(input);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ExtractionApi#extractFaceImage");
@@ -171,7 +171,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **param0** | [**ExtractFaceFromImageInput**](ExtractFaceFromImageInput.md)| param0 |
+ **input** | [**ExtractFaceFromImageInput**](ExtractFaceFromImageInput.md)| input |
 
 ### Return type
 
@@ -188,7 +188,7 @@ No authorization required
 
 <a name="extractFaceVideo"></a>
 # **extractFaceVideo**
-> ExtractFaceFromVideoResult extractFaceVideo(param0)
+> ExtractFaceFromVideoResult extractFaceVideo(input)
 
 Extracts face biometric data (template) from a supplied video
 
@@ -200,9 +200,9 @@ Extracts face biometric data (template) from a supplied video
 
 
 ExtractionApi apiInstance = new ExtractionApi();
-ExtractFaceFromVideoInput param0 = new ExtractFaceFromVideoInput(); // ExtractFaceFromVideoInput | param0
+ExtractFaceFromVideoInput input = new ExtractFaceFromVideoInput(); // ExtractFaceFromVideoInput | input
 try {
-    ExtractFaceFromVideoResult result = apiInstance.extractFaceVideo(param0);
+    ExtractFaceFromVideoResult result = apiInstance.extractFaceVideo(input);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ExtractionApi#extractFaceVideo");
@@ -214,7 +214,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **param0** | [**ExtractFaceFromVideoInput**](ExtractFaceFromVideoInput.md)| param0 |
+ **input** | [**ExtractFaceFromVideoInput**](ExtractFaceFromVideoInput.md)| input |
 
 ### Return type
 
@@ -231,7 +231,7 @@ No authorization required
 
 <a name="extractFingerprintImage"></a>
 # **extractFingerprintImage**
-> ExtractFingerPrintFromImageResult extractFingerprintImage(param0)
+> ExtractFingerPrintFromImageResult extractFingerprintImage(input)
 
 Extracts finger biometric data (template) from a supplied image
 
@@ -243,9 +243,9 @@ Extracts finger biometric data (template) from a supplied image
 
 
 ExtractionApi apiInstance = new ExtractionApi();
-ExtractFingerPrintFromImageInput param0 = new ExtractFingerPrintFromImageInput(); // ExtractFingerPrintFromImageInput | param0
+ExtractFingerPrintFromImageInput input = new ExtractFingerPrintFromImageInput(); // ExtractFingerPrintFromImageInput | input
 try {
-    ExtractFingerPrintFromImageResult result = apiInstance.extractFingerprintImage(param0);
+    ExtractFingerPrintFromImageResult result = apiInstance.extractFingerprintImage(input);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ExtractionApi#extractFingerprintImage");
@@ -257,7 +257,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **param0** | [**ExtractFingerPrintFromImageInput**](ExtractFingerPrintFromImageInput.md)| param0 |
+ **input** | [**ExtractFingerPrintFromImageInput**](ExtractFingerPrintFromImageInput.md)| input |
 
 ### Return type
 
@@ -274,7 +274,7 @@ No authorization required
 
 <a name="extractTextDependentVoice"></a>
 # **extractTextDependentVoice**
-> ExtractTextDependentVoiceFromAudioResult extractTextDependentVoice(param0)
+> ExtractTextDependentVoiceFromAudioResult extractTextDependentVoice(input)
 
 Extracts text-dependent voice biometric data (template) from a supplied audio
 
@@ -286,9 +286,9 @@ Extracts text-dependent voice biometric data (template) from a supplied audio
 
 
 ExtractionApi apiInstance = new ExtractionApi();
-ExtractTextDependentVoiceFromAudioInput param0 = new ExtractTextDependentVoiceFromAudioInput(); // ExtractTextDependentVoiceFromAudioInput | param0
+ExtractTextDependentVoiceFromAudioInput input = new ExtractTextDependentVoiceFromAudioInput(); // ExtractTextDependentVoiceFromAudioInput | input
 try {
-    ExtractTextDependentVoiceFromAudioResult result = apiInstance.extractTextDependentVoice(param0);
+    ExtractTextDependentVoiceFromAudioResult result = apiInstance.extractTextDependentVoice(input);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ExtractionApi#extractTextDependentVoice");
@@ -300,7 +300,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **param0** | [**ExtractTextDependentVoiceFromAudioInput**](ExtractTextDependentVoiceFromAudioInput.md)| param0 |
+ **input** | [**ExtractTextDependentVoiceFromAudioInput**](ExtractTextDependentVoiceFromAudioInput.md)| input |
 
 ### Return type
 
@@ -317,7 +317,7 @@ No authorization required
 
 <a name="extractTextIndependentVoice"></a>
 # **extractTextIndependentVoice**
-> ExtractTextIndependentVoiceFromAudioResult extractTextIndependentVoice(param0)
+> ExtractTextIndependentVoiceFromAudioResult extractTextIndependentVoice(input)
 
 Extracts text-independent voice biometric data (template) from a supplied audio
 
@@ -329,9 +329,9 @@ Extracts text-independent voice biometric data (template) from a supplied audio
 
 
 ExtractionApi apiInstance = new ExtractionApi();
-ExtractTextIndependentVoiceFromAudioInput param0 = new ExtractTextIndependentVoiceFromAudioInput(); // ExtractTextIndependentVoiceFromAudioInput | param0
+ExtractTextIndependentVoiceFromAudioInput input = new ExtractTextIndependentVoiceFromAudioInput(); // ExtractTextIndependentVoiceFromAudioInput | input
 try {
-    ExtractTextIndependentVoiceFromAudioResult result = apiInstance.extractTextIndependentVoice(param0);
+    ExtractTextIndependentVoiceFromAudioResult result = apiInstance.extractTextIndependentVoice(input);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling ExtractionApi#extractTextIndependentVoice");
@@ -343,7 +343,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **param0** | [**ExtractTextIndependentVoiceFromAudioInput**](ExtractTextIndependentVoiceFromAudioInput.md)| param0 |
+ **input** | [**ExtractTextIndependentVoiceFromAudioInput**](ExtractTextIndependentVoiceFromAudioInput.md)| input |
 
 ### Return type
 

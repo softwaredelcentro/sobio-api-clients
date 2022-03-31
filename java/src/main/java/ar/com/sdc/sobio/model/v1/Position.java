@@ -26,7 +26,7 @@ import java.util.List;
 /**
  * Position
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-10-02T11:05:26.582-03:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-03-29T11:50:58.997-03:00")
 public class Position {
   @JsonProperty("height")
   private Integer height = null;

@@ -26,7 +26,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2019-10-02T11:05:26.582-03:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-03-29T11:50:58.997-03:00")
 public class DatabaseApi {
   private ApiClient apiClient;
 
@@ -49,16 +49,16 @@ public class DatabaseApi {
   /**
    * Deletes an enrolled subject from biometric engine
    * 
-   * @param param0 param0 (required)
+   * @param input input (required)
    * @return DeleteResult
    * @throws ApiException if fails to make API call
    */
-  public DeleteResult delete(DeleteInput param0) throws ApiException {
-    Object localVarPostBody = param0;
+  public DeleteResult delete(DeleteInput input) throws ApiException {
+    Object localVarPostBody = input;
     
-    // verify the required parameter 'param0' is set
-    if (param0 == null) {
-      throw new ApiException(400, "Missing the required parameter 'param0' when calling delete");
+    // verify the required parameter 'input' is set
+    if (input == null) {
+      throw new ApiException(400, "Missing the required parameter 'input' when calling delete");
     }
     
     // create path and map variables
@@ -132,16 +132,16 @@ public class DatabaseApi {
   /**
    * Performs a biometric enrollment supplied biometric data which is associated with supplied enrolled subject id
    * 
-   * @param param0 param0 (required)
+   * @param input input (required)
    * @return EnrollResult
    * @throws ApiException if fails to make API call
    */
-  public EnrollResult enroll(EnrollInput param0) throws ApiException {
-    Object localVarPostBody = param0;
+  public EnrollResult enroll(EnrollInput input) throws ApiException {
+    Object localVarPostBody = input;
     
-    // verify the required parameter 'param0' is set
-    if (param0 == null) {
-      throw new ApiException(400, "Missing the required parameter 'param0' when calling enroll");
+    // verify the required parameter 'input' is set
+    if (input == null) {
+      throw new ApiException(400, "Missing the required parameter 'input' when calling enroll");
     }
     
     // create path and map variables
@@ -173,16 +173,16 @@ public class DatabaseApi {
   /**
    * List enrolled Subject ID&#39;s
    * 
-   * @param param0 param0 (required)
+   * @param input input (required)
    * @return ListOutput
    * @throws ApiException if fails to make API call
    */
-  public ListOutput list(ListInput param0) throws ApiException {
-    Object localVarPostBody = param0;
+  public ListOutput list(ListInput input) throws ApiException {
+    Object localVarPostBody = input;
     
-    // verify the required parameter 'param0' is set
-    if (param0 == null) {
-      throw new ApiException(400, "Missing the required parameter 'param0' when calling list");
+    // verify the required parameter 'input' is set
+    if (input == null) {
+      throw new ApiException(400, "Missing the required parameter 'input' when calling list");
     }
     
     // create path and map variables
@@ -214,16 +214,16 @@ public class DatabaseApi {
   /**
    * Obtain biometric enrolled data from supplied subject id
    * 
-   * @param param0 param0 (required)
+   * @param input input (required)
    * @return SubjectBiometricDataResult
    * @throws ApiException if fails to make API call
    */
-  public SubjectBiometricDataResult subjectData(ObtainSubjectBiometricData param0) throws ApiException {
-    Object localVarPostBody = param0;
+  public SubjectBiometricDataResult subjectData(ObtainSubjectBiometricData input) throws ApiException {
+    Object localVarPostBody = input;
     
-    // verify the required parameter 'param0' is set
-    if (param0 == null) {
-      throw new ApiException(400, "Missing the required parameter 'param0' when calling subjectData");
+    // verify the required parameter 'input' is set
+    if (input == null) {
+      throw new ApiException(400, "Missing the required parameter 'input' when calling subjectData");
     }
     
     // create path and map variables
@@ -255,16 +255,16 @@ public class DatabaseApi {
   /**
    * Obtain information of supplied subject id
    * 
-   * @param param0 param0 (required)
+   * @param input input (required)
    * @return SubjectInformationResult
    * @throws ApiException if fails to make API call
    */
-  public SubjectInformationResult subjectInfo(ObtainSubjectInfo param0) throws ApiException {
-    Object localVarPostBody = param0;
+  public SubjectInformationResult subjectInfo(ObtainSubjectInfo input) throws ApiException {
+    Object localVarPostBody = input;
     
-    // verify the required parameter 'param0' is set
-    if (param0 == null) {
-      throw new ApiException(400, "Missing the required parameter 'param0' when calling subjectInfo");
+    // verify the required parameter 'input' is set
+    if (input == null) {
+      throw new ApiException(400, "Missing the required parameter 'input' when calling subjectInfo");
     }
     
     // create path and map variables
@@ -296,16 +296,16 @@ public class DatabaseApi {
   /**
    * Updates biometric data of an already enrolled subject
    * 
-   * @param param0 param0 (required)
+   * @param input input (required)
    * @return UpdateResult
    * @throws ApiException if fails to make API call
    */
-  public UpdateResult update(UpdateInput param0) throws ApiException {
-    Object localVarPostBody = param0;
+  public UpdateResult update(UpdateInput input) throws ApiException {
+    Object localVarPostBody = input;
     
-    // verify the required parameter 'param0' is set
-    if (param0 == null) {
-      throw new ApiException(400, "Missing the required parameter 'param0' when calling update");
+    // verify the required parameter 'input' is set
+    if (input == null) {
+      throw new ApiException(400, "Missing the required parameter 'input' when calling update");
     }
     
     // create path and map variables

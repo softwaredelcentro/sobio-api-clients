@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **documentVersion** | [**DocumentVersionEnum**](#DocumentVersionEnum) |  |  [optional]
 **expirationDate** | [**DocumentDate**](DocumentDate.md) |  |  [optional]
 **face** | [**Face**](Face.md) |  |  [optional]
+**fingerPrint** | [**FingerPrint**](FingerPrint.md) |  |  [optional]
 **givenNames** | **String** |  |  [optional]
 **issuingCountry** | **String** |  |  [optional]
 **issuingDate** | [**DocumentDate**](DocumentDate.md) |  |  [optional]

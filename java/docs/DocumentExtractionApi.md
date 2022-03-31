@@ -1,6 +1,6 @@
 # DocumentExtractionApi
 
-All URIs are relative to *https://sobio-b76a.sdc.com.ar*
+All URIs are relative to *https://sobio*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="extractDniArDocInfo"></a>
 # **extractDniArDocInfo**
-> ExtractDNIARResult extractDniArDocInfo(param0)
+> ExtractDNIARResult extractDniArDocInfo(input)
 
 Extracts ARGENTINA ID Card document information
 
@@ -21,9 +21,9 @@ Extracts ARGENTINA ID Card document information
 
 
 DocumentExtractionApi apiInstance = new DocumentExtractionApi();
-ExtractDNIARInput param0 = new ExtractDNIARInput(); // ExtractDNIARInput | param0
+ExtractDNIARInput input = new ExtractDNIARInput(); // ExtractDNIARInput | input
 try {
-    ExtractDNIARResult result = apiInstance.extractDniArDocInfo(param0);
+    ExtractDNIARResult result = apiInstance.extractDniArDocInfo(input);
     System.out.println(result);
 } catch (ApiException e) {
     System.err.println("Exception when calling DocumentExtractionApi#extractDniArDocInfo");
@@ -35,7 +35,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **param0** | [**ExtractDNIARInput**](ExtractDNIARInput.md)| param0 |
+ **input** | [**ExtractDNIARInput**](ExtractDNIARInput.md)| input |
 
 ### Return type
 
