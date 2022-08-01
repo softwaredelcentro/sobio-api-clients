@@ -1,6 +1,6 @@
 # MatchingApi
 
-All URIs are relative to *https://sobio*
+All URIs are relative to *https://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -18,9 +18,19 @@ Performs an identification (1:N) of supplied biometric data against enrolled sub
 ### Example
 ```java
 // Import classes:
+//import ar.com.sdc.sobio.client.v1.ApiClient;
 //import ar.com.sdc.sobio.client.v1.ApiException;
+//import ar.com.sdc.sobio.client.v1.Configuration;
+//import ar.com.sdc.sobio.client.v1.auth.*;
 //import ar.com.sdc.sobio.api.v1.MatchingApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Token
+ApiKeyAuth Token = (ApiKeyAuth) defaultClient.getAuthentication("Token");
+Token.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Token.setApiKeyPrefix("Token");
 
 MatchingApi apiInstance = new MatchingApi();
 IdentifyInput input = new IdentifyInput(); // IdentifyInput | input
@@ -45,7 +55,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Token](../README.md#Token)
 
 ### HTTP request headers
 
@@ -61,9 +71,19 @@ Performs a verification (1:1) of supplied biometric data against a supplied enro
 ### Example
 ```java
 // Import classes:
+//import ar.com.sdc.sobio.client.v1.ApiClient;
 //import ar.com.sdc.sobio.client.v1.ApiException;
+//import ar.com.sdc.sobio.client.v1.Configuration;
+//import ar.com.sdc.sobio.client.v1.auth.*;
 //import ar.com.sdc.sobio.api.v1.MatchingApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Token
+ApiKeyAuth Token = (ApiKeyAuth) defaultClient.getAuthentication("Token");
+Token.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Token.setApiKeyPrefix("Token");
 
 MatchingApi apiInstance = new MatchingApi();
 VerifyInput input = new VerifyInput(); // VerifyInput | input
@@ -88,7 +108,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Token](../README.md#Token)
 
 ### HTTP request headers
 
@@ -104,9 +124,19 @@ Performs a verification (1:1) of two supplied biometric subjects
 ### Example
 ```java
 // Import classes:
+//import ar.com.sdc.sobio.client.v1.ApiClient;
 //import ar.com.sdc.sobio.client.v1.ApiException;
+//import ar.com.sdc.sobio.client.v1.Configuration;
+//import ar.com.sdc.sobio.client.v1.auth.*;
 //import ar.com.sdc.sobio.api.v1.MatchingApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Token
+ApiKeyAuth Token = (ApiKeyAuth) defaultClient.getAuthentication("Token");
+Token.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Token.setApiKeyPrefix("Token");
 
 MatchingApi apiInstance = new MatchingApi();
 VerifyT2TInput input = new VerifyT2TInput(); // VerifyT2TInput | input
@@ -131,7 +161,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Token](../README.md#Token)
 
 ### HTTP request headers
 

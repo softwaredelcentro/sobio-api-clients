@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **age** | **Integer** |  |  [optional]
 **clahe** | **Integer** |  |  [optional]
-**confidence** | **Integer** |  |  [optional]
+**confidence** | **byte[]** |  |  [optional]
 **emotion** | [**Emotion**](Emotion.md) |  |  [optional]
 **expression** | [**Expresion**](Expresion.md) |  |  [optional]
 **gender** | [**Gender**](Gender.md) |  |  [optional]

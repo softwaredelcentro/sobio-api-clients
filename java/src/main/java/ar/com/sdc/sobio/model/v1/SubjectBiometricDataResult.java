@@ -24,7 +24,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * SubjectBiometricDataResult
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-03-29T11:50:58.997-03:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-08-01T15:17:54.527-03:00")
 public class SubjectBiometricDataResult {
   @JsonProperty("exception")
   private Boolean exception = null;
@@ -33,9 +33,9 @@ public class SubjectBiometricDataResult {
    * Gets or Sets status
    */
   public enum StatusEnum {
-    OK("OK"),
+    INEXISTENT("INEXISTENT"),
     
-    INEXISTENT("INEXISTENT");
+    OK("OK");
 
     private String value;
 

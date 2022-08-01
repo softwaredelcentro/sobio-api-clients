@@ -25,7 +25,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * ExtractTextIndependentVoiceFromAudioResult
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-03-29T11:50:58.997-03:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-08-01T15:17:54.527-03:00")
 public class ExtractTextIndependentVoiceFromAudioResult {
   @JsonProperty("exception")
   private Boolean exception = null;
@@ -37,19 +37,19 @@ public class ExtractTextIndependentVoiceFromAudioResult {
    * Gets or Sets status
    */
   public enum StatusEnum {
-    OK("OK"),
-    
-    LOW_QUALITY("LOW_QUALITY"),
-    
-    VOICE_NOT_DETECTED("VOICE_NOT_DETECTED"),
-    
-    NOISY("NOISY"),
+    EXCEPTION("EXCEPTION"),
     
     LOW_LEVEL("LOW_LEVEL"),
     
-    EXCEPTION("EXCEPTION"),
+    LOW_QUALITY("LOW_QUALITY"),
     
-    TOO_SHORT("TOO_SHORT");
+    NOISY("NOISY"),
+    
+    OK("OK"),
+    
+    TOO_SHORT("TOO_SHORT"),
+    
+    VOICE_NOT_DETECTED("VOICE_NOT_DETECTED");
 
     private String value;
 

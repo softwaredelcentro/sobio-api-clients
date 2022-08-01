@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **dedo** | [**DedoEnum**](#DedoEnum) |  |  [optional]
-**images** | [**List&lt;List&lt;Integer&gt;&gt;**](List.md) |  |  [optional]
+**images** | **byte[]** |  |  [optional]
 **source** | [**SourceEnum**](#SourceEnum) |  |  [optional]
 **template** | **byte[]** |  |  [optional]
 
@@ -14,16 +14,16 @@ Name | Type | Description | Notes
 ## Enum: DedoEnum
 Name | Value
 ---- | -----
-RIGHT_THUMB | &quot;RIGHT_THUMB&quot;
-LEFT_THUMB | &quot;LEFT_THUMB&quot;
-RIGHT_INDEX_FINGER | &quot;RIGHT_INDEX_FINGER&quot;
 LEFT_INDEX_FINGER | &quot;LEFT_INDEX_FINGER&quot;
-RIGHT_MIDDLE_FINGER | &quot;RIGHT_MIDDLE_FINGER&quot;
+LEFT_LITTLE_FINGER | &quot;LEFT_LITTLE_FINGER&quot;
 LEFT_MIDDLE_FINGER | &quot;LEFT_MIDDLE_FINGER&quot;
 LEFT_RING_FINGER | &quot;LEFT_RING_FINGER&quot;
-RIGHT_RING_FINGER | &quot;RIGHT_RING_FINGER&quot;
-LEFT_LITTLE_FINGER | &quot;LEFT_LITTLE_FINGER&quot;
+LEFT_THUMB | &quot;LEFT_THUMB&quot;
+RIGHT_INDEX_FINGER | &quot;RIGHT_INDEX_FINGER&quot;
 RIGHT_LITTLE_FINGER | &quot;RIGHT_LITTLE_FINGER&quot;
+RIGHT_MIDDLE_FINGER | &quot;RIGHT_MIDDLE_FINGER&quot;
+RIGHT_RING_FINGER | &quot;RIGHT_RING_FINGER&quot;
+RIGHT_THUMB | &quot;RIGHT_THUMB&quot;
 UNKNOWN | &quot;UNKNOWN&quot;
 
 

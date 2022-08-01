@@ -26,24 +26,24 @@ Name | Type | Description | Notes
 ## Enum: CodeEnum
 Name | Value
 ---- | -----
-PASSPORT | &quot;Passport&quot;
-TYPEI | &quot;TypeI&quot;
-TYPEA | &quot;TypeA&quot;
 CREWMEMBER | &quot;CrewMember&quot;
-TYPEC | &quot;TypeC&quot;
-TYPEV | &quot;TypeV&quot;
 MIGRANT | &quot;Migrant&quot;
+PASSPORT | &quot;Passport&quot;
+TYPEA | &quot;TypeA&quot;
+TYPEC | &quot;TypeC&quot;
+TYPEI | &quot;TypeI&quot;
+TYPEV | &quot;TypeV&quot;
 
 
 <a name="FormatEnum"></a>
 ## Enum: FormatEnum
 Name | Value
 ---- | -----
-MRTD_TD1 | &quot;MRTD_TD1&quot;
 FRENCH_ID | &quot;FRENCH_ID&quot;
-MRV_VISA_B | &quot;MRV_VISA_B&quot;
+MRTD_TD1 | &quot;MRTD_TD1&quot;
 MRTD_TD2 | &quot;MRTD_TD2&quot;
 MRV_VISA_A | &quot;MRV_VISA_A&quot;
+MRV_VISA_B | &quot;MRV_VISA_B&quot;
 PASSPORT | &quot;PASSPORT&quot;
 SLOVAK_ID_234 | &quot;SLOVAK_ID_234&quot;
 
@@ -52,8 +52,8 @@ SLOVAK_ID_234 | &quot;SLOVAK_ID_234&quot;
 ## Enum: SexEnum
 Name | Value
 ---- | -----
-MALE | &quot;Male&quot;
 FEMALE | &quot;Female&quot;
+MALE | &quot;Male&quot;
 UNSPECIFIED | &quot;Unspecified&quot;
 
 

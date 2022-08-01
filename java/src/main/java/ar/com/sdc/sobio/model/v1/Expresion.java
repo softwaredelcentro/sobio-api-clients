@@ -23,10 +23,10 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * Expresion
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-03-29T11:50:58.997-03:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-08-01T15:17:54.527-03:00")
 public class Expresion {
   @JsonProperty("confidence")
-  private Integer confidence = null;
+  private byte[] confidence = null;
 
   /**
    * Gets or Sets type
@@ -78,23 +78,21 @@ public class Expresion {
   @JsonProperty("type")
   private TypeEnum type = null;
 
-  public Expresion confidence(Integer confidence) {
+  public Expresion confidence(byte[] confidence) {
     this.confidence = confidence;
     return this;
   }
 
    /**
    * Get confidence
-   * minimum: -128
-   * maximum: 127
    * @return confidence
   **/
   @ApiModelProperty(value = "")
-  public Integer getConfidence() {
+  public byte[] getConfidence() {
     return confidence;
   }
 
-  public void setConfidence(Integer confidence) {
+  public void setConfidence(byte[] confidence) {
     this.confidence = confidence;
   }
 

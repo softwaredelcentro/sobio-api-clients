@@ -26,7 +26,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * DocumentInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-03-29T11:50:58.997-03:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-08-01T15:17:54.527-03:00")
 public class DocumentInformation {
   @JsonProperty("address")
   private String address = null;
@@ -40,6 +40,9 @@ public class DocumentInformation {
   @JsonProperty("code2")
   private String code2 = null;
 
+  @JsonProperty("cuilNumber")
+  private String cuilNumber = null;
+
   @JsonProperty("dateOfBirth")
   private DocumentDate dateOfBirth = null;
 
@@ -50,21 +53,21 @@ public class DocumentInformation {
    * Gets or Sets documentType
    */
   public enum DocumentTypeEnum {
-    PASSPORT("PASSPORT"),
-    
-    TYPE_I("TYPE_I"),
-    
-    TYPE_A("TYPE_A"),
-    
     CREWMEMBER("CREWMEMBER"),
-    
-    TYPE_C("TYPE_C"),
-    
-    VISA("VISA"),
     
     MIGRANT("MIGRANT"),
     
-    UNKNOWN("UNKNOWN");
+    PASSPORT("PASSPORT"),
+    
+    TYPE_A("TYPE_A"),
+    
+    TYPE_C("TYPE_C"),
+    
+    TYPE_I("TYPE_I"),
+    
+    UNKNOWN("UNKNOWN"),
+    
+    VISA("VISA");
 
     private String value;
 
@@ -100,11 +103,11 @@ public class DocumentInformation {
    * Gets or Sets documentVersion
    */
   public enum DocumentVersionEnum {
-    UNKNOWN("UNKNOWN"),
-    
     ARGENTINA_ID_V1("ARGENTINA_ID_V1"),
     
-    ARGENTINA_ID_V2("ARGENTINA_ID_V2");
+    ARGENTINA_ID_V2("ARGENTINA_ID_V2"),
+    
+    UNKNOWN("UNKNOWN");
 
     private String value;
 
@@ -167,9 +170,9 @@ public class DocumentInformation {
    * Gets or Sets sex
    */
   public enum SexEnum {
-    MALE("MALE"),
-    
     FEMALE("FEMALE"),
+    
+    MALE("MALE"),
     
     UNSPECIFIED("UNSPECIFIED");
 
@@ -288,6 +291,24 @@ public class DocumentInformation {
 
   public void setCode2(String code2) {
     this.code2 = code2;
+  }
+
+  public DocumentInformation cuilNumber(String cuilNumber) {
+    this.cuilNumber = cuilNumber;
+    return this;
+  }
+
+   /**
+   * Get cuilNumber
+   * @return cuilNumber
+  **/
+  @ApiModelProperty(value = "")
+  public String getCuilNumber() {
+    return cuilNumber;
+  }
+
+  public void setCuilNumber(String cuilNumber) {
+    this.cuilNumber = cuilNumber;
   }
 
   public DocumentInformation dateOfBirth(DocumentDate dateOfBirth) {
@@ -646,6 +667,7 @@ public class DocumentInformation {
         Objects.equals(this.addressConfidence, documentInformation.addressConfidence) &&
         Objects.equals(this.code1, documentInformation.code1) &&
         Objects.equals(this.code2, documentInformation.code2) &&
+        Objects.equals(this.cuilNumber, documentInformation.cuilNumber) &&
         Objects.equals(this.dateOfBirth, documentInformation.dateOfBirth) &&
         Objects.equals(this.documentNumber, documentInformation.documentNumber) &&
         Objects.equals(this.documentType, documentInformation.documentType) &&
@@ -669,7 +691,7 @@ public class DocumentInformation {
 
   @Override
   public int hashCode() {
-    return Objects.hash(address, addressConfidence, code1, code2, dateOfBirth, documentNumber, documentType, documentVersion, expirationDate, face, fingerPrint, givenNames, issuingCountry, issuingDate, nationality, order, sequence, sex, surname, validComposite, validDateOfBirth, validDocumentNumber, validExpirationDate);
+    return Objects.hash(address, addressConfidence, code1, code2, cuilNumber, dateOfBirth, documentNumber, documentType, documentVersion, expirationDate, face, fingerPrint, givenNames, issuingCountry, issuingDate, nationality, order, sequence, sex, surname, validComposite, validDateOfBirth, validDocumentNumber, validExpirationDate);
   }
 
 
@@ -682,6 +704,7 @@ public class DocumentInformation {
     sb.append("    addressConfidence: ").append(toIndentedString(addressConfidence)).append("\n");
     sb.append("    code1: ").append(toIndentedString(code1)).append("\n");
     sb.append("    code2: ").append(toIndentedString(code2)).append("\n");
+    sb.append("    cuilNumber: ").append(toIndentedString(cuilNumber)).append("\n");
     sb.append("    dateOfBirth: ").append(toIndentedString(dateOfBirth)).append("\n");
     sb.append("    documentNumber: ").append(toIndentedString(documentNumber)).append("\n");
     sb.append("    documentType: ").append(toIndentedString(documentType)).append("\n");

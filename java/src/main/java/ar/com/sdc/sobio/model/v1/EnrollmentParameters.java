@@ -25,7 +25,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * EnrollmentParameters
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-03-29T11:50:58.997-03:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-08-01T15:17:54.527-03:00")
 public class EnrollmentParameters {
   @JsonProperty("conditions")
   private Conditions conditions = null;

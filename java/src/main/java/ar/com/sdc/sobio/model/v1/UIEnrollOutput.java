@@ -23,7 +23,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * UIEnrollOutput
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-03-29T11:50:58.997-03:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-08-01T15:17:54.527-03:00")
 public class UIEnrollOutput {
   @JsonProperty("duplicatedSubjectId")
   private String duplicatedSubjectId = null;
@@ -35,15 +35,15 @@ public class UIEnrollOutput {
    * Gets or Sets status
    */
   public enum StatusEnum {
-    SUCCESS("SUCCESS"),
-    
-    DUPLICATED_TEMPLATE("DUPLICATED_TEMPLATE"),
+    BAD_TEMPLATE("BAD_TEMPLATE"),
     
     DUPLICATED_SUBJECT_ID("DUPLICATED_SUBJECT_ID"),
     
-    BAD_TEMPLATE("BAD_TEMPLATE"),
+    DUPLICATED_TEMPLATE("DUPLICATED_TEMPLATE"),
     
-    INTRATEMPLATE_FACE_MISMATCH("INTRATEMPLATE_FACE_MISMATCH");
+    INTRATEMPLATE_FACE_MISMATCH("INTRATEMPLATE_FACE_MISMATCH"),
+    
+    SUCCESS("SUCCESS");
 
     private String value;
 

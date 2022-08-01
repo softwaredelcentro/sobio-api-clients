@@ -1,6 +1,6 @@
 # DatabaseApi
 
-All URIs are relative to *https://sobio*
+All URIs are relative to *https://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -22,9 +22,19 @@ Deletes an enrolled subject from biometric engine
 ### Example
 ```java
 // Import classes:
+//import ar.com.sdc.sobio.client.v1.ApiClient;
 //import ar.com.sdc.sobio.client.v1.ApiException;
+//import ar.com.sdc.sobio.client.v1.Configuration;
+//import ar.com.sdc.sobio.client.v1.auth.*;
 //import ar.com.sdc.sobio.api.v1.DatabaseApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Token
+ApiKeyAuth Token = (ApiKeyAuth) defaultClient.getAuthentication("Token");
+Token.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Token.setApiKeyPrefix("Token");
 
 DatabaseApi apiInstance = new DatabaseApi();
 DeleteInput input = new DeleteInput(); // DeleteInput | input
@@ -49,7 +59,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Token](../README.md#Token)
 
 ### HTTP request headers
 
@@ -65,9 +75,19 @@ Download zipped subject biometric data for supplied subject id
 ### Example
 ```java
 // Import classes:
+//import ar.com.sdc.sobio.client.v1.ApiClient;
 //import ar.com.sdc.sobio.client.v1.ApiException;
+//import ar.com.sdc.sobio.client.v1.Configuration;
+//import ar.com.sdc.sobio.client.v1.auth.*;
 //import ar.com.sdc.sobio.api.v1.DatabaseApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Token
+ApiKeyAuth Token = (ApiKeyAuth) defaultClient.getAuthentication("Token");
+Token.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Token.setApiKeyPrefix("Token");
 
 DatabaseApi apiInstance = new DatabaseApi();
 String subjectId = "subjectId_example"; // String | subjectId
@@ -92,7 +112,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Token](../README.md#Token)
 
 ### HTTP request headers
 
@@ -108,9 +128,19 @@ Performs a biometric enrollment supplied biometric data which is associated with
 ### Example
 ```java
 // Import classes:
+//import ar.com.sdc.sobio.client.v1.ApiClient;
 //import ar.com.sdc.sobio.client.v1.ApiException;
+//import ar.com.sdc.sobio.client.v1.Configuration;
+//import ar.com.sdc.sobio.client.v1.auth.*;
 //import ar.com.sdc.sobio.api.v1.DatabaseApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Token
+ApiKeyAuth Token = (ApiKeyAuth) defaultClient.getAuthentication("Token");
+Token.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Token.setApiKeyPrefix("Token");
 
 DatabaseApi apiInstance = new DatabaseApi();
 EnrollInput input = new EnrollInput(); // EnrollInput | input
@@ -135,7 +165,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Token](../README.md#Token)
 
 ### HTTP request headers
 
@@ -151,9 +181,19 @@ List enrolled Subject ID&#39;s
 ### Example
 ```java
 // Import classes:
+//import ar.com.sdc.sobio.client.v1.ApiClient;
 //import ar.com.sdc.sobio.client.v1.ApiException;
+//import ar.com.sdc.sobio.client.v1.Configuration;
+//import ar.com.sdc.sobio.client.v1.auth.*;
 //import ar.com.sdc.sobio.api.v1.DatabaseApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Token
+ApiKeyAuth Token = (ApiKeyAuth) defaultClient.getAuthentication("Token");
+Token.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Token.setApiKeyPrefix("Token");
 
 DatabaseApi apiInstance = new DatabaseApi();
 ListInput input = new ListInput(); // ListInput | input
@@ -178,7 +218,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Token](../README.md#Token)
 
 ### HTTP request headers
 
@@ -194,9 +234,19 @@ Obtain biometric enrolled data from supplied subject id
 ### Example
 ```java
 // Import classes:
+//import ar.com.sdc.sobio.client.v1.ApiClient;
 //import ar.com.sdc.sobio.client.v1.ApiException;
+//import ar.com.sdc.sobio.client.v1.Configuration;
+//import ar.com.sdc.sobio.client.v1.auth.*;
 //import ar.com.sdc.sobio.api.v1.DatabaseApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Token
+ApiKeyAuth Token = (ApiKeyAuth) defaultClient.getAuthentication("Token");
+Token.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Token.setApiKeyPrefix("Token");
 
 DatabaseApi apiInstance = new DatabaseApi();
 ObtainSubjectBiometricData input = new ObtainSubjectBiometricData(); // ObtainSubjectBiometricData | input
@@ -221,7 +271,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Token](../README.md#Token)
 
 ### HTTP request headers
 
@@ -237,9 +287,19 @@ Obtain information of supplied subject id
 ### Example
 ```java
 // Import classes:
+//import ar.com.sdc.sobio.client.v1.ApiClient;
 //import ar.com.sdc.sobio.client.v1.ApiException;
+//import ar.com.sdc.sobio.client.v1.Configuration;
+//import ar.com.sdc.sobio.client.v1.auth.*;
 //import ar.com.sdc.sobio.api.v1.DatabaseApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Token
+ApiKeyAuth Token = (ApiKeyAuth) defaultClient.getAuthentication("Token");
+Token.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Token.setApiKeyPrefix("Token");
 
 DatabaseApi apiInstance = new DatabaseApi();
 ObtainSubjectInfo input = new ObtainSubjectInfo(); // ObtainSubjectInfo | input
@@ -264,7 +324,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Token](../README.md#Token)
 
 ### HTTP request headers
 
@@ -280,9 +340,19 @@ Updates biometric data of an already enrolled subject
 ### Example
 ```java
 // Import classes:
+//import ar.com.sdc.sobio.client.v1.ApiClient;
 //import ar.com.sdc.sobio.client.v1.ApiException;
+//import ar.com.sdc.sobio.client.v1.Configuration;
+//import ar.com.sdc.sobio.client.v1.auth.*;
 //import ar.com.sdc.sobio.api.v1.DatabaseApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Token
+ApiKeyAuth Token = (ApiKeyAuth) defaultClient.getAuthentication("Token");
+Token.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Token.setApiKeyPrefix("Token");
 
 DatabaseApi apiInstance = new DatabaseApi();
 UpdateInput input = new UpdateInput(); // UpdateInput | input
@@ -307,7 +377,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Token](../README.md#Token)
 
 ### HTTP request headers
 

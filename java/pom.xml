@@ -6,7 +6,7 @@
 	<artifactId>sobio-api-client</artifactId>
 	<packaging>jar</packaging>
 	<name>sobio-api-client</name>
-	<version>20220329.726e704</version>	                  
+	<version>20220329.0569fb1</version>	                  
 	<distributionManagement>
 		<repository>
 			<id>releases</id>
@@ -34,7 +34,7 @@
 									<goal>generate</goal>
 								</goals>
 								<configuration>
-									<inputSpec>http://127.0.0.1:8081/v2/api-docs</inputSpec>
+									<inputSpec>http://127.0.0.1:8080/v2/api-docs</inputSpec>
 									<language>java</language>
 									<output>${project.basedir}</output>
 									<apiPackage>ar.com.sdc.sobio.api.v1</apiPackage>

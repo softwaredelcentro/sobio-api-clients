@@ -23,7 +23,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * UIVerifyOutput
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-03-29T11:50:58.997-03:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-08-01T15:17:54.527-03:00")
 public class UIVerifyOutput {
   @JsonProperty("confidence")
   private Integer confidence = null;
@@ -39,7 +39,15 @@ public class UIVerifyOutput {
     
     CHECK_CONFIDENCE("CHECK_CONFIDENCE"),
     
-    INTRATEMPLATE_FACE_MISMATCH("INTRATEMPLATE_FACE_MISMATCH");
+    INEXISTENT("INEXISTENT"),
+    
+    INTRATEMPLATE_FACE_MISMATCH("INTRATEMPLATE_FACE_MISMATCH"),
+    
+    MATCHING_NODE_UNAVAILABLE("MATCHING_NODE_UNAVAILABLE"),
+    
+    NOT_VERIFIED("NOT_VERIFIED"),
+    
+    WITHOUT_TEMPLATE("WITHOUT_TEMPLATE");
 
     private String value;
 

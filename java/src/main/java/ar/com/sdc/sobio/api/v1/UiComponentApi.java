@@ -9,6 +9,10 @@ import javax.ws.rs.core.GenericType;
 
 import ar.com.sdc.sobio.model.v1.UIEnrollInput;
 import ar.com.sdc.sobio.model.v1.UIEnrollOutput;
+import ar.com.sdc.sobio.model.v1.UIExtractDNIARInput;
+import ar.com.sdc.sobio.model.v1.UIExtractDNIAROutput;
+import ar.com.sdc.sobio.model.v1.UIExtractFaceFromImageInput;
+import ar.com.sdc.sobio.model.v1.UIExtractFaceFromImageResult;
 import ar.com.sdc.sobio.model.v1.UIVerifyInput;
 import ar.com.sdc.sobio.model.v1.UIVerifyOutput;
 import ar.com.sdc.sobio.model.v1.UIVerifyT2TInput;
@@ -19,7 +23,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-03-29T11:50:58.997-03:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-08-01T15:17:54.527-03:00")
 public class UiComponentApi {
   private ApiClient apiClient;
 
@@ -75,7 +79,7 @@ public class UiComponentApi {
     };
     final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
 
-    String[] localVarAuthNames = new String[] {  };
+    String[] localVarAuthNames = new String[] { "Token" };
 
     GenericType<UIEnrollOutput> localVarReturnType = new GenericType<UIEnrollOutput>() {};
     return apiClient.invokeAPI(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
@@ -116,9 +120,91 @@ public class UiComponentApi {
     };
     final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
 
-    String[] localVarAuthNames = new String[] {  };
+    String[] localVarAuthNames = new String[] { "Token" };
 
     GenericType<UIEnrollOutput> localVarReturnType = new GenericType<UIEnrollOutput>() {};
+    return apiClient.invokeAPI(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+      }
+  /**
+   * Extracts ARGENTINA ID Card document information
+   * 
+   * @param input input (required)
+   * @return UIExtractDNIAROutput
+   * @throws ApiException if fails to make API call
+   */
+  public UIExtractDNIAROutput extractDniArDocInfo1(UIExtractDNIARInput input) throws ApiException {
+    Object localVarPostBody = input;
+    
+    // verify the required parameter 'input' is set
+    if (input == null) {
+      throw new ApiException(400, "Missing the required parameter 'input' when calling extractDniArDocInfo1");
+    }
+    
+    // create path and map variables
+    String localVarPath = "/v1/ui/dni-ar-extraction";
+
+    // query params
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+
+    
+    
+    final String[] localVarAccepts = {
+      "application/json"
+    };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      "application/json"
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] { "Token" };
+
+    GenericType<UIExtractDNIAROutput> localVarReturnType = new GenericType<UIExtractDNIAROutput>() {};
+    return apiClient.invokeAPI(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+      }
+  /**
+   * Extracts face biometric data (template) from a supplied image
+   * 
+   * @param input input (required)
+   * @return UIExtractFaceFromImageResult
+   * @throws ApiException if fails to make API call
+   */
+  public UIExtractFaceFromImageResult extractFaceImage1(UIExtractFaceFromImageInput input) throws ApiException {
+    Object localVarPostBody = input;
+    
+    // verify the required parameter 'input' is set
+    if (input == null) {
+      throw new ApiException(400, "Missing the required parameter 'input' when calling extractFaceImage1");
+    }
+    
+    // create path and map variables
+    String localVarPath = "/v1/ui/extract-face-image";
+
+    // query params
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+
+    
+    
+    final String[] localVarAccepts = {
+      "application/json"
+    };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      "application/json"
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] { "Token" };
+
+    GenericType<UIExtractFaceFromImageResult> localVarReturnType = new GenericType<UIExtractFaceFromImageResult>() {};
     return apiClient.invokeAPI(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
       }
   /**
@@ -157,7 +243,7 @@ public class UiComponentApi {
     };
     final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
 
-    String[] localVarAuthNames = new String[] {  };
+    String[] localVarAuthNames = new String[] { "Token" };
 
     GenericType<UIVerifyOutput> localVarReturnType = new GenericType<UIVerifyOutput>() {};
     return apiClient.invokeAPI(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
@@ -198,7 +284,7 @@ public class UiComponentApi {
     };
     final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
 
-    String[] localVarAuthNames = new String[] {  };
+    String[] localVarAuthNames = new String[] { "Token" };
 
     GenericType<UIVerifyT2TOutput> localVarReturnType = new GenericType<UIVerifyT2TOutput>() {};
     return apiClient.invokeAPI(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);

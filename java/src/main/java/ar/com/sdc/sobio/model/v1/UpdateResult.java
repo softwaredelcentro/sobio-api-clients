@@ -23,7 +23,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * UpdateResult
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-03-29T11:50:58.997-03:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-08-01T15:17:54.527-03:00")
 public class UpdateResult {
   @JsonProperty("duplicatedSubjectId")
   private String duplicatedSubjectId = null;
@@ -35,19 +35,19 @@ public class UpdateResult {
    * Gets or Sets status
    */
   public enum StatusEnum {
-    UPDATE_OK("UPDATE_OK"),
-    
     DUPLICATED_FINGERPRINTS("DUPLICATED_FINGERPRINTS"),
     
     DUPLICATED_SUBJECT("DUPLICATED_SUBJECT"),
     
-    INEXISTENT("INEXISTENT"),
+    DUPLICATE_SEARCH_UNSUPPORTED("DUPLICATE_SEARCH_UNSUPPORTED"),
     
-    WITHOUT_TEMPLATE("WITHOUT_TEMPLATE"),
+    INEXISTENT("INEXISTENT"),
     
     MATCHING_NODE_UNAVAILABLE("MATCHING_NODE_UNAVAILABLE"),
     
-    DUPLICATE_SEARCH_UNSUPPORTED("DUPLICATE_SEARCH_UNSUPPORTED");
+    UPDATE_OK("UPDATE_OK"),
+    
+    WITHOUT_TEMPLATE("WITHOUT_TEMPLATE");
 
     private String value;
 

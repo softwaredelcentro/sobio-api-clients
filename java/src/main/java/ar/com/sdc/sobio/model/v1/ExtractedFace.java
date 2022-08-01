@@ -25,7 +25,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * ExtractedFace
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-03-29T11:50:58.997-03:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-08-01T15:17:54.527-03:00")
 public class ExtractedFace {
   @JsonProperty("face")
   private Face face = null;
@@ -37,11 +37,11 @@ public class ExtractedFace {
    * Gets or Sets status
    */
   public enum StatusEnum {
-    OK("OK"),
-    
     BAD_ILLUMINATION("BAD_ILLUMINATION"),
     
-    FACE_NOT_DETECTED("FACE_NOT_DETECTED");
+    FACE_NOT_DETECTED("FACE_NOT_DETECTED"),
+    
+    OK("OK");
 
     private String value;
 

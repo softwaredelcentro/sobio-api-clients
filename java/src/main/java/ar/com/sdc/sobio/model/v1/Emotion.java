@@ -23,166 +23,152 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * Emotion
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-03-29T11:50:58.997-03:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-08-01T15:17:54.527-03:00")
 public class Emotion {
   @JsonProperty("anger")
-  private Integer anger = null;
+  private byte[] anger = null;
 
   @JsonProperty("disgust")
-  private Integer disgust = null;
+  private byte[] disgust = null;
 
   @JsonProperty("fear")
-  private Integer fear = null;
+  private byte[] fear = null;
 
   @JsonProperty("happiness")
-  private Integer happiness = null;
+  private byte[] happiness = null;
 
   @JsonProperty("neutral")
-  private Integer neutral = null;
+  private byte[] neutral = null;
 
   @JsonProperty("sadness")
-  private Integer sadness = null;
+  private byte[] sadness = null;
 
   @JsonProperty("surprise")
-  private Integer surprise = null;
+  private byte[] surprise = null;
 
-  public Emotion anger(Integer anger) {
+  public Emotion anger(byte[] anger) {
     this.anger = anger;
     return this;
   }
 
    /**
    * Get anger
-   * minimum: -128
-   * maximum: 127
    * @return anger
   **/
   @ApiModelProperty(value = "")
-  public Integer getAnger() {
+  public byte[] getAnger() {
     return anger;
   }
 
-  public void setAnger(Integer anger) {
+  public void setAnger(byte[] anger) {
     this.anger = anger;
   }
 
-  public Emotion disgust(Integer disgust) {
+  public Emotion disgust(byte[] disgust) {
     this.disgust = disgust;
     return this;
   }
 
    /**
    * Get disgust
-   * minimum: -128
-   * maximum: 127
    * @return disgust
   **/
   @ApiModelProperty(value = "")
-  public Integer getDisgust() {
+  public byte[] getDisgust() {
     return disgust;
   }
 
-  public void setDisgust(Integer disgust) {
+  public void setDisgust(byte[] disgust) {
     this.disgust = disgust;
   }
 
-  public Emotion fear(Integer fear) {
+  public Emotion fear(byte[] fear) {
     this.fear = fear;
     return this;
   }
 
    /**
    * Get fear
-   * minimum: -128
-   * maximum: 127
    * @return fear
   **/
   @ApiModelProperty(value = "")
-  public Integer getFear() {
+  public byte[] getFear() {
     return fear;
   }
 
-  public void setFear(Integer fear) {
+  public void setFear(byte[] fear) {
     this.fear = fear;
   }
 
-  public Emotion happiness(Integer happiness) {
+  public Emotion happiness(byte[] happiness) {
     this.happiness = happiness;
     return this;
   }
 
    /**
    * Get happiness
-   * minimum: -128
-   * maximum: 127
    * @return happiness
   **/
   @ApiModelProperty(value = "")
-  public Integer getHappiness() {
+  public byte[] getHappiness() {
     return happiness;
   }
 
-  public void setHappiness(Integer happiness) {
+  public void setHappiness(byte[] happiness) {
     this.happiness = happiness;
   }
 
-  public Emotion neutral(Integer neutral) {
+  public Emotion neutral(byte[] neutral) {
     this.neutral = neutral;
     return this;
   }
 
    /**
    * Get neutral
-   * minimum: -128
-   * maximum: 127
    * @return neutral
   **/
   @ApiModelProperty(value = "")
-  public Integer getNeutral() {
+  public byte[] getNeutral() {
     return neutral;
   }
 
-  public void setNeutral(Integer neutral) {
+  public void setNeutral(byte[] neutral) {
     this.neutral = neutral;
   }
 
-  public Emotion sadness(Integer sadness) {
+  public Emotion sadness(byte[] sadness) {
     this.sadness = sadness;
     return this;
   }
 
    /**
    * Get sadness
-   * minimum: -128
-   * maximum: 127
    * @return sadness
   **/
   @ApiModelProperty(value = "")
-  public Integer getSadness() {
+  public byte[] getSadness() {
     return sadness;
   }
 
-  public void setSadness(Integer sadness) {
+  public void setSadness(byte[] sadness) {
     this.sadness = sadness;
   }
 
-  public Emotion surprise(Integer surprise) {
+  public Emotion surprise(byte[] surprise) {
     this.surprise = surprise;
     return this;
   }
 
    /**
    * Get surprise
-   * minimum: -128
-   * maximum: 127
    * @return surprise
   **/
   @ApiModelProperty(value = "")
-  public Integer getSurprise() {
+  public byte[] getSurprise() {
     return surprise;
   }
 
-  public void setSurprise(Integer surprise) {
+  public void setSurprise(byte[] surprise) {
     this.surprise = surprise;
   }
 

@@ -1,6 +1,6 @@
 # ExtractionApi
 
-All URIs are relative to *https://sobio*
+All URIs are relative to *https://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -23,9 +23,19 @@ Concats multiple audio-streams
 ### Example
 ```java
 // Import classes:
+//import ar.com.sdc.sobio.client.v1.ApiClient;
 //import ar.com.sdc.sobio.client.v1.ApiException;
+//import ar.com.sdc.sobio.client.v1.Configuration;
+//import ar.com.sdc.sobio.client.v1.auth.*;
 //import ar.com.sdc.sobio.api.v1.ExtractionApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Token
+ApiKeyAuth Token = (ApiKeyAuth) defaultClient.getAuthentication("Token");
+Token.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Token.setApiKeyPrefix("Token");
 
 ExtractionApi apiInstance = new ExtractionApi();
 ConcatAudioStreamsInput input = new ConcatAudioStreamsInput(); // ConcatAudioStreamsInput | input
@@ -50,7 +60,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Token](../README.md#Token)
 
 ### HTTP request headers
 
@@ -66,9 +76,19 @@ Convert Fingerprint in PNG to WSQ format
 ### Example
 ```java
 // Import classes:
+//import ar.com.sdc.sobio.client.v1.ApiClient;
 //import ar.com.sdc.sobio.client.v1.ApiException;
+//import ar.com.sdc.sobio.client.v1.Configuration;
+//import ar.com.sdc.sobio.client.v1.auth.*;
 //import ar.com.sdc.sobio.api.v1.ExtractionApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Token
+ApiKeyAuth Token = (ApiKeyAuth) defaultClient.getAuthentication("Token");
+Token.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Token.setApiKeyPrefix("Token");
 
 ExtractionApi apiInstance = new ExtractionApi();
 ConvertFingerprintImageInput input = new ConvertFingerprintImageInput(); // ConvertFingerprintImageInput | input
@@ -93,7 +113,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Token](../README.md#Token)
 
 ### HTTP request headers
 
@@ -109,9 +129,19 @@ Convert Fingerprint in WSQ to PNG format
 ### Example
 ```java
 // Import classes:
+//import ar.com.sdc.sobio.client.v1.ApiClient;
 //import ar.com.sdc.sobio.client.v1.ApiException;
+//import ar.com.sdc.sobio.client.v1.Configuration;
+//import ar.com.sdc.sobio.client.v1.auth.*;
 //import ar.com.sdc.sobio.api.v1.ExtractionApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Token
+ApiKeyAuth Token = (ApiKeyAuth) defaultClient.getAuthentication("Token");
+Token.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Token.setApiKeyPrefix("Token");
 
 ExtractionApi apiInstance = new ExtractionApi();
 ConvertFingerprintImageInput input = new ConvertFingerprintImageInput(); // ConvertFingerprintImageInput | input
@@ -136,7 +166,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Token](../README.md#Token)
 
 ### HTTP request headers
 
@@ -152,9 +182,19 @@ Extracts face biometric data (template) from a supplied image
 ### Example
 ```java
 // Import classes:
+//import ar.com.sdc.sobio.client.v1.ApiClient;
 //import ar.com.sdc.sobio.client.v1.ApiException;
+//import ar.com.sdc.sobio.client.v1.Configuration;
+//import ar.com.sdc.sobio.client.v1.auth.*;
 //import ar.com.sdc.sobio.api.v1.ExtractionApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Token
+ApiKeyAuth Token = (ApiKeyAuth) defaultClient.getAuthentication("Token");
+Token.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Token.setApiKeyPrefix("Token");
 
 ExtractionApi apiInstance = new ExtractionApi();
 ExtractFaceFromImageInput input = new ExtractFaceFromImageInput(); // ExtractFaceFromImageInput | input
@@ -179,7 +219,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Token](../README.md#Token)
 
 ### HTTP request headers
 
@@ -195,9 +235,19 @@ Extracts face biometric data (template) from a supplied video
 ### Example
 ```java
 // Import classes:
+//import ar.com.sdc.sobio.client.v1.ApiClient;
 //import ar.com.sdc.sobio.client.v1.ApiException;
+//import ar.com.sdc.sobio.client.v1.Configuration;
+//import ar.com.sdc.sobio.client.v1.auth.*;
 //import ar.com.sdc.sobio.api.v1.ExtractionApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Token
+ApiKeyAuth Token = (ApiKeyAuth) defaultClient.getAuthentication("Token");
+Token.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Token.setApiKeyPrefix("Token");
 
 ExtractionApi apiInstance = new ExtractionApi();
 ExtractFaceFromVideoInput input = new ExtractFaceFromVideoInput(); // ExtractFaceFromVideoInput | input
@@ -222,7 +272,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Token](../README.md#Token)
 
 ### HTTP request headers
 
@@ -238,9 +288,19 @@ Extracts finger biometric data (template) from a supplied image
 ### Example
 ```java
 // Import classes:
+//import ar.com.sdc.sobio.client.v1.ApiClient;
 //import ar.com.sdc.sobio.client.v1.ApiException;
+//import ar.com.sdc.sobio.client.v1.Configuration;
+//import ar.com.sdc.sobio.client.v1.auth.*;
 //import ar.com.sdc.sobio.api.v1.ExtractionApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Token
+ApiKeyAuth Token = (ApiKeyAuth) defaultClient.getAuthentication("Token");
+Token.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Token.setApiKeyPrefix("Token");
 
 ExtractionApi apiInstance = new ExtractionApi();
 ExtractFingerPrintFromImageInput input = new ExtractFingerPrintFromImageInput(); // ExtractFingerPrintFromImageInput | input
@@ -265,7 +325,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Token](../README.md#Token)
 
 ### HTTP request headers
 
@@ -281,9 +341,19 @@ Extracts text-dependent voice biometric data (template) from a supplied audio
 ### Example
 ```java
 // Import classes:
+//import ar.com.sdc.sobio.client.v1.ApiClient;
 //import ar.com.sdc.sobio.client.v1.ApiException;
+//import ar.com.sdc.sobio.client.v1.Configuration;
+//import ar.com.sdc.sobio.client.v1.auth.*;
 //import ar.com.sdc.sobio.api.v1.ExtractionApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Token
+ApiKeyAuth Token = (ApiKeyAuth) defaultClient.getAuthentication("Token");
+Token.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Token.setApiKeyPrefix("Token");
 
 ExtractionApi apiInstance = new ExtractionApi();
 ExtractTextDependentVoiceFromAudioInput input = new ExtractTextDependentVoiceFromAudioInput(); // ExtractTextDependentVoiceFromAudioInput | input
@@ -308,7 +378,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Token](../README.md#Token)
 
 ### HTTP request headers
 
@@ -324,9 +394,19 @@ Extracts text-independent voice biometric data (template) from a supplied audio
 ### Example
 ```java
 // Import classes:
+//import ar.com.sdc.sobio.client.v1.ApiClient;
 //import ar.com.sdc.sobio.client.v1.ApiException;
+//import ar.com.sdc.sobio.client.v1.Configuration;
+//import ar.com.sdc.sobio.client.v1.auth.*;
 //import ar.com.sdc.sobio.api.v1.ExtractionApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Token
+ApiKeyAuth Token = (ApiKeyAuth) defaultClient.getAuthentication("Token");
+Token.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Token.setApiKeyPrefix("Token");
 
 ExtractionApi apiInstance = new ExtractionApi();
 ExtractTextIndependentVoiceFromAudioInput input = new ExtractTextIndependentVoiceFromAudioInput(); // ExtractTextIndependentVoiceFromAudioInput | input
@@ -351,7 +431,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Token](../README.md#Token)
 
 ### HTTP request headers
 

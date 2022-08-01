@@ -23,10 +23,10 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * Point
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-03-29T11:50:58.997-03:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-08-01T15:17:54.527-03:00")
 public class Point {
   @JsonProperty("confidence")
-  private Integer confidence = null;
+  private byte[] confidence = null;
 
   @JsonProperty("num")
   private Integer num = null;
@@ -37,23 +37,21 @@ public class Point {
   @JsonProperty("y")
   private Integer y = null;
 
-  public Point confidence(Integer confidence) {
+  public Point confidence(byte[] confidence) {
     this.confidence = confidence;
     return this;
   }
 
    /**
    * Get confidence
-   * minimum: -128
-   * maximum: 127
    * @return confidence
   **/
   @ApiModelProperty(value = "")
-  public Integer getConfidence() {
+  public byte[] getConfidence() {
     return confidence;
   }
 
-  public void setConfidence(Integer confidence) {
+  public void setConfidence(byte[] confidence) {
     this.confidence = confidence;
   }
 

@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **evaluateNFIQ** | **Boolean** |  |  [optional]
 **imageSource** | [**ImageSourceEnum**](#ImageSourceEnum) |  |  [optional]
 **maxRotation** | **Float** |  |  [optional]
-**minQuality** | **Integer** |  |  [optional]
+**minQuality** | **byte[]** |  |  [optional]
 **position** | [**PositionEnum**](#PositionEnum) |  |  [optional]
 **useCache** | **Boolean** |  |  [optional]
 **useOnlyAnsi378** | **Boolean** |  |  [optional]
@@ -27,16 +27,16 @@ UNKNOWN | &quot;UNKNOWN&quot;
 ## Enum: PositionEnum
 Name | Value
 ---- | -----
-RIGHT_THUMB | &quot;RIGHT_THUMB&quot;
-LEFT_THUMB | &quot;LEFT_THUMB&quot;
-RIGHT_INDEX_FINGER | &quot;RIGHT_INDEX_FINGER&quot;
 LEFT_INDEX_FINGER | &quot;LEFT_INDEX_FINGER&quot;
-RIGHT_MIDDLE_FINGER | &quot;RIGHT_MIDDLE_FINGER&quot;
+LEFT_LITTLE_FINGER | &quot;LEFT_LITTLE_FINGER&quot;
 LEFT_MIDDLE_FINGER | &quot;LEFT_MIDDLE_FINGER&quot;
 LEFT_RING_FINGER | &quot;LEFT_RING_FINGER&quot;
-RIGHT_RING_FINGER | &quot;RIGHT_RING_FINGER&quot;
-LEFT_LITTLE_FINGER | &quot;LEFT_LITTLE_FINGER&quot;
+LEFT_THUMB | &quot;LEFT_THUMB&quot;
+RIGHT_INDEX_FINGER | &quot;RIGHT_INDEX_FINGER&quot;
 RIGHT_LITTLE_FINGER | &quot;RIGHT_LITTLE_FINGER&quot;
+RIGHT_MIDDLE_FINGER | &quot;RIGHT_MIDDLE_FINGER&quot;
+RIGHT_RING_FINGER | &quot;RIGHT_RING_FINGER&quot;
+RIGHT_THUMB | &quot;RIGHT_THUMB&quot;
 UNKNOWN | &quot;UNKNOWN&quot;
 
 

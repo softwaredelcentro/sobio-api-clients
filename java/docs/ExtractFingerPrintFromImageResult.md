@@ -15,9 +15,9 @@ Name | Type | Description | Notes
 ## Enum: StatusEnum
 Name | Value
 ---- | -----
-OK | &quot;OK&quot;
-LOW_QUALITY | &quot;LOW_QUALITY&quot;
 INVALID_IMAGE_RESOLUTION | &quot;INVALID_IMAGE_RESOLUTION&quot;
+LOW_QUALITY | &quot;LOW_QUALITY&quot;
+OK | &quot;OK&quot;
 
 
 

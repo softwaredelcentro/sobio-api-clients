@@ -23,22 +23,22 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * Traits
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-03-29T11:50:58.997-03:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-08-01T15:17:54.527-03:00")
 public class Traits {
   @JsonProperty("ambosOjosCerrados")
   private Boolean ambosOjosCerrados = null;
 
   @JsonProperty("beard")
-  private Integer beard = null;
+  private byte[] beard = null;
 
   @JsonProperty("darkGlasses")
-  private Integer darkGlasses = null;
+  private byte[] darkGlasses = null;
 
   @JsonProperty("glasses")
-  private Integer glasses = null;
+  private byte[] glasses = null;
 
   @JsonProperty("hat")
-  private Integer hat = null;
+  private byte[] hat = null;
 
   @JsonProperty("leftEyeClosed")
   private Boolean leftEyeClosed = null;
@@ -59,10 +59,10 @@ public class Traits {
   private Boolean lookingUpward = null;
 
   @JsonProperty("mustache")
-  private Integer mustache = null;
+  private byte[] mustache = null;
 
   @JsonProperty("openMouth")
-  private Integer openMouth = null;
+  private byte[] openMouth = null;
 
   @JsonProperty("rightEyeClosed")
   private Boolean rightEyeClosed = null;
@@ -85,83 +85,75 @@ public class Traits {
     this.ambosOjosCerrados = ambosOjosCerrados;
   }
 
-  public Traits beard(Integer beard) {
+  public Traits beard(byte[] beard) {
     this.beard = beard;
     return this;
   }
 
    /**
    * Get beard
-   * minimum: -128
-   * maximum: 127
    * @return beard
   **/
   @ApiModelProperty(value = "")
-  public Integer getBeard() {
+  public byte[] getBeard() {
     return beard;
   }
 
-  public void setBeard(Integer beard) {
+  public void setBeard(byte[] beard) {
     this.beard = beard;
   }
 
-  public Traits darkGlasses(Integer darkGlasses) {
+  public Traits darkGlasses(byte[] darkGlasses) {
     this.darkGlasses = darkGlasses;
     return this;
   }
 
    /**
    * Get darkGlasses
-   * minimum: -128
-   * maximum: 127
    * @return darkGlasses
   **/
   @ApiModelProperty(value = "")
-  public Integer getDarkGlasses() {
+  public byte[] getDarkGlasses() {
     return darkGlasses;
   }
 
-  public void setDarkGlasses(Integer darkGlasses) {
+  public void setDarkGlasses(byte[] darkGlasses) {
     this.darkGlasses = darkGlasses;
   }
 
-  public Traits glasses(Integer glasses) {
+  public Traits glasses(byte[] glasses) {
     this.glasses = glasses;
     return this;
   }
 
    /**
    * Get glasses
-   * minimum: -128
-   * maximum: 127
    * @return glasses
   **/
   @ApiModelProperty(value = "")
-  public Integer getGlasses() {
+  public byte[] getGlasses() {
     return glasses;
   }
 
-  public void setGlasses(Integer glasses) {
+  public void setGlasses(byte[] glasses) {
     this.glasses = glasses;
   }
 
-  public Traits hat(Integer hat) {
+  public Traits hat(byte[] hat) {
     this.hat = hat;
     return this;
   }
 
    /**
    * Get hat
-   * minimum: -128
-   * maximum: 127
    * @return hat
   **/
   @ApiModelProperty(value = "")
-  public Integer getHat() {
+  public byte[] getHat() {
     return hat;
   }
 
-  public void setHat(Integer hat) {
+  public void setHat(byte[] hat) {
     this.hat = hat;
   }
 
@@ -273,43 +265,39 @@ public class Traits {
     this.lookingUpward = lookingUpward;
   }
 
-  public Traits mustache(Integer mustache) {
+  public Traits mustache(byte[] mustache) {
     this.mustache = mustache;
     return this;
   }
 
    /**
    * Get mustache
-   * minimum: -128
-   * maximum: 127
    * @return mustache
   **/
   @ApiModelProperty(value = "")
-  public Integer getMustache() {
+  public byte[] getMustache() {
     return mustache;
   }
 
-  public void setMustache(Integer mustache) {
+  public void setMustache(byte[] mustache) {
     this.mustache = mustache;
   }
 
-  public Traits openMouth(Integer openMouth) {
+  public Traits openMouth(byte[] openMouth) {
     this.openMouth = openMouth;
     return this;
   }
 
    /**
    * Get openMouth
-   * minimum: -128
-   * maximum: 127
    * @return openMouth
   **/
   @ApiModelProperty(value = "")
-  public Integer getOpenMouth() {
+  public byte[] getOpenMouth() {
     return openMouth;
   }
 
-  public void setOpenMouth(Integer openMouth) {
+  public void setOpenMouth(byte[] openMouth) {
     this.openMouth = openMouth;
   }
 

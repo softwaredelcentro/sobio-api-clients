@@ -13,9 +13,9 @@ Name | Type | Description | Notes
 ## Enum: StatusEnum
 Name | Value
 ---- | -----
-OK | &quot;OK&quot;
 BAD_ILLUMINATION | &quot;BAD_ILLUMINATION&quot;
 FACE_NOT_DETECTED | &quot;FACE_NOT_DETECTED&quot;
+OK | &quot;OK&quot;
 
 
 

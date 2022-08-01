@@ -1,6 +1,6 @@
 # DocumentExtractionApi
 
-All URIs are relative to *https://sobio*
+All URIs are relative to *https://127.0.0.1:8080*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -16,9 +16,19 @@ Extracts ARGENTINA ID Card document information
 ### Example
 ```java
 // Import classes:
+//import ar.com.sdc.sobio.client.v1.ApiClient;
 //import ar.com.sdc.sobio.client.v1.ApiException;
+//import ar.com.sdc.sobio.client.v1.Configuration;
+//import ar.com.sdc.sobio.client.v1.auth.*;
 //import ar.com.sdc.sobio.api.v1.DocumentExtractionApi;
 
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Token
+ApiKeyAuth Token = (ApiKeyAuth) defaultClient.getAuthentication("Token");
+Token.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Token.setApiKeyPrefix("Token");
 
 DocumentExtractionApi apiInstance = new DocumentExtractionApi();
 ExtractDNIARInput input = new ExtractDNIARInput(); // ExtractDNIARInput | input
@@ -43,7 +53,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[Token](../README.md#Token)
 
 ### HTTP request headers
 

@@ -25,7 +25,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * ExtractFingerPrintFromImageResult
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-03-29T11:50:58.997-03:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-08-01T15:17:54.527-03:00")
 public class ExtractFingerPrintFromImageResult {
   @JsonProperty("exception")
   private Boolean exception = null;
@@ -40,11 +40,11 @@ public class ExtractFingerPrintFromImageResult {
    * Gets or Sets status
    */
   public enum StatusEnum {
-    OK("OK"),
+    INVALID_IMAGE_RESOLUTION("INVALID_IMAGE_RESOLUTION"),
     
     LOW_QUALITY("LOW_QUALITY"),
     
-    INVALID_IMAGE_RESOLUTION("INVALID_IMAGE_RESOLUTION");
+    OK("OK");
 
     private String value;
 

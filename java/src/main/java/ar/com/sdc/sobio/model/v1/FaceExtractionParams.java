@@ -24,7 +24,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * FaceExtractionParams
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-03-29T11:50:58.997-03:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-08-01T15:17:54.527-03:00")
 public class FaceExtractionParams {
   @JsonProperty("blinkSensibility")
   private Double blinkSensibility = null;
@@ -63,13 +63,13 @@ public class FaceExtractionParams {
   private Integer minCLAHE = null;
 
   @JsonProperty("minConfidence")
-  private Integer minConfidence = null;
+  private byte[] minConfidence = null;
 
   @JsonProperty("minIOD")
   private Integer minIOD = null;
 
   @JsonProperty("minQuality")
-  private Integer minQuality = null;
+  private byte[] minQuality = null;
 
   @JsonProperty("scaleH")
   private Integer scaleH = null;
@@ -302,23 +302,21 @@ public class FaceExtractionParams {
     this.minCLAHE = minCLAHE;
   }
 
-  public FaceExtractionParams minConfidence(Integer minConfidence) {
+  public FaceExtractionParams minConfidence(byte[] minConfidence) {
     this.minConfidence = minConfidence;
     return this;
   }
 
    /**
    * Get minConfidence
-   * minimum: -128
-   * maximum: 127
    * @return minConfidence
   **/
   @ApiModelProperty(value = "")
-  public Integer getMinConfidence() {
+  public byte[] getMinConfidence() {
     return minConfidence;
   }
 
-  public void setMinConfidence(Integer minConfidence) {
+  public void setMinConfidence(byte[] minConfidence) {
     this.minConfidence = minConfidence;
   }
 
@@ -340,23 +338,21 @@ public class FaceExtractionParams {
     this.minIOD = minIOD;
   }
 
-  public FaceExtractionParams minQuality(Integer minQuality) {
+  public FaceExtractionParams minQuality(byte[] minQuality) {
     this.minQuality = minQuality;
     return this;
   }
 
    /**
    * Get minQuality
-   * minimum: -128
-   * maximum: 127
    * @return minQuality
   **/
   @ApiModelProperty(value = "")
-  public Integer getMinQuality() {
+  public byte[] getMinQuality() {
     return minQuality;
   }
 
-  public void setMinQuality(Integer minQuality) {
+  public void setMinQuality(byte[] minQuality) {
     this.minQuality = minQuality;
   }
 

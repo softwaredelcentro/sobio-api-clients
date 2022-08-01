@@ -19,37 +19,35 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * CompositeFingerPrint
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-03-29T11:50:58.997-03:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-08-01T15:17:54.527-03:00")
 public class CompositeFingerPrint {
   /**
    * Gets or Sets dedo
    */
   public enum DedoEnum {
-    RIGHT_THUMB("RIGHT_THUMB"),
-    
-    LEFT_THUMB("LEFT_THUMB"),
-    
-    RIGHT_INDEX_FINGER("RIGHT_INDEX_FINGER"),
-    
     LEFT_INDEX_FINGER("LEFT_INDEX_FINGER"),
     
-    RIGHT_MIDDLE_FINGER("RIGHT_MIDDLE_FINGER"),
+    LEFT_LITTLE_FINGER("LEFT_LITTLE_FINGER"),
     
     LEFT_MIDDLE_FINGER("LEFT_MIDDLE_FINGER"),
     
     LEFT_RING_FINGER("LEFT_RING_FINGER"),
     
-    RIGHT_RING_FINGER("RIGHT_RING_FINGER"),
+    LEFT_THUMB("LEFT_THUMB"),
     
-    LEFT_LITTLE_FINGER("LEFT_LITTLE_FINGER"),
+    RIGHT_INDEX_FINGER("RIGHT_INDEX_FINGER"),
     
     RIGHT_LITTLE_FINGER("RIGHT_LITTLE_FINGER"),
+    
+    RIGHT_MIDDLE_FINGER("RIGHT_MIDDLE_FINGER"),
+    
+    RIGHT_RING_FINGER("RIGHT_RING_FINGER"),
+    
+    RIGHT_THUMB("RIGHT_THUMB"),
     
     UNKNOWN("UNKNOWN");
 
@@ -84,7 +82,7 @@ public class CompositeFingerPrint {
   private DedoEnum dedo = null;
 
   @JsonProperty("images")
-  private List<List<Integer>> images = null;
+  private byte[] images = null;
 
   /**
    * Gets or Sets source
@@ -147,16 +145,8 @@ public class CompositeFingerPrint {
     this.dedo = dedo;
   }
 
-  public CompositeFingerPrint images(List<List<Integer>> images) {
+  public CompositeFingerPrint images(byte[] images) {
     this.images = images;
-    return this;
-  }
-
-  public CompositeFingerPrint addImagesItem(List<Integer> imagesItem) {
-    if (this.images == null) {
-      this.images = new ArrayList<List<Integer>>();
-    }
-    this.images.add(imagesItem);
     return this;
   }
 
@@ -165,11 +155,11 @@ public class CompositeFingerPrint {
    * @return images
   **/
   @ApiModelProperty(value = "")
-  public List<List<Integer>> getImages() {
+  public byte[] getImages() {
     return images;
   }
 
-  public void setImages(List<List<Integer>> images) {
+  public void setImages(byte[] images) {
     this.images = images;
   }
 

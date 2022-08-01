@@ -20,24 +20,24 @@ Name | Type | Description | Notes
 ## Enum: StatusEnum
 Name | Value
 ---- | -----
-OK | &quot;OK&quot;
+BAD_IMAGE_RESOLUTION | &quot;BAD_IMAGE_RESOLUTION&quot;
 EXCEPTION | &quot;EXCEPTION&quot;
-SPOOF | &quot;SPOOF&quot;
-FRONT_FACE_NOT_FOUND | &quot;FRONT_FACE_NOT_FOUND&quot;
 FRONT_FACE_BAD_ILLUMINATION | &quot;FRONT_FACE_BAD_ILLUMINATION&quot;
+FRONT_FACE_NOT_FOUND | &quot;FRONT_FACE_NOT_FOUND&quot;
 NEITHER_MRZ_NOR_PDF417_DETECTED | &quot;NEITHER_MRZ_NOR_PDF417_DETECTED&quot;
 NOT_ARGENTINA_ID | &quot;NOT_ARGENTINA_ID&quot;
-BAD_IMAGE_RESOLUTION | &quot;BAD_IMAGE_RESOLUTION&quot;
+OK | &quot;OK&quot;
+SPOOF | &quot;SPOOF&quot;
 
 
 <a name="SuggestedActionEnum"></a>
 ## Enum: SuggestedActionEnum
 Name | Value
 ---- | -----
+NONE | &quot;NONE&quot;
+RESCAN_BACK | &quot;RESCAN_BACK&quot;
 RESCAN_BOTH_SIDES | &quot;RESCAN_BOTH_SIDES&quot;
 RESCAN_FRONT | &quot;RESCAN_FRONT&quot;
-RESCAN_BACK | &quot;RESCAN_BACK&quot;
-NONE | &quot;NONE&quot;
 RETRY | &quot;RETRY&quot;
 
 

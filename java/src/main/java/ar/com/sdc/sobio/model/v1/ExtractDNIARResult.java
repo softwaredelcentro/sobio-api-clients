@@ -27,7 +27,7 @@ import java.util.List;
 /**
  * ExtractDNIARResult
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-03-29T11:50:58.997-03:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-08-01T15:17:54.527-03:00")
 public class ExtractDNIARResult {
   @JsonProperty("additionalInfo")
   private String additionalInfo = null;
@@ -54,21 +54,21 @@ public class ExtractDNIARResult {
    * Gets or Sets status
    */
   public enum StatusEnum {
-    OK("OK"),
+    BAD_IMAGE_RESOLUTION("BAD_IMAGE_RESOLUTION"),
     
     EXCEPTION("EXCEPTION"),
     
-    SPOOF("SPOOF"),
+    FRONT_FACE_BAD_ILLUMINATION("FRONT_FACE_BAD_ILLUMINATION"),
     
     FRONT_FACE_NOT_FOUND("FRONT_FACE_NOT_FOUND"),
-    
-    FRONT_FACE_BAD_ILLUMINATION("FRONT_FACE_BAD_ILLUMINATION"),
     
     NEITHER_MRZ_NOR_PDF417_DETECTED("NEITHER_MRZ_NOR_PDF417_DETECTED"),
     
     NOT_ARGENTINA_ID("NOT_ARGENTINA_ID"),
     
-    BAD_IMAGE_RESOLUTION("BAD_IMAGE_RESOLUTION");
+    OK("OK"),
+    
+    SPOOF("SPOOF");
 
     private String value;
 
@@ -104,13 +104,13 @@ public class ExtractDNIARResult {
    * Gets or Sets suggestedAction
    */
   public enum SuggestedActionEnum {
-    RESCAN_BOTH_SIDES("RESCAN_BOTH_SIDES"),
-    
-    RESCAN_FRONT("RESCAN_FRONT"),
+    NONE("NONE"),
     
     RESCAN_BACK("RESCAN_BACK"),
     
-    NONE("NONE"),
+    RESCAN_BOTH_SIDES("RESCAN_BOTH_SIDES"),
+    
+    RESCAN_FRONT("RESCAN_FRONT"),
     
     RETRY("RETRY");
 

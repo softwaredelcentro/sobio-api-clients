@@ -15,24 +15,23 @@ package ar.com.sdc.sobio.model.v1;
 
 import java.util.Objects;
 import ar.com.sdc.sobio.model.v1.InputStream;
-import ar.com.sdc.sobio.model.v1.URI;
-import ar.com.sdc.sobio.model.v1.URL;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.io.File;
 
 /**
  * Resource
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-03-29T11:50:58.997-03:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-08-01T15:17:54.527-03:00")
 public class Resource {
   @JsonProperty("description")
   private String description = null;
 
   @JsonProperty("file")
-  private java.io.File file = null;
+  private File file = null;
 
   @JsonProperty("filename")
   private String filename = null;
@@ -47,10 +46,10 @@ public class Resource {
   private Boolean readable = null;
 
   @JsonProperty("uri")
-  private URI uri = null;
+  private String uri = null;
 
   @JsonProperty("url")
-  private URL url = null;
+  private String url = null;
 
   public Resource description(String description) {
     this.description = description;
@@ -70,7 +69,7 @@ public class Resource {
     this.description = description;
   }
 
-  public Resource file(java.io.File file) {
+  public Resource file(File file) {
     this.file = file;
     return this;
   }
@@ -80,11 +79,11 @@ public class Resource {
    * @return file
   **/
   @ApiModelProperty(value = "")
-  public java.io.File getFile() {
+  public File getFile() {
     return file;
   }
 
-  public void setFile(java.io.File file) {
+  public void setFile(File file) {
     this.file = file;
   }
 
@@ -160,7 +159,7 @@ public class Resource {
     this.readable = readable;
   }
 
-  public Resource uri(URI uri) {
+  public Resource uri(String uri) {
     this.uri = uri;
     return this;
   }
@@ -170,15 +169,15 @@ public class Resource {
    * @return uri
   **/
   @ApiModelProperty(value = "")
-  public URI getUri() {
+  public String getUri() {
     return uri;
   }
 
-  public void setUri(URI uri) {
+  public void setUri(String uri) {
     this.uri = uri;
   }
 
-  public Resource url(URL url) {
+  public Resource url(String url) {
     this.url = url;
     return this;
   }
@@ -188,11 +187,11 @@ public class Resource {
    * @return url
   **/
   @ApiModelProperty(value = "")
-  public URL getUrl() {
+  public String getUrl() {
     return url;
   }
 
-  public void setUrl(URL url) {
+  public void setUrl(String url) {
     this.url = url;
   }
 

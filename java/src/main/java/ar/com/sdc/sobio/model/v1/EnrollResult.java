@@ -23,7 +23,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * EnrollResult
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-03-29T11:50:58.997-03:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-08-01T15:17:54.527-03:00")
 public class EnrollResult {
   @JsonProperty("duplicatedSubjectId")
   private String duplicatedSubjectId = null;
@@ -35,19 +35,19 @@ public class EnrollResult {
    * Gets or Sets status
    */
   public enum StatusEnum {
-    ENROLL_OK("ENROLL_OK"),
-    
     DUPLICATED_FINGERPRINTS("DUPLICATED_FINGERPRINTS"),
     
     DUPLICATED_SUBJECT("DUPLICATED_SUBJECT"),
     
-    SUBJECT_ID_ALREADY_ENROLLED("SUBJECT_ID_ALREADY_ENROLLED"),
+    DUPLICATE_SEARCH_UNSUPPORTED("DUPLICATE_SEARCH_UNSUPPORTED"),
     
-    WITHOUT_TEMPLATE("WITHOUT_TEMPLATE"),
+    ENROLL_OK("ENROLL_OK"),
     
     MATCHING_NODE_UNAVAILABLE("MATCHING_NODE_UNAVAILABLE"),
     
-    DUPLICATE_SEARCH_UNSUPPORTED("DUPLICATE_SEARCH_UNSUPPORTED");
+    SUBJECT_ID_ALREADY_ENROLLED("SUBJECT_ID_ALREADY_ENROLLED"),
+    
+    WITHOUT_TEMPLATE("WITHOUT_TEMPLATE");
 
     private String value;
 

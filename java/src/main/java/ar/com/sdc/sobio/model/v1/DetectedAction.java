@@ -26,7 +26,7 @@ import java.util.List;
 /**
  * DetectedAction
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-03-29T11:50:58.997-03:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-08-01T15:17:54.527-03:00")
 public class DetectedAction {
   @JsonProperty("frameNum")
   private Integer frameNum = null;
@@ -47,19 +47,19 @@ public class DetectedAction {
    * Gets or Sets type
    */
   public enum TypeEnum {
+    LEFT_EYE_BLINK("LEFT_EYE_BLINK"),
+    
+    LOOKING_DOWNWARDS("LOOKING_DOWNWARDS"),
+    
+    LOOKING_FRONT("LOOKING_FRONT"),
+    
     LOOKING_LEFT("LOOKING_LEFT"),
     
     LOOKING_RIGHT("LOOKING_RIGHT"),
     
     LOOKING_UPWARDS("LOOKING_UPWARDS"),
     
-    LOOKING_DOWNWARDS("LOOKING_DOWNWARDS"),
-    
-    LOOKING_FRONT("LOOKING_FRONT"),
-    
-    RIGHT_EYE_BLINK("RIGHT_EYE_BLINK"),
-    
-    LEFT_EYE_BLINK("LEFT_EYE_BLINK");
+    RIGHT_EYE_BLINK("RIGHT_EYE_BLINK");
 
     private String value;
 

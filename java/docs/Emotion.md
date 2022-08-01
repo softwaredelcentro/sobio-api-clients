@@ -4,13 +4,13 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**anger** | **Integer** |  |  [optional]
-**disgust** | **Integer** |  |  [optional]
-**fear** | **Integer** |  |  [optional]
-**happiness** | **Integer** |  |  [optional]
-**neutral** | **Integer** |  |  [optional]
-**sadness** | **Integer** |  |  [optional]
-**surprise** | **Integer** |  |  [optional]
+**anger** | **byte[]** |  |  [optional]
+**disgust** | **byte[]** |  |  [optional]
+**fear** | **byte[]** |  |  [optional]
+**happiness** | **byte[]** |  |  [optional]
+**neutral** | **byte[]** |  |  [optional]
+**sadness** | **byte[]** |  |  [optional]
+**surprise** | **byte[]** |  |  [optional]
 
 
 

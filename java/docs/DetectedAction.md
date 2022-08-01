@@ -17,13 +17,13 @@ Name | Type | Description | Notes
 ## Enum: TypeEnum
 Name | Value
 ---- | -----
+LEFT_EYE_BLINK | &quot;LEFT_EYE_BLINK&quot;
+LOOKING_DOWNWARDS | &quot;LOOKING_DOWNWARDS&quot;
+LOOKING_FRONT | &quot;LOOKING_FRONT&quot;
 LOOKING_LEFT | &quot;LOOKING_LEFT&quot;
 LOOKING_RIGHT | &quot;LOOKING_RIGHT&quot;
 LOOKING_UPWARDS | &quot;LOOKING_UPWARDS&quot;
-LOOKING_DOWNWARDS | &quot;LOOKING_DOWNWARDS&quot;
-LOOKING_FRONT | &quot;LOOKING_FRONT&quot;
 RIGHT_EYE_BLINK | &quot;RIGHT_EYE_BLINK&quot;
-LEFT_EYE_BLINK | &quot;LEFT_EYE_BLINK&quot;
 
 
 

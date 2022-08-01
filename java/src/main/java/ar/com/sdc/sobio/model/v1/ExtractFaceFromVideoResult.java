@@ -28,7 +28,7 @@ import java.util.List;
 /**
  * ExtractFaceFromVideoResult
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-03-29T11:50:58.997-03:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-08-01T15:17:54.527-03:00")
 public class ExtractFaceFromVideoResult {
   @JsonProperty("detectedActions")
   private List<DetectedAction> detectedActions = null;
@@ -46,15 +46,15 @@ public class ExtractFaceFromVideoResult {
    * Gets or Sets status
    */
   public enum StatusEnum {
-    OK("OK"),
+    BAD_ILLUMINATION("BAD_ILLUMINATION"),
     
-    UNKNOWN_VIDEO_FORMAT("UNKNOWN_VIDEO_FORMAT"),
+    FACE_NOT_DETECTED("FACE_NOT_DETECTED"),
     
     MORE_THAN_ONE_FACE("MORE_THAN_ONE_FACE"),
     
-    BAD_ILLUMINATION("BAD_ILLUMINATION"),
+    OK("OK"),
     
-    FACE_NOT_DETECTED("FACE_NOT_DETECTED");
+    UNKNOWN_VIDEO_FORMAT("UNKNOWN_VIDEO_FORMAT");
 
     private String value;
 

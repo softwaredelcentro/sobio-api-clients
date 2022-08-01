@@ -23,7 +23,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * FingerPrintExtractionParameters
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-03-29T11:50:58.997-03:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-08-01T15:17:54.527-03:00")
 public class FingerPrintExtractionParameters {
   @JsonProperty("determinePatternClass")
   private Boolean determinePatternClass = null;
@@ -75,31 +75,31 @@ public class FingerPrintExtractionParameters {
   private Float maxRotation = null;
 
   @JsonProperty("minQuality")
-  private Integer minQuality = null;
+  private byte[] minQuality = null;
 
   /**
    * Gets or Sets position
    */
   public enum PositionEnum {
-    RIGHT_THUMB("RIGHT_THUMB"),
-    
-    LEFT_THUMB("LEFT_THUMB"),
-    
-    RIGHT_INDEX_FINGER("RIGHT_INDEX_FINGER"),
-    
     LEFT_INDEX_FINGER("LEFT_INDEX_FINGER"),
     
-    RIGHT_MIDDLE_FINGER("RIGHT_MIDDLE_FINGER"),
+    LEFT_LITTLE_FINGER("LEFT_LITTLE_FINGER"),
     
     LEFT_MIDDLE_FINGER("LEFT_MIDDLE_FINGER"),
     
     LEFT_RING_FINGER("LEFT_RING_FINGER"),
     
-    RIGHT_RING_FINGER("RIGHT_RING_FINGER"),
+    LEFT_THUMB("LEFT_THUMB"),
     
-    LEFT_LITTLE_FINGER("LEFT_LITTLE_FINGER"),
+    RIGHT_INDEX_FINGER("RIGHT_INDEX_FINGER"),
     
     RIGHT_LITTLE_FINGER("RIGHT_LITTLE_FINGER"),
+    
+    RIGHT_MIDDLE_FINGER("RIGHT_MIDDLE_FINGER"),
+    
+    RIGHT_RING_FINGER("RIGHT_RING_FINGER"),
+    
+    RIGHT_THUMB("RIGHT_THUMB"),
     
     UNKNOWN("UNKNOWN");
 
@@ -211,23 +211,21 @@ public class FingerPrintExtractionParameters {
     this.maxRotation = maxRotation;
   }
 
-  public FingerPrintExtractionParameters minQuality(Integer minQuality) {
+  public FingerPrintExtractionParameters minQuality(byte[] minQuality) {
     this.minQuality = minQuality;
     return this;
   }
 
    /**
    * Get minQuality
-   * minimum: -128
-   * maximum: 127
    * @return minQuality
   **/
   @ApiModelProperty(value = "")
-  public Integer getMinQuality() {
+  public byte[] getMinQuality() {
     return minQuality;
   }
 
-  public void setMinQuality(Integer minQuality) {
+  public void setMinQuality(byte[] minQuality) {
     this.minQuality = minQuality;
   }
 
