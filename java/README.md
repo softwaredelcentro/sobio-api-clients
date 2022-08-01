@@ -2,7 +2,8 @@
 
 Generated with swagger-codegen with
 
-```mvnw -Pswagger-codegen clean package deploy
+```shell
+mvnw -Pswagger-codegen clean package deploy
 ```
 
 ## Requirements
