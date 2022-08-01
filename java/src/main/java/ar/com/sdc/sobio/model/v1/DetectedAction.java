@@ -26,7 +26,7 @@ import java.util.List;
 /**
  * DetectedAction
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-08-01T16:13:13.139-03:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-08-01T17:51:31.127-03:00")
 public class DetectedAction {
   @JsonProperty("frameNum")
   private Integer frameNum = null;
