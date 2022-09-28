@@ -13,7 +13,7 @@
 
 package ar.com.sdc.sobio.client.v1;
 
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-09-28T09:56:20.444-03:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-09-28T10:34:31.222-03:00")
 public class Configuration {
     private static ApiClient defaultApiClient = new ApiClient();
 
