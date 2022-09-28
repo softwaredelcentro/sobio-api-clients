@@ -22,22 +22,22 @@ Name | Type | Description | Notes
 ## Enum: StatusEnum
 Name | Value
 ---- | -----
-BAD_TEMPLATE | &quot;BAD_TEMPLATE&quot;
+OK | &quot;OK&quot;
 EXCEPTION | &quot;EXCEPTION&quot;
-FRONT_FACE_BAD_ILLUMINATION | &quot;FRONT_FACE_BAD_ILLUMINATION&quot;
+SPOOF | &quot;SPOOF&quot;
 FRONT_FACE_NOT_FOUND | &quot;FRONT_FACE_NOT_FOUND&quot;
+FRONT_FACE_BAD_ILLUMINATION | &quot;FRONT_FACE_BAD_ILLUMINATION&quot;
 NEITHER_MRZ_NOR_PDF417_DETECTED | &quot;NEITHER_MRZ_NOR_PDF417_DETECTED&quot;
 NOT_ARGENTINA_ID | &quot;NOT_ARGENTINA_ID&quot;
-OK | &quot;OK&quot;
-SPOOF | &quot;SPOOF&quot;
+BAD_TEMPLATE | &quot;BAD_TEMPLATE&quot;
 
 
 <a name="SuggestedActionEnum"></a>
 ## Enum: SuggestedActionEnum
 Name | Value
 ---- | -----
-NONE | &quot;NONE&quot;
 RESCAN | &quot;RESCAN&quot;
+NONE | &quot;NONE&quot;
 RETRY | &quot;RETRY&quot;
 
 

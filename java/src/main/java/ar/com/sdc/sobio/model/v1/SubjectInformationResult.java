@@ -24,7 +24,7 @@ import org.joda.time.DateTime;
 /**
  * SubjectInformationResult
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-08-01T17:51:31.127-03:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-09-28T07:44:13.357-03:00")
 public class SubjectInformationResult {
   @JsonProperty("compositeFingerCount")
   private Integer compositeFingerCount = null;
@@ -87,9 +87,9 @@ public class SubjectInformationResult {
    * Gets or Sets status
    */
   public enum StatusEnum {
-    INEXISTENT("INEXISTENT"),
+    OK("OK"),
     
-    OK("OK");
+    INEXISTENT("INEXISTENT");
 
     private String value;
 

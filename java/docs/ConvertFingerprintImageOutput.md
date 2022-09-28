@@ -14,8 +14,8 @@ Name | Type | Description | Notes
 ## Enum: StatusEnum
 Name | Value
 ---- | -----
-ERROR | &quot;ERROR&quot;
 OK | &quot;OK&quot;
+ERROR | &quot;ERROR&quot;
 
 
 

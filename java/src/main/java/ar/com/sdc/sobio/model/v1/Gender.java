@@ -23,18 +23,18 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * Gender
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-08-01T17:51:31.127-03:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-09-28T07:44:13.357-03:00")
 public class Gender {
   @JsonProperty("confidence")
-  private byte[] confidence = null;
+  private Integer confidence = null;
 
   /**
    * Gets or Sets type
    */
   public enum TypeEnum {
-    FEMALE("FEMALE"),
-    
     MALE("MALE"),
+    
+    FEMALE("FEMALE"),
     
     NOT_DETECTED("NOT_DETECTED"),
     
@@ -70,21 +70,23 @@ public class Gender {
   @JsonProperty("type")
   private TypeEnum type = null;
 
-  public Gender confidence(byte[] confidence) {
+  public Gender confidence(Integer confidence) {
     this.confidence = confidence;
     return this;
   }
 
    /**
    * Get confidence
+   * minimum: -128
+   * maximum: 127
    * @return confidence
   **/
   @ApiModelProperty(value = "")
-  public byte[] getConfidence() {
+  public Integer getConfidence() {
     return confidence;
   }
 
-  public void setConfidence(byte[] confidence) {
+  public void setConfidence(Integer confidence) {
     this.confidence = confidence;
   }
 

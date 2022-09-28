@@ -23,7 +23,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * IdentifyResult
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-08-01T17:51:31.127-03:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-09-28T07:44:13.357-03:00")
 public class IdentifyResult {
   @JsonProperty("confidence")
   private Double confidence = null;
@@ -43,13 +43,13 @@ public class IdentifyResult {
   public enum StatusEnum {
     IDENTIFY_OK("IDENTIFY_OK"),
     
-    IDENTIFY_UNSUPPORTED("IDENTIFY_UNSUPPORTED"),
+    NOT_IDENTIFIED("NOT_IDENTIFIED"),
     
     MATCHING_NODE_UNAVAILABLE("MATCHING_NODE_UNAVAILABLE"),
     
-    NOT_IDENTIFIED("NOT_IDENTIFIED"),
+    WITHOUT_TEMPLATE("WITHOUT_TEMPLATE"),
     
-    WITHOUT_TEMPLATE("WITHOUT_TEMPLATE");
+    IDENTIFY_UNSUPPORTED("IDENTIFY_UNSUPPORTED");
 
     private String value;
 

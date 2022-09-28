@@ -34,31 +34,31 @@ Name | Type | Description | Notes
 ## Enum: DocumentTypeEnum
 Name | Value
 ---- | -----
-CREWMEMBER | &quot;CREWMEMBER&quot;
-MIGRANT | &quot;MIGRANT&quot;
 PASSPORT | &quot;PASSPORT&quot;
-TYPE_A | &quot;TYPE_A&quot;
-TYPE_C | &quot;TYPE_C&quot;
 TYPE_I | &quot;TYPE_I&quot;
-UNKNOWN | &quot;UNKNOWN&quot;
+TYPE_A | &quot;TYPE_A&quot;
+CREWMEMBER | &quot;CREWMEMBER&quot;
+TYPE_C | &quot;TYPE_C&quot;
 VISA | &quot;VISA&quot;
+MIGRANT | &quot;MIGRANT&quot;
+UNKNOWN | &quot;UNKNOWN&quot;
 
 
 <a name="DocumentVersionEnum"></a>
 ## Enum: DocumentVersionEnum
 Name | Value
 ---- | -----
+UNKNOWN | &quot;UNKNOWN&quot;
 ARGENTINA_ID_V1 | &quot;ARGENTINA_ID_V1&quot;
 ARGENTINA_ID_V2 | &quot;ARGENTINA_ID_V2&quot;
-UNKNOWN | &quot;UNKNOWN&quot;
 
 
 <a name="SexEnum"></a>
 ## Enum: SexEnum
 Name | Value
 ---- | -----
-FEMALE | &quot;FEMALE&quot;
 MALE | &quot;MALE&quot;
+FEMALE | &quot;FEMALE&quot;
 UNSPECIFIED | &quot;UNSPECIFIED&quot;
 
 

@@ -5,8 +5,8 @@ All URIs are relative to *https://127.0.0.1:8080*
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**byDate**](AuditApi.md#byDate) | **POST** /v1/audit/by-date | Lists audit-data filtered by dates, and number of rows
-[**detailsList**](AuditApi.md#detailsList) | **POST** /v1/audit/details-list | Lists filtered audit-details
-[**detailsList1**](AuditApi.md#detailsList1) | **POST** /v1/audit/details-by-txid | Lists filtered audit-details
+[**detailsList**](AuditApi.md#detailsList) | **POST** /v1/audit/details-by-txid | Lists filtered audit-details
+[**detailsList1**](AuditApi.md#detailsList1) | **POST** /v1/audit/details-list | Lists filtered audit-details
 [**downloadId**](AuditApi.md#downloadId) | **GET** /v1/audit/by-audit-id/{auditId} | Download zipped activity log for supplied audit id
 [**downloadId1**](AuditApi.md#downloadId1) | **GET** /v1/audit/by-subject-id/{subjectId} | Download zipped activity log for supplied subject id
 [**downloadId2**](AuditApi.md#downloadId2) | **GET** /v1/audit/by-audit-token/{auditToken} | Downloads zipped activity log for supplied audit token
@@ -67,60 +67,7 @@ Name | Type | Description  | Notes
 
 <a name="detailsList"></a>
 # **detailsList**
-> AuditDetailListOutput detailsList(input)
-
-Lists filtered audit-details
-
-### Example
-```java
-// Import classes:
-//import ar.com.sdc.sobio.client.v1.ApiClient;
-//import ar.com.sdc.sobio.client.v1.ApiException;
-//import ar.com.sdc.sobio.client.v1.Configuration;
-//import ar.com.sdc.sobio.client.v1.auth.*;
-//import ar.com.sdc.sobio.api.v1.AuditApi;
-
-ApiClient defaultClient = Configuration.getDefaultApiClient();
-
-// Configure API key authorization: Token
-ApiKeyAuth Token = (ApiKeyAuth) defaultClient.getAuthentication("Token");
-Token.setApiKey("YOUR API KEY");
-// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
-//Token.setApiKeyPrefix("Token");
-
-AuditApi apiInstance = new AuditApi();
-AuditDetailListInput input = new AuditDetailListInput(); // AuditDetailListInput | input
-try {
-    AuditDetailListOutput result = apiInstance.detailsList(input);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling AuditApi#detailsList");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **input** | [**AuditDetailListInput**](AuditDetailListInput.md)| input |
-
-### Return type
-
-[**AuditDetailListOutput**](AuditDetailListOutput.md)
-
-### Authorization
-
-[Token](../README.md#Token)
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a name="detailsList1"></a>
-# **detailsList1**
-> AuditDetailOutput detailsList1(input)
+> AuditDetailOutput detailsList(input)
 
 Lists filtered audit-details
 
@@ -144,10 +91,10 @@ Token.setApiKey("YOUR API KEY");
 AuditApi apiInstance = new AuditApi();
 AuditDetailInput input = new AuditDetailInput(); // AuditDetailInput | input
 try {
-    AuditDetailOutput result = apiInstance.detailsList1(input);
+    AuditDetailOutput result = apiInstance.detailsList(input);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling AuditApi#detailsList1");
+    System.err.println("Exception when calling AuditApi#detailsList");
     e.printStackTrace();
 }
 ```
@@ -161,6 +108,59 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**AuditDetailOutput**](AuditDetailOutput.md)
+
+### Authorization
+
+[Token](../README.md#Token)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="detailsList1"></a>
+# **detailsList1**
+> AuditDetailListOutput detailsList1(input)
+
+Lists filtered audit-details
+
+### Example
+```java
+// Import classes:
+//import ar.com.sdc.sobio.client.v1.ApiClient;
+//import ar.com.sdc.sobio.client.v1.ApiException;
+//import ar.com.sdc.sobio.client.v1.Configuration;
+//import ar.com.sdc.sobio.client.v1.auth.*;
+//import ar.com.sdc.sobio.api.v1.AuditApi;
+
+ApiClient defaultClient = Configuration.getDefaultApiClient();
+
+// Configure API key authorization: Token
+ApiKeyAuth Token = (ApiKeyAuth) defaultClient.getAuthentication("Token");
+Token.setApiKey("YOUR API KEY");
+// Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+//Token.setApiKeyPrefix("Token");
+
+AuditApi apiInstance = new AuditApi();
+AuditDetailListInput input = new AuditDetailListInput(); // AuditDetailListInput | input
+try {
+    AuditDetailListOutput result = apiInstance.detailsList1(input);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling AuditApi#detailsList1");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **input** | [**AuditDetailListInput**](AuditDetailListInput.md)| input |
+
+### Return type
+
+[**AuditDetailListOutput**](AuditDetailListOutput.md)
 
 ### Authorization
 

@@ -3,7 +3,7 @@
 Generated with swagger-codegen with
 
 ```shell
-mvnw -Pswagger-codegen clean package deploy
+mvnw -Pswagger-codegen -DskipTests clean package deploy
 ```
 
 ## Requirements

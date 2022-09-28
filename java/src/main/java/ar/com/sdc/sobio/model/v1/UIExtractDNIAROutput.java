@@ -27,7 +27,7 @@ import java.util.List;
 /**
  * UIExtractDNIAROutput
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-08-01T17:51:31.127-03:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-09-28T07:44:13.357-03:00")
 public class UIExtractDNIAROutput {
   @JsonProperty("additionalInfo")
   private String additionalInfo = null;
@@ -60,21 +60,21 @@ public class UIExtractDNIAROutput {
    * Gets or Sets status
    */
   public enum StatusEnum {
-    BAD_TEMPLATE("BAD_TEMPLATE"),
+    OK("OK"),
     
     EXCEPTION("EXCEPTION"),
     
-    FRONT_FACE_BAD_ILLUMINATION("FRONT_FACE_BAD_ILLUMINATION"),
+    SPOOF("SPOOF"),
     
     FRONT_FACE_NOT_FOUND("FRONT_FACE_NOT_FOUND"),
+    
+    FRONT_FACE_BAD_ILLUMINATION("FRONT_FACE_BAD_ILLUMINATION"),
     
     NEITHER_MRZ_NOR_PDF417_DETECTED("NEITHER_MRZ_NOR_PDF417_DETECTED"),
     
     NOT_ARGENTINA_ID("NOT_ARGENTINA_ID"),
     
-    OK("OK"),
-    
-    SPOOF("SPOOF");
+    BAD_TEMPLATE("BAD_TEMPLATE");
 
     private String value;
 
@@ -110,9 +110,9 @@ public class UIExtractDNIAROutput {
    * Gets or Sets suggestedAction
    */
   public enum SuggestedActionEnum {
-    NONE("NONE"),
-    
     RESCAN("RESCAN"),
+    
+    NONE("NONE"),
     
     RETRY("RETRY");
 

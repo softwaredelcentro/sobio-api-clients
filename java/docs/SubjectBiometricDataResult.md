@@ -14,8 +14,8 @@ Name | Type | Description | Notes
 ## Enum: StatusEnum
 Name | Value
 ---- | -----
-INEXISTENT | &quot;INEXISTENT&quot;
 OK | &quot;OK&quot;
+INEXISTENT | &quot;INEXISTENT&quot;
 
 
 

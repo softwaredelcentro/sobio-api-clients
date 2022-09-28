@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**confidence** | **byte[]** |  |  [optional]
+**confidence** | **Integer** |  |  [optional]
 **type** | [**TypeEnum**](#TypeEnum) |  |  [optional]
 
 

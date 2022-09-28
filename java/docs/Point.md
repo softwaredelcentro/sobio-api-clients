@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**confidence** | **byte[]** |  |  [optional]
+**confidence** | **Integer** |  |  [optional]
 **num** | **Integer** |  |  [optional]
 **x** | **Integer** |  |  [optional]
 **y** | **Integer** |  |  [optional]

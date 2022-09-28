@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**confidence** | **byte[]** |  |  [optional]
+**confidence** | **Integer** |  |  [optional]
 **type** | [**TypeEnum**](#TypeEnum) |  |  [optional]
 
 
@@ -12,8 +12,8 @@ Name | Type | Description | Notes
 ## Enum: TypeEnum
 Name | Value
 ---- | -----
-FEMALE | &quot;FEMALE&quot;
 MALE | &quot;MALE&quot;
+FEMALE | &quot;FEMALE&quot;
 NOT_DETECTED | &quot;NOT_DETECTED&quot;
 UNSPECIFIED | &quot;UNSPECIFIED&quot;
 

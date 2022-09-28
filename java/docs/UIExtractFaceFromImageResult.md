@@ -16,10 +16,10 @@ Name | Type | Description | Notes
 ## Enum: StatusEnum
 Name | Value
 ---- | -----
-BAD_ILLUMINATION | &quot;BAD_ILLUMINATION&quot;
-BAD_TEMPLATE | &quot;BAD_TEMPLATE&quot;
-FACE_NOT_DETECTED | &quot;FACE_NOT_DETECTED&quot;
 OK | &quot;OK&quot;
+BAD_ILLUMINATION | &quot;BAD_ILLUMINATION&quot;
+FACE_NOT_DETECTED | &quot;FACE_NOT_DETECTED&quot;
+BAD_TEMPLATE | &quot;BAD_TEMPLATE&quot;
 TEMPLATE_MULTIPLE_FACES | &quot;TEMPLATE_MULTIPLE_FACES&quot;
 
 

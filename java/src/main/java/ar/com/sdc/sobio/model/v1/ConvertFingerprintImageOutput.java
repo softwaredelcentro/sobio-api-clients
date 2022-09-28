@@ -23,7 +23,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * ConvertFingerprintImageOutput
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-08-01T17:51:31.127-03:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-09-28T07:44:13.357-03:00")
 public class ConvertFingerprintImageOutput {
   @JsonProperty("exception")
   private Boolean exception = null;
@@ -35,9 +35,9 @@ public class ConvertFingerprintImageOutput {
    * Gets or Sets status
    */
   public enum StatusEnum {
-    ERROR("ERROR"),
+    OK("OK"),
     
-    OK("OK");
+    ERROR("ERROR");
 
     private String value;
 

@@ -23,7 +23,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * FingerPrint
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-08-01T17:51:31.127-03:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-09-28T07:44:13.357-03:00")
 public class FingerPrint {
   /**
    * Gets or Sets formatoTemplate
@@ -110,25 +110,25 @@ public class FingerPrint {
    * Gets or Sets position
    */
   public enum PositionEnum {
-    LEFT_INDEX_FINGER("LEFT_INDEX_FINGER"),
-    
-    LEFT_LITTLE_FINGER("LEFT_LITTLE_FINGER"),
-    
-    LEFT_MIDDLE_FINGER("LEFT_MIDDLE_FINGER"),
-    
-    LEFT_RING_FINGER("LEFT_RING_FINGER"),
+    RIGHT_THUMB("RIGHT_THUMB"),
     
     LEFT_THUMB("LEFT_THUMB"),
     
     RIGHT_INDEX_FINGER("RIGHT_INDEX_FINGER"),
     
-    RIGHT_LITTLE_FINGER("RIGHT_LITTLE_FINGER"),
+    LEFT_INDEX_FINGER("LEFT_INDEX_FINGER"),
     
     RIGHT_MIDDLE_FINGER("RIGHT_MIDDLE_FINGER"),
     
+    LEFT_MIDDLE_FINGER("LEFT_MIDDLE_FINGER"),
+    
+    LEFT_RING_FINGER("LEFT_RING_FINGER"),
+    
     RIGHT_RING_FINGER("RIGHT_RING_FINGER"),
     
-    RIGHT_THUMB("RIGHT_THUMB"),
+    LEFT_LITTLE_FINGER("LEFT_LITTLE_FINGER"),
+    
+    RIGHT_LITTLE_FINGER("RIGHT_LITTLE_FINGER"),
     
     UNKNOWN("UNKNOWN");
 

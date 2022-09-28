@@ -23,7 +23,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * VerifyResult
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-08-01T17:51:31.127-03:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-09-28T07:44:13.357-03:00")
 public class VerifyResult {
   @JsonProperty("confidence")
   private Double confidence = null;
@@ -41,15 +41,15 @@ public class VerifyResult {
    * Gets or Sets status
    */
   public enum StatusEnum {
-    CHECK_CONFIDENCE("CHECK_CONFIDENCE"),
-    
     INEXISTENT("INEXISTENT"),
     
-    MATCHING_NODE_UNAVAILABLE("MATCHING_NODE_UNAVAILABLE"),
+    CHECK_CONFIDENCE("CHECK_CONFIDENCE"),
     
     NOT_VERIFIED("NOT_VERIFIED"),
     
-    WITHOUT_TEMPLATE("WITHOUT_TEMPLATE");
+    WITHOUT_TEMPLATE("WITHOUT_TEMPLATE"),
+    
+    MATCHING_NODE_UNAVAILABLE("MATCHING_NODE_UNAVAILABLE");
 
     private String value;
 

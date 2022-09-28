@@ -23,7 +23,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * FingerPrintProperties
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-08-01T17:51:31.127-03:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-09-28T07:44:13.357-03:00")
 public class FingerPrintProperties {
   @JsonProperty("bitRate")
   private Float bitRate = null;
@@ -35,19 +35,19 @@ public class FingerPrintProperties {
    * Gets or Sets nfiq
    */
   public enum NfiqEnum {
+    NOT_EVALUATED("NOT_EVALUATED"),
+    
     EXCELLENT("EXCELLENT"),
     
-    FAIR("FAIR"),
+    VERY_GOOD("VERY_GOOD"),
     
     GOOD("GOOD"),
     
-    NOT_EVALUATED("NOT_EVALUATED"),
+    FAIR("FAIR"),
     
     POOR("POOR"),
     
-    UNKNOWN("UNKNOWN"),
-    
-    VERY_GOOD("VERY_GOOD");
+    UNKNOWN("UNKNOWN");
 
     private String value;
 

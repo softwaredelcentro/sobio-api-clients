@@ -26,7 +26,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * DocumentInformation
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-08-01T17:51:31.127-03:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-09-28T07:44:13.357-03:00")
 public class DocumentInformation {
   @JsonProperty("address")
   private String address = null;
@@ -53,21 +53,21 @@ public class DocumentInformation {
    * Gets or Sets documentType
    */
   public enum DocumentTypeEnum {
-    CREWMEMBER("CREWMEMBER"),
-    
-    MIGRANT("MIGRANT"),
-    
     PASSPORT("PASSPORT"),
-    
-    TYPE_A("TYPE_A"),
-    
-    TYPE_C("TYPE_C"),
     
     TYPE_I("TYPE_I"),
     
-    UNKNOWN("UNKNOWN"),
+    TYPE_A("TYPE_A"),
     
-    VISA("VISA");
+    CREWMEMBER("CREWMEMBER"),
+    
+    TYPE_C("TYPE_C"),
+    
+    VISA("VISA"),
+    
+    MIGRANT("MIGRANT"),
+    
+    UNKNOWN("UNKNOWN");
 
     private String value;
 
@@ -103,11 +103,11 @@ public class DocumentInformation {
    * Gets or Sets documentVersion
    */
   public enum DocumentVersionEnum {
+    UNKNOWN("UNKNOWN"),
+    
     ARGENTINA_ID_V1("ARGENTINA_ID_V1"),
     
-    ARGENTINA_ID_V2("ARGENTINA_ID_V2"),
-    
-    UNKNOWN("UNKNOWN");
+    ARGENTINA_ID_V2("ARGENTINA_ID_V2");
 
     private String value;
 
@@ -170,9 +170,9 @@ public class DocumentInformation {
    * Gets or Sets sex
    */
   public enum SexEnum {
-    FEMALE("FEMALE"),
-    
     MALE("MALE"),
+    
+    FEMALE("FEMALE"),
     
     UNSPECIFIED("UNSPECIFIED");
 

@@ -15,13 +15,13 @@ Name | Type | Description | Notes
 ## Enum: StatusEnum
 Name | Value
 ---- | -----
-EXCEPTION | &quot;EXCEPTION&quot;
-LOW_LEVEL | &quot;LOW_LEVEL&quot;
-LOW_QUALITY | &quot;LOW_QUALITY&quot;
-NOISY | &quot;NOISY&quot;
 OK | &quot;OK&quot;
-TOO_SHORT | &quot;TOO_SHORT&quot;
+LOW_QUALITY | &quot;LOW_QUALITY&quot;
 VOICE_NOT_DETECTED | &quot;VOICE_NOT_DETECTED&quot;
+NOISY | &quot;NOISY&quot;
+LOW_LEVEL | &quot;LOW_LEVEL&quot;
+EXCEPTION | &quot;EXCEPTION&quot;
+TOO_SHORT | &quot;TOO_SHORT&quot;
 
 
 

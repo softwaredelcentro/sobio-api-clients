@@ -25,7 +25,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * UIExtractFaceFromImageResult
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-08-01T17:51:31.127-03:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-09-28T07:44:13.357-03:00")
 public class UIExtractFaceFromImageResult {
   @JsonProperty("exception")
   private Boolean exception = null;
@@ -43,13 +43,13 @@ public class UIExtractFaceFromImageResult {
    * Gets or Sets status
    */
   public enum StatusEnum {
-    BAD_ILLUMINATION("BAD_ILLUMINATION"),
+    OK("OK"),
     
-    BAD_TEMPLATE("BAD_TEMPLATE"),
+    BAD_ILLUMINATION("BAD_ILLUMINATION"),
     
     FACE_NOT_DETECTED("FACE_NOT_DETECTED"),
     
-    OK("OK"),
+    BAD_TEMPLATE("BAD_TEMPLATE"),
     
     TEMPLATE_MULTIPLE_FACES("TEMPLATE_MULTIPLE_FACES");
 

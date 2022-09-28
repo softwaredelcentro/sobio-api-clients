@@ -24,25 +24,25 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * MrzRecord
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-08-01T17:51:31.127-03:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-09-28T07:44:13.357-03:00")
 public class MrzRecord {
   /**
    * Gets or Sets code
    */
   public enum CodeEnum {
-    CREWMEMBER("CrewMember"),
-    
-    MIGRANT("Migrant"),
-    
     PASSPORT("Passport"),
-    
-    TYPEA("TypeA"),
-    
-    TYPEC("TypeC"),
     
     TYPEI("TypeI"),
     
-    TYPEV("TypeV");
+    TYPEA("TypeA"),
+    
+    CREWMEMBER("CrewMember"),
+    
+    TYPEC("TypeC"),
+    
+    TYPEV("TypeV"),
+    
+    MIGRANT("Migrant");
 
     private String value;
 
@@ -93,15 +93,15 @@ public class MrzRecord {
    * Gets or Sets format
    */
   public enum FormatEnum {
+    MRTD_TD1("MRTD_TD1"),
+    
     FRENCH_ID("FRENCH_ID"),
     
-    MRTD_TD1("MRTD_TD1"),
+    MRV_VISA_B("MRV_VISA_B"),
     
     MRTD_TD2("MRTD_TD2"),
     
     MRV_VISA_A("MRV_VISA_A"),
-    
-    MRV_VISA_B("MRV_VISA_B"),
     
     PASSPORT("PASSPORT"),
     
@@ -150,9 +150,9 @@ public class MrzRecord {
    * Gets or Sets sex
    */
   public enum SexEnum {
-    FEMALE("Female"),
-    
     MALE("Male"),
+    
+    FEMALE("Female"),
     
     UNSPECIFIED("Unspecified");
 

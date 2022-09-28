@@ -24,7 +24,7 @@ import org.joda.time.DateTime;
 /**
  * AuditDetail
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-08-01T17:51:31.127-03:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-09-28T07:44:13.357-03:00")
 public class AuditDetail {
   @JsonProperty("date")
   private DateTime date = null;
@@ -34,6 +34,12 @@ public class AuditDetail {
 
   @JsonProperty("duration")
   private Long duration = null;
+
+  @JsonProperty("info1")
+  private byte[] info1 = null;
+
+  @JsonProperty("info2")
+  private byte[] info2 = null;
 
   @JsonProperty("parameters")
   private String parameters = null;
@@ -54,45 +60,45 @@ public class AuditDetail {
    * Gets or Sets type
    */
   public enum TypeEnum {
-    ACTUALIZACION("ACTUALIZACION"),
+    ENROLAMIENTO("ENROLAMIENTO"),
     
-    BORRADO("BORRADO"),
+    VERIFICACION("VERIFICACION"),
+    
+    IDENTIFICACION("IDENTIFICACION"),
     
     BUSQUEDA_DUPLICADOS("BUSQUEDA_DUPLICADOS"),
     
-    ENROLAMIENTO("ENROLAMIENTO"),
+    BORRADO("BORRADO"),
     
-    ENROLAMIENTO_BATCH("ENROLAMIENTO_BATCH"),
-    
-    EXTRACCION_HUELLA("EXTRACCION_HUELLA"),
+    ACTUALIZACION("ACTUALIZACION"),
     
     EXTRACCION_ROSTRO("EXTRACCION_ROSTRO"),
     
     EXTRACCION_TEMPLATE("EXTRACCION_TEMPLATE"),
     
+    OBTENER_TEMPLATE("OBTENER_TEMPLATE"),
+    
+    ENROLAMIENTO_BATCH("ENROLAMIENTO_BATCH"),
+    
+    EXTRACCION_HUELLA("EXTRACCION_HUELLA"),
+    
     EXTRACCION_VOZ("EXTRACCION_VOZ"),
     
-    EXTRACT_DOCUMENT_INFO("EXTRACT_DOCUMENT_INFO"),
-    
-    IDENTIFICACION("IDENTIFICACION"),
-    
-    LOGGING_API_REQUEST_RESPONSE("LOGGING_API_REQUEST_RESPONSE"),
+    VERIFICAR_T2T("VERIFICAR_T2T"),
     
     OBTENER_INFORMACION_SUJETO("OBTENER_INFORMACION_SUJETO"),
     
-    OBTENER_TEMPLATE("OBTENER_TEMPLATE"),
+    EXTRACT_DOCUMENT_INFO("EXTRACT_DOCUMENT_INFO"),
+    
+    LOGGING_API_REQUEST_RESPONSE("LOGGING_API_REQUEST_RESPONSE"),
     
     UI_COMPONENT_ENROLL("UI_COMPONENT_ENROLL"),
-    
-    UI_COMPONENT_EXTRACT_DOCUMENT_INFO("UI_COMPONENT_EXTRACT_DOCUMENT_INFO"),
     
     UI_COMPONENT_VERIFY("UI_COMPONENT_VERIFY"),
     
     UI_EXTRACT_DOCUMENT_INFO("UI_EXTRACT_DOCUMENT_INFO"),
     
-    VERIFICACION("VERIFICACION"),
-    
-    VERIFICAR_T2T("VERIFICAR_T2T");
+    UI_COMPONENT_EXTRACT_DOCUMENT_INFO("UI_COMPONENT_EXTRACT_DOCUMENT_INFO");
 
     private String value;
 
@@ -176,6 +182,42 @@ public class AuditDetail {
 
   public void setDuration(Long duration) {
     this.duration = duration;
+  }
+
+  public AuditDetail info1(byte[] info1) {
+    this.info1 = info1;
+    return this;
+  }
+
+   /**
+   * Get info1
+   * @return info1
+  **/
+  @ApiModelProperty(value = "")
+  public byte[] getInfo1() {
+    return info1;
+  }
+
+  public void setInfo1(byte[] info1) {
+    this.info1 = info1;
+  }
+
+  public AuditDetail info2(byte[] info2) {
+    this.info2 = info2;
+    return this;
+  }
+
+   /**
+   * Get info2
+   * @return info2
+  **/
+  @ApiModelProperty(value = "")
+  public byte[] getInfo2() {
+    return info2;
+  }
+
+  public void setInfo2(byte[] info2) {
+    this.info2 = info2;
   }
 
   public AuditDetail parameters(String parameters) {
@@ -299,6 +341,8 @@ public class AuditDetail {
     return Objects.equals(this.date, auditDetail.date) &&
         Objects.equals(this.detail, auditDetail.detail) &&
         Objects.equals(this.duration, auditDetail.duration) &&
+        Objects.equals(this.info1, auditDetail.info1) &&
+        Objects.equals(this.info2, auditDetail.info2) &&
         Objects.equals(this.parameters, auditDetail.parameters) &&
         Objects.equals(this.result, auditDetail.result) &&
         Objects.equals(this.subjectId, auditDetail.subjectId) &&
@@ -309,7 +353,7 @@ public class AuditDetail {
 
   @Override
   public int hashCode() {
-    return Objects.hash(date, detail, duration, parameters, result, subjectId, token, txId, type);
+    return Objects.hash(date, detail, duration, info1, info2, parameters, result, subjectId, token, txId, type);
   }
 
 
@@ -321,6 +365,8 @@ public class AuditDetail {
     sb.append("    date: ").append(toIndentedString(date)).append("\n");
     sb.append("    detail: ").append(toIndentedString(detail)).append("\n");
     sb.append("    duration: ").append(toIndentedString(duration)).append("\n");
+    sb.append("    info1: ").append(toIndentedString(info1)).append("\n");
+    sb.append("    info2: ").append(toIndentedString(info2)).append("\n");
     sb.append("    parameters: ").append(toIndentedString(parameters)).append("\n");
     sb.append("    result: ").append(toIndentedString(result)).append("\n");
     sb.append("    subjectId: ").append(toIndentedString(subjectId)).append("\n");

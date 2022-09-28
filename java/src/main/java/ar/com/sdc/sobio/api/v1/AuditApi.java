@@ -20,7 +20,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-08-01T17:51:31.127-03:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-09-28T07:44:13.357-03:00")
 public class AuditApi {
   private ApiClient apiClient;
 
@@ -85,56 +85,15 @@ public class AuditApi {
    * Lists filtered audit-details
    * 
    * @param input input (required)
-   * @return AuditDetailListOutput
+   * @return AuditDetailOutput
    * @throws ApiException if fails to make API call
    */
-  public AuditDetailListOutput detailsList(AuditDetailListInput input) throws ApiException {
+  public AuditDetailOutput detailsList(AuditDetailInput input) throws ApiException {
     Object localVarPostBody = input;
     
     // verify the required parameter 'input' is set
     if (input == null) {
       throw new ApiException(400, "Missing the required parameter 'input' when calling detailsList");
-    }
-    
-    // create path and map variables
-    String localVarPath = "/v1/audit/details-list";
-
-    // query params
-    List<Pair> localVarQueryParams = new ArrayList<Pair>();
-    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-
-    
-    
-    final String[] localVarAccepts = {
-      "application/json"
-    };
-    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-
-    final String[] localVarContentTypes = {
-      "application/json"
-    };
-    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-
-    String[] localVarAuthNames = new String[] { "Token" };
-
-    GenericType<AuditDetailListOutput> localVarReturnType = new GenericType<AuditDetailListOutput>() {};
-    return apiClient.invokeAPI(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
-      }
-  /**
-   * Lists filtered audit-details
-   * 
-   * @param input input (required)
-   * @return AuditDetailOutput
-   * @throws ApiException if fails to make API call
-   */
-  public AuditDetailOutput detailsList1(AuditDetailInput input) throws ApiException {
-    Object localVarPostBody = input;
-    
-    // verify the required parameter 'input' is set
-    if (input == null) {
-      throw new ApiException(400, "Missing the required parameter 'input' when calling detailsList1");
     }
     
     // create path and map variables
@@ -161,6 +120,47 @@ public class AuditApi {
     String[] localVarAuthNames = new String[] { "Token" };
 
     GenericType<AuditDetailOutput> localVarReturnType = new GenericType<AuditDetailOutput>() {};
+    return apiClient.invokeAPI(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+      }
+  /**
+   * Lists filtered audit-details
+   * 
+   * @param input input (required)
+   * @return AuditDetailListOutput
+   * @throws ApiException if fails to make API call
+   */
+  public AuditDetailListOutput detailsList1(AuditDetailListInput input) throws ApiException {
+    Object localVarPostBody = input;
+    
+    // verify the required parameter 'input' is set
+    if (input == null) {
+      throw new ApiException(400, "Missing the required parameter 'input' when calling detailsList1");
+    }
+    
+    // create path and map variables
+    String localVarPath = "/v1/audit/details-list";
+
+    // query params
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+
+    
+    
+    final String[] localVarAccepts = {
+      "application/json"
+    };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      "application/json"
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] { "Token" };
+
+    GenericType<AuditDetailListOutput> localVarReturnType = new GenericType<AuditDetailListOutput>() {};
     return apiClient.invokeAPI(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
       }
   /**

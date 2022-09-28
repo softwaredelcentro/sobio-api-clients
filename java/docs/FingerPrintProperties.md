@@ -15,13 +15,13 @@ Name | Type | Description | Notes
 ## Enum: NfiqEnum
 Name | Value
 ---- | -----
-EXCELLENT | &quot;EXCELLENT&quot;
-FAIR | &quot;FAIR&quot;
-GOOD | &quot;GOOD&quot;
 NOT_EVALUATED | &quot;NOT_EVALUATED&quot;
+EXCELLENT | &quot;EXCELLENT&quot;
+VERY_GOOD | &quot;VERY_GOOD&quot;
+GOOD | &quot;GOOD&quot;
+FAIR | &quot;FAIR&quot;
 POOR | &quot;POOR&quot;
 UNKNOWN | &quot;UNKNOWN&quot;
-VERY_GOOD | &quot;VERY_GOOD&quot;
 
 
 <a name="PatternEnum"></a>
