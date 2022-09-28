@@ -26,7 +26,7 @@ import java.util.List;
 /**
  * AuditDetailOutput
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-09-28T07:51:40.431-03:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-09-28T09:56:20.444-03:00")
 public class AuditDetailOutput {
   @JsonProperty("auditDetail")
   private List<AuditDetail> auditDetail = null;

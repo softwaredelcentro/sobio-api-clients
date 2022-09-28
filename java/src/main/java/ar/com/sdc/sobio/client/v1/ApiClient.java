@@ -51,10 +51,10 @@ import ar.com.sdc.sobio.client.v1.auth.Authentication;
 import ar.com.sdc.sobio.client.v1.auth.HttpBasicAuth;
 import ar.com.sdc.sobio.client.v1.auth.OAuth;
 
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-10-25T13:07:38.915-03:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-09-28T09:48:33.180-03:00")
 public class ApiClient {
   protected Map<String, String> defaultHeaderMap = new HashMap<String, String>();
-  protected String basePath = "http://172.16.1.30:10081";
+  protected String basePath = "https://127.0.0.1:8080";
   protected boolean debugging = false;
   protected int connectionTimeout = 0;
   private int readTimeout = 0;
@@ -81,7 +81,7 @@ public class ApiClient {
 
     // Setup authentications (key: authentication name, value: authentication).
     authentications = new HashMap<String, Authentication>();
-    authentications.put("Token", new OAuth());
+    authentications.put("Token", new ApiKeyAuth("header", "Authorization"));
     // Prevent the authentications from being modified.
     authentications = Collections.unmodifiableMap(authentications);
   }
@@ -661,6 +661,7 @@ public class ApiClient {
 
     // Not using `.target(this.basePath).path(path)` below,
     // to support (constant) query string in `path`, e.g. "/posts?draft=1"
+    System.out.println("ApiClient.invokeAPI targetURL="+this.basePath + path);
     WebTarget target = httpClient.target(this.basePath + path);
 
     if (queryParams != null) {
