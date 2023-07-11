@@ -16,6 +16,7 @@ package ar.com.sdc.sobio.model.v1;
 import java.util.Objects;
 import ar.com.sdc.sobio.model.v1.Face;
 import ar.com.sdc.sobio.model.v1.FaceProperties;
+import ar.com.sdc.sobio.model.v1.UITemplateMetada;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -25,7 +26,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * UIExtractFaceFromImageResult
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-09-28T10:34:31.222-03:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-06-14T14:59:22.046-03:00")
 public class UIExtractFaceFromImageResult {
   @JsonProperty("exception")
   private Boolean exception = null;
@@ -85,6 +86,9 @@ public class UIExtractFaceFromImageResult {
 
   @JsonProperty("txId")
   private String txId = null;
+
+  @JsonProperty("uiTemplateMetadata")
+  private UITemplateMetada uiTemplateMetadata = null;
 
   public UIExtractFaceFromImageResult exception(Boolean exception) {
     this.exception = exception;
@@ -194,6 +198,24 @@ public class UIExtractFaceFromImageResult {
     this.txId = txId;
   }
 
+  public UIExtractFaceFromImageResult uiTemplateMetadata(UITemplateMetada uiTemplateMetadata) {
+    this.uiTemplateMetadata = uiTemplateMetadata;
+    return this;
+  }
+
+   /**
+   * Get uiTemplateMetadata
+   * @return uiTemplateMetadata
+  **/
+  @ApiModelProperty(value = "")
+  public UITemplateMetada getUiTemplateMetadata() {
+    return uiTemplateMetadata;
+  }
+
+  public void setUiTemplateMetadata(UITemplateMetada uiTemplateMetadata) {
+    this.uiTemplateMetadata = uiTemplateMetadata;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -209,12 +231,13 @@ public class UIExtractFaceFromImageResult {
         Objects.equals(this.faceImage, uiExtractFaceFromImageResult.faceImage) &&
         Objects.equals(this.properties, uiExtractFaceFromImageResult.properties) &&
         Objects.equals(this.status, uiExtractFaceFromImageResult.status) &&
-        Objects.equals(this.txId, uiExtractFaceFromImageResult.txId);
+        Objects.equals(this.txId, uiExtractFaceFromImageResult.txId) &&
+        Objects.equals(this.uiTemplateMetadata, uiExtractFaceFromImageResult.uiTemplateMetadata);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(exception, face, faceImage, properties, status, txId);
+    return Objects.hash(exception, face, faceImage, properties, status, txId, uiTemplateMetadata);
   }
 
 
@@ -229,6 +252,7 @@ public class UIExtractFaceFromImageResult {
     sb.append("    properties: ").append(toIndentedString(properties)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    txId: ").append(toIndentedString(txId)).append("\n");
+    sb.append("    uiTemplateMetadata: ").append(toIndentedString(uiTemplateMetadata)).append("\n");
     sb.append("}");
     return sb.toString();
   }

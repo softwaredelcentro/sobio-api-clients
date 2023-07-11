@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **status** | [**StatusEnum**](#StatusEnum) |  |  [optional]
 **suggestedAction** | [**SuggestedActionEnum**](#SuggestedActionEnum) |  |  [optional]
 **txId** | **String** |  |  [optional]
+**uiTemplateMetadata** | [**UITemplateMetada**](UITemplateMetada.md) |  |  [optional]
 
 
 <a name="StatusEnum"></a>

@@ -6,19 +6,21 @@
 	<artifactId>sobio-api-client</artifactId>
 	<packaging>jar</packaging>
 	<name>sobio-api-client</name>
-	<version>20220928.2a5b95b</version>	                  
+	<version>20220928.266b49a</version>	                  
 	<distributionManagement>
 		<repository>
 			<id>releases</id>
 			<name>Internal Releases</name>
 			<!-- url>http://repo/repository/maven-releases/</url -->
-			<url>file://${project.build.directory}/mvn-repo</url>
+			<!-- url>file://${project.build.directory}/mvn-repo</url -->
+			<url>file:///home/daniel/local/proys/sdc/git/mvn-repo</url>			
 		</repository>
 		<snapshotRepository>
 			<id>snapshots</id>
 			<name>Internal Snapshots</name>
 			<!-- url>http://repo/repository/maven-snapshots/</url -->
-			<url>file://${project.build.directory}/mvn-repo</url>
+			<!-- url>file://${project.build.directory}/mvn-repo</url -->
+			<url>file:///home/daniel/local/proys/sdc/git/mvn-repo</url>			
 		</snapshotRepository>
 	</distributionManagement>
 	<profiles>

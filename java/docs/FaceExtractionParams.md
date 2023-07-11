@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **detectOnlyMajorFace** | **Boolean** |  |  [optional]
 **detectTraitsAndActions** | **Boolean** |  |  [optional]
 **facePoseSensibility** | [**FacePoseSensibilityConfig**](FacePoseSensibilityConfig.md) |  |  [optional]
+**livenessCheck** | [**LivenessCheckEnum**](#LivenessCheckEnum) |  |  [optional]
 **maxCLAHE** | **Integer** |  |  [optional]
 **maxRoll** | **Integer** |  |  [optional]
 **maxYaw** | **Integer** |  |  [optional]
@@ -24,6 +25,19 @@ Name | Type | Description | Notes
 **useCLAHE** | **Boolean** |  |  [optional]
 **useCache** | **Boolean** |  |  [optional]
 **videoFramesSeq** | **Integer** |  |  [optional]
+
+
+<a name="LivenessCheckEnum"></a>
+## Enum: LivenessCheckEnum
+Name | Value
+---- | -----
+WEAK | &quot;WEAK&quot;
+PAD_1_L0 | &quot;PAD_1_L0&quot;
+PAD_1_L1 | &quot;PAD_1_L1&quot;
+PAD_1_L2 | &quot;PAD_1_L2&quot;
+PAD_1_L3 | &quot;PAD_1_L3&quot;
+PAD_1_L4 | &quot;PAD_1_L4&quot;
+PAD_1_L5 | &quot;PAD_1_L5&quot;
 
 
 

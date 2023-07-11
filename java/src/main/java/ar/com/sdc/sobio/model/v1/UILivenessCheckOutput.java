@@ -19,24 +19,61 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
- * ListOutput
+ * UILivenessCheckOutput
  */
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-06-14T14:59:22.046-03:00")
-public class ListOutput {
+public class UILivenessCheckOutput {
   @JsonProperty("exception")
   private Boolean exception = null;
 
-  @JsonProperty("ids")
-  private List<String> ids = null;
+  /**
+   * Gets or Sets status
+   */
+  public enum StatusEnum {
+    BAD_TEMPLATE("BAD_TEMPLATE"),
+    
+    TEMPLATE_WITHOUT_VIDEO("TEMPLATE_WITHOUT_VIDEO"),
+    
+    LIVENESS_CHECK_OK("LIVENESS_CHECK_OK"),
+    
+    LIVENESS_CHECK_FAILED("LIVENESS_CHECK_FAILED");
+
+    private String value;
+
+    StatusEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonValue
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    @JsonCreator
+    public static StatusEnum fromValue(String text) {
+      for (StatusEnum b : StatusEnum.values()) {
+        if (String.valueOf(b.value).equals(text)) {
+          return b;
+        }
+      }
+      return null;
+    }
+  }
+
+  @JsonProperty("status")
+  private StatusEnum status = null;
 
   @JsonProperty("txId")
   private String txId = null;
 
-  public ListOutput exception(Boolean exception) {
+  public UILivenessCheckOutput exception(Boolean exception) {
     this.exception = exception;
     return this;
   }
@@ -54,33 +91,25 @@ public class ListOutput {
     this.exception = exception;
   }
 
-  public ListOutput ids(List<String> ids) {
-    this.ids = ids;
-    return this;
-  }
-
-  public ListOutput addIdsItem(String idsItem) {
-    if (this.ids == null) {
-      this.ids = new ArrayList<String>();
-    }
-    this.ids.add(idsItem);
+  public UILivenessCheckOutput status(StatusEnum status) {
+    this.status = status;
     return this;
   }
 
    /**
-   * Get ids
-   * @return ids
+   * Get status
+   * @return status
   **/
   @ApiModelProperty(value = "")
-  public List<String> getIds() {
-    return ids;
+  public StatusEnum getStatus() {
+    return status;
   }
 
-  public void setIds(List<String> ids) {
-    this.ids = ids;
+  public void setStatus(StatusEnum status) {
+    this.status = status;
   }
 
-  public ListOutput txId(String txId) {
+  public UILivenessCheckOutput txId(String txId) {
     this.txId = txId;
     return this;
   }
@@ -107,25 +136,25 @@ public class ListOutput {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    ListOutput listOutput = (ListOutput) o;
-    return Objects.equals(this.exception, listOutput.exception) &&
-        Objects.equals(this.ids, listOutput.ids) &&
-        Objects.equals(this.txId, listOutput.txId);
+    UILivenessCheckOutput uiLivenessCheckOutput = (UILivenessCheckOutput) o;
+    return Objects.equals(this.exception, uiLivenessCheckOutput.exception) &&
+        Objects.equals(this.status, uiLivenessCheckOutput.status) &&
+        Objects.equals(this.txId, uiLivenessCheckOutput.txId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(exception, ids, txId);
+    return Objects.hash(exception, status, txId);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class ListOutput {\n");
+    sb.append("class UILivenessCheckOutput {\n");
     
     sb.append("    exception: ").append(toIndentedString(exception)).append("\n");
-    sb.append("    ids: ").append(toIndentedString(ids)).append("\n");
+    sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    txId: ").append(toIndentedString(txId)).append("\n");
     sb.append("}");
     return sb.toString();

@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **properties** | [**FaceProperties**](FaceProperties.md) |  |  [optional]
 **status** | [**StatusEnum**](#StatusEnum) |  |  [optional]
 **txId** | **String** |  |  [optional]
+**uiTemplateMetadata** | [**UITemplateMetada**](UITemplateMetada.md) |  |  [optional]
 
 
 <a name="StatusEnum"></a>

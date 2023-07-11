@@ -18,7 +18,7 @@ import ar.com.sdc.sobio.client.v1.Pair;
 import java.util.Map;
 import java.util.List;
 
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-09-28T10:34:31.222-03:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-06-14T14:59:22.046-03:00")
 public class OAuth implements Authentication {
   private String accessToken;
 

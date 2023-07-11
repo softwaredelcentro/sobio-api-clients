@@ -13,6 +13,8 @@ import ar.com.sdc.sobio.model.v1.UIExtractDNIARInput;
 import ar.com.sdc.sobio.model.v1.UIExtractDNIAROutput;
 import ar.com.sdc.sobio.model.v1.UIExtractFaceFromImageInput;
 import ar.com.sdc.sobio.model.v1.UIExtractFaceFromImageResult;
+import ar.com.sdc.sobio.model.v1.UILivenessCheckInput;
+import ar.com.sdc.sobio.model.v1.UILivenessCheckOutput;
 import ar.com.sdc.sobio.model.v1.UIVerifyInput;
 import ar.com.sdc.sobio.model.v1.UIVerifyOutput;
 import ar.com.sdc.sobio.model.v1.UIVerifyT2TInput;
@@ -23,7 +25,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-09-28T10:34:31.222-03:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-06-14T14:59:22.046-03:00")
 public class UiComponentApi {
   private ApiClient apiClient;
 
@@ -43,6 +45,47 @@ public class UiComponentApi {
     this.apiClient = apiClient;
   }
 
+  /**
+   * Performs a face livcess verification from an UI component template
+   * 
+   * @param input input (required)
+   * @return UILivenessCheckOutput
+   * @throws ApiException if fails to make API call
+   */
+  public UILivenessCheckOutput checkLiveness(UILivenessCheckInput input) throws ApiException {
+    Object localVarPostBody = input;
+    
+    // verify the required parameter 'input' is set
+    if (input == null) {
+      throw new ApiException(400, "Missing the required parameter 'input' when calling checkLiveness");
+    }
+    
+    // create path and map variables
+    String localVarPath = "/v1/ui/check-liveness";
+
+    // query params
+    List<Pair> localVarQueryParams = new ArrayList<Pair>();
+    Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+    Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+
+    
+    
+    final String[] localVarAccepts = {
+      "application/json"
+    };
+    final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+
+    final String[] localVarContentTypes = {
+      "application/json"
+    };
+    final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+
+    String[] localVarAuthNames = new String[] { "Token" };
+
+    GenericType<UILivenessCheckOutput> localVarReturnType = new GenericType<UILivenessCheckOutput>() {};
+    return apiClient.invokeAPI(localVarPath, "POST", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAccept, localVarContentType, localVarAuthNames, localVarReturnType);
+      }
   /**
    * Performs a biometric enrollment supplied biometric data which is associated with supplied enrolled subject id
    * 

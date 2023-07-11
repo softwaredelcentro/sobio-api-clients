@@ -28,7 +28,7 @@ import java.util.List;
 /**
  * ExtractFaceFromVideoResult
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-09-28T10:34:31.222-03:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-06-14T14:59:22.046-03:00")
 public class ExtractFaceFromVideoResult {
   @JsonProperty("detectedActions")
   private List<DetectedAction> detectedActions = null;
@@ -54,7 +54,9 @@ public class ExtractFaceFromVideoResult {
     
     BAD_ILLUMINATION("BAD_ILLUMINATION"),
     
-    FACE_NOT_DETECTED("FACE_NOT_DETECTED");
+    FACE_NOT_DETECTED("FACE_NOT_DETECTED"),
+    
+    LIVENESS_CHECK_FAILED("LIVENESS_CHECK_FAILED");
 
     private String value;
 

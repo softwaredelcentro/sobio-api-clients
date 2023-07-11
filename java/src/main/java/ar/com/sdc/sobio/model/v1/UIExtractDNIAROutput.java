@@ -16,6 +16,7 @@ package ar.com.sdc.sobio.model.v1;
 import java.util.Objects;
 import ar.com.sdc.sobio.model.v1.DocumentInformation;
 import ar.com.sdc.sobio.model.v1.MrzRecord;
+import ar.com.sdc.sobio.model.v1.UITemplateMetada;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -27,7 +28,7 @@ import java.util.List;
 /**
  * UIExtractDNIAROutput
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-09-28T10:34:31.222-03:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-06-14T14:59:22.046-03:00")
 public class UIExtractDNIAROutput {
   @JsonProperty("additionalInfo")
   private String additionalInfo = null;
@@ -148,6 +149,9 @@ public class UIExtractDNIAROutput {
 
   @JsonProperty("txId")
   private String txId = null;
+
+  @JsonProperty("uiTemplateMetadata")
+  private UITemplateMetada uiTemplateMetadata = null;
 
   public UIExtractDNIAROutput additionalInfo(String additionalInfo) {
     this.additionalInfo = additionalInfo;
@@ -373,6 +377,24 @@ public class UIExtractDNIAROutput {
     this.txId = txId;
   }
 
+  public UIExtractDNIAROutput uiTemplateMetadata(UITemplateMetada uiTemplateMetadata) {
+    this.uiTemplateMetadata = uiTemplateMetadata;
+    return this;
+  }
+
+   /**
+   * Get uiTemplateMetadata
+   * @return uiTemplateMetadata
+  **/
+  @ApiModelProperty(value = "")
+  public UITemplateMetada getUiTemplateMetadata() {
+    return uiTemplateMetadata;
+  }
+
+  public void setUiTemplateMetadata(UITemplateMetada uiTemplateMetadata) {
+    this.uiTemplateMetadata = uiTemplateMetadata;
+  }
+
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -394,12 +416,13 @@ public class UIExtractDNIAROutput {
         Objects.equals(this.pdf417Detected, uiExtractDNIAROutput.pdf417Detected) &&
         Objects.equals(this.status, uiExtractDNIAROutput.status) &&
         Objects.equals(this.suggestedAction, uiExtractDNIAROutput.suggestedAction) &&
-        Objects.equals(this.txId, uiExtractDNIAROutput.txId);
+        Objects.equals(this.txId, uiExtractDNIAROutput.txId) &&
+        Objects.equals(this.uiTemplateMetadata, uiExtractDNIAROutput.uiTemplateMetadata);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(additionalInfo, backImage, documentInfo, exception, frontImage, mrz, mrzDetected, pdf417, pdf417Detected, status, suggestedAction, txId);
+    return Objects.hash(additionalInfo, backImage, documentInfo, exception, frontImage, mrz, mrzDetected, pdf417, pdf417Detected, status, suggestedAction, txId, uiTemplateMetadata);
   }
 
 
@@ -420,6 +443,7 @@ public class UIExtractDNIAROutput {
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    suggestedAction: ").append(toIndentedString(suggestedAction)).append("\n");
     sb.append("    txId: ").append(toIndentedString(txId)).append("\n");
+    sb.append("    uiTemplateMetadata: ").append(toIndentedString(uiTemplateMetadata)).append("\n");
     sb.append("}");
     return sb.toString();
   }

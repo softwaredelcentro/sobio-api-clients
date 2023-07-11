@@ -14,7 +14,6 @@
 package ar.com.sdc.sobio.model.v1;
 
 import java.util.Objects;
-import ar.com.sdc.sobio.model.v1.BiometricData;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -22,23 +21,57 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 /**
- * UIVerifyT2TInput
+ * UILivenessCheckInput
  */
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-06-14T14:59:22.046-03:00")
-public class UIVerifyT2TInput {
+public class UILivenessCheckInput {
   @JsonProperty("auditToken")
   private String auditToken = null;
 
-  @JsonProperty("bioInfo")
-  private BiometricData bioInfo = null;
+  /**
+   * Gets or Sets checkLivenessMode
+   */
+  public enum CheckLivenessModeEnum {
+    LOW("LOW"),
+    
+    MEDIUM("MEDIUM"),
+    
+    HIGH("HIGH");
+
+    private String value;
+
+    CheckLivenessModeEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonValue
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    @JsonCreator
+    public static CheckLivenessModeEnum fromValue(String text) {
+      for (CheckLivenessModeEnum b : CheckLivenessModeEnum.values()) {
+        if (String.valueOf(b.value).equals(text)) {
+          return b;
+        }
+      }
+      return null;
+    }
+  }
+
+  @JsonProperty("checkLivenessMode")
+  private CheckLivenessModeEnum checkLivenessMode = null;
 
   @JsonProperty("uiTemplate")
   private String uiTemplate = null;
 
-  @JsonProperty("uiTemplate2")
-  private String uiTemplate2 = null;
-
-  public UIVerifyT2TInput auditToken(String auditToken) {
+  public UILivenessCheckInput auditToken(String auditToken) {
     this.auditToken = auditToken;
     return this;
   }
@@ -47,7 +80,7 @@ public class UIVerifyT2TInput {
    * Get auditToken
    * @return auditToken
   **/
-  @ApiModelProperty(required = true, value = "")
+  @ApiModelProperty(value = "")
   public String getAuditToken() {
     return auditToken;
   }
@@ -56,25 +89,25 @@ public class UIVerifyT2TInput {
     this.auditToken = auditToken;
   }
 
-  public UIVerifyT2TInput bioInfo(BiometricData bioInfo) {
-    this.bioInfo = bioInfo;
+  public UILivenessCheckInput checkLivenessMode(CheckLivenessModeEnum checkLivenessMode) {
+    this.checkLivenessMode = checkLivenessMode;
     return this;
   }
 
    /**
-   * Get bioInfo
-   * @return bioInfo
+   * Get checkLivenessMode
+   * @return checkLivenessMode
   **/
-  @ApiModelProperty(value = "")
-  public BiometricData getBioInfo() {
-    return bioInfo;
+  @ApiModelProperty(required = true, value = "")
+  public CheckLivenessModeEnum getCheckLivenessMode() {
+    return checkLivenessMode;
   }
 
-  public void setBioInfo(BiometricData bioInfo) {
-    this.bioInfo = bioInfo;
+  public void setCheckLivenessMode(CheckLivenessModeEnum checkLivenessMode) {
+    this.checkLivenessMode = checkLivenessMode;
   }
 
-  public UIVerifyT2TInput uiTemplate(String uiTemplate) {
+  public UILivenessCheckInput uiTemplate(String uiTemplate) {
     this.uiTemplate = uiTemplate;
     return this;
   }
@@ -92,24 +125,6 @@ public class UIVerifyT2TInput {
     this.uiTemplate = uiTemplate;
   }
 
-  public UIVerifyT2TInput uiTemplate2(String uiTemplate2) {
-    this.uiTemplate2 = uiTemplate2;
-    return this;
-  }
-
-   /**
-   * Get uiTemplate2
-   * @return uiTemplate2
-  **/
-  @ApiModelProperty(value = "")
-  public String getUiTemplate2() {
-    return uiTemplate2;
-  }
-
-  public void setUiTemplate2(String uiTemplate2) {
-    this.uiTemplate2 = uiTemplate2;
-  }
-
 
   @Override
   public boolean equals(java.lang.Object o) {
@@ -119,28 +134,26 @@ public class UIVerifyT2TInput {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    UIVerifyT2TInput uiVerifyT2TInput = (UIVerifyT2TInput) o;
-    return Objects.equals(this.auditToken, uiVerifyT2TInput.auditToken) &&
-        Objects.equals(this.bioInfo, uiVerifyT2TInput.bioInfo) &&
-        Objects.equals(this.uiTemplate, uiVerifyT2TInput.uiTemplate) &&
-        Objects.equals(this.uiTemplate2, uiVerifyT2TInput.uiTemplate2);
+    UILivenessCheckInput uiLivenessCheckInput = (UILivenessCheckInput) o;
+    return Objects.equals(this.auditToken, uiLivenessCheckInput.auditToken) &&
+        Objects.equals(this.checkLivenessMode, uiLivenessCheckInput.checkLivenessMode) &&
+        Objects.equals(this.uiTemplate, uiLivenessCheckInput.uiTemplate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(auditToken, bioInfo, uiTemplate, uiTemplate2);
+    return Objects.hash(auditToken, checkLivenessMode, uiTemplate);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class UIVerifyT2TInput {\n");
+    sb.append("class UILivenessCheckInput {\n");
     
     sb.append("    auditToken: ").append(toIndentedString(auditToken)).append("\n");
-    sb.append("    bioInfo: ").append(toIndentedString(bioInfo)).append("\n");
+    sb.append("    checkLivenessMode: ").append(toIndentedString(checkLivenessMode)).append("\n");
     sb.append("    uiTemplate: ").append(toIndentedString(uiTemplate)).append("\n");
-    sb.append("    uiTemplate2: ").append(toIndentedString(uiTemplate2)).append("\n");
     sb.append("}");
     return sb.toString();
   }

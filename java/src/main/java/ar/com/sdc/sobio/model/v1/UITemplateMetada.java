@@ -19,52 +19,32 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import org.joda.time.DateTime;
 
 /**
- * Face
+ * UITemplateMetada
  */
 @javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-06-14T14:59:22.046-03:00")
-public class Face {
-  @JsonProperty("image")
-  private byte[] image = null;
+public class UITemplateMetada {
+  @JsonProperty("fechaCreacionTemplate")
+  private DateTime fechaCreacionTemplate = null;
 
-  @JsonProperty("template")
-  private byte[] template = null;
-
-  public Face image(byte[] image) {
-    this.image = image;
+  public UITemplateMetada fechaCreacionTemplate(DateTime fechaCreacionTemplate) {
+    this.fechaCreacionTemplate = fechaCreacionTemplate;
     return this;
   }
 
    /**
-   * Get image
-   * @return image
+   * Get fechaCreacionTemplate
+   * @return fechaCreacionTemplate
   **/
   @ApiModelProperty(value = "")
-  public byte[] getImage() {
-    return image;
+  public DateTime getFechaCreacionTemplate() {
+    return fechaCreacionTemplate;
   }
 
-  public void setImage(byte[] image) {
-    this.image = image;
-  }
-
-  public Face template(byte[] template) {
-    this.template = template;
-    return this;
-  }
-
-   /**
-   * Get template
-   * @return template
-  **/
-  @ApiModelProperty(value = "")
-  public byte[] getTemplate() {
-    return template;
-  }
-
-  public void setTemplate(byte[] template) {
-    this.template = template;
+  public void setFechaCreacionTemplate(DateTime fechaCreacionTemplate) {
+    this.fechaCreacionTemplate = fechaCreacionTemplate;
   }
 
 
@@ -76,24 +56,22 @@ public class Face {
     if (o == null || getClass() != o.getClass()) {
       return false;
     }
-    Face face = (Face) o;
-    return Objects.equals(this.image, face.image) &&
-        Objects.equals(this.template, face.template);
+    UITemplateMetada uiTemplateMetada = (UITemplateMetada) o;
+    return Objects.equals(this.fechaCreacionTemplate, uiTemplateMetada.fechaCreacionTemplate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(image, template);
+    return Objects.hash(fechaCreacionTemplate);
   }
 
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
-    sb.append("class Face {\n");
+    sb.append("class UITemplateMetada {\n");
     
-    sb.append("    image: ").append(toIndentedString(image)).append("\n");
-    sb.append("    template: ").append(toIndentedString(template)).append("\n");
+    sb.append("    fechaCreacionTemplate: ").append(toIndentedString(fechaCreacionTemplate)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -24,7 +24,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * FaceExtractionParams
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2022-09-28T10:34:31.222-03:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-06-14T14:59:22.046-03:00")
 public class FaceExtractionParams {
   @JsonProperty("blinkSensibility")
   private Double blinkSensibility = null;
@@ -49,6 +49,54 @@ public class FaceExtractionParams {
 
   @JsonProperty("facePoseSensibility")
   private FacePoseSensibilityConfig facePoseSensibility = null;
+
+  /**
+   * Gets or Sets livenessCheck
+   */
+  public enum LivenessCheckEnum {
+    WEAK("WEAK"),
+    
+    PAD_1_L0("PAD_1_L0"),
+    
+    PAD_1_L1("PAD_1_L1"),
+    
+    PAD_1_L2("PAD_1_L2"),
+    
+    PAD_1_L3("PAD_1_L3"),
+    
+    PAD_1_L4("PAD_1_L4"),
+    
+    PAD_1_L5("PAD_1_L5");
+
+    private String value;
+
+    LivenessCheckEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonValue
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    @JsonCreator
+    public static LivenessCheckEnum fromValue(String text) {
+      for (LivenessCheckEnum b : LivenessCheckEnum.values()) {
+        if (String.valueOf(b.value).equals(text)) {
+          return b;
+        }
+      }
+      return null;
+    }
+  }
+
+  @JsonProperty("livenessCheck")
+  private LivenessCheckEnum livenessCheck = null;
 
   @JsonProperty("maxCLAHE")
   private Integer maxCLAHE = null;
@@ -228,6 +276,24 @@ public class FaceExtractionParams {
 
   public void setFacePoseSensibility(FacePoseSensibilityConfig facePoseSensibility) {
     this.facePoseSensibility = facePoseSensibility;
+  }
+
+  public FaceExtractionParams livenessCheck(LivenessCheckEnum livenessCheck) {
+    this.livenessCheck = livenessCheck;
+    return this;
+  }
+
+   /**
+   * Get livenessCheck
+   * @return livenessCheck
+  **/
+  @ApiModelProperty(value = "")
+  public LivenessCheckEnum getLivenessCheck() {
+    return livenessCheck;
+  }
+
+  public void setLivenessCheck(LivenessCheckEnum livenessCheck) {
+    this.livenessCheck = livenessCheck;
   }
 
   public FaceExtractionParams maxCLAHE(Integer maxCLAHE) {
@@ -468,6 +534,7 @@ public class FaceExtractionParams {
         Objects.equals(this.detectOnlyMajorFace, faceExtractionParams.detectOnlyMajorFace) &&
         Objects.equals(this.detectTraitsAndActions, faceExtractionParams.detectTraitsAndActions) &&
         Objects.equals(this.facePoseSensibility, faceExtractionParams.facePoseSensibility) &&
+        Objects.equals(this.livenessCheck, faceExtractionParams.livenessCheck) &&
         Objects.equals(this.maxCLAHE, faceExtractionParams.maxCLAHE) &&
         Objects.equals(this.maxRoll, faceExtractionParams.maxRoll) &&
         Objects.equals(this.maxYaw, faceExtractionParams.maxYaw) &&
@@ -484,7 +551,7 @@ public class FaceExtractionParams {
 
   @Override
   public int hashCode() {
-    return Objects.hash(blinkSensibility, detectAge, detectEmotion, detectExpression, detectGender, detectOnlyMajorFace, detectTraitsAndActions, facePoseSensibility, maxCLAHE, maxRoll, maxYaw, minCLAHE, minConfidence, minIOD, minQuality, scaleH, thumbnailWidth, useCLAHE, useCache, videoFramesSeq);
+    return Objects.hash(blinkSensibility, detectAge, detectEmotion, detectExpression, detectGender, detectOnlyMajorFace, detectTraitsAndActions, facePoseSensibility, livenessCheck, maxCLAHE, maxRoll, maxYaw, minCLAHE, minConfidence, minIOD, minQuality, scaleH, thumbnailWidth, useCLAHE, useCache, videoFramesSeq);
   }
 
 
@@ -501,6 +568,7 @@ public class FaceExtractionParams {
     sb.append("    detectOnlyMajorFace: ").append(toIndentedString(detectOnlyMajorFace)).append("\n");
     sb.append("    detectTraitsAndActions: ").append(toIndentedString(detectTraitsAndActions)).append("\n");
     sb.append("    facePoseSensibility: ").append(toIndentedString(facePoseSensibility)).append("\n");
+    sb.append("    livenessCheck: ").append(toIndentedString(livenessCheck)).append("\n");
     sb.append("    maxCLAHE: ").append(toIndentedString(maxCLAHE)).append("\n");
     sb.append("    maxRoll: ").append(toIndentedString(maxRoll)).append("\n");
     sb.append("    maxYaw: ").append(toIndentedString(maxYaw)).append("\n");
