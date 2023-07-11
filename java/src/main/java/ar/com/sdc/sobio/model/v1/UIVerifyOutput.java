@@ -23,13 +23,19 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * UIVerifyOutput
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-06-14T14:59:22.046-03:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-07-11T17:05:54.141-03:00")
 public class UIVerifyOutput {
   @JsonProperty("confidence")
   private Integer confidence = null;
 
   @JsonProperty("exception")
   private Boolean exception = null;
+
+  @JsonProperty("faP")
+  private Double faP = null;
+
+  @JsonProperty("score")
+  private Integer score = null;
 
   /**
    * Gets or Sets status
@@ -118,6 +124,42 @@ public class UIVerifyOutput {
     this.exception = exception;
   }
 
+  public UIVerifyOutput faP(Double faP) {
+    this.faP = faP;
+    return this;
+  }
+
+   /**
+   * Get faP
+   * @return faP
+  **/
+  @ApiModelProperty(value = "")
+  public Double getFaP() {
+    return faP;
+  }
+
+  public void setFaP(Double faP) {
+    this.faP = faP;
+  }
+
+  public UIVerifyOutput score(Integer score) {
+    this.score = score;
+    return this;
+  }
+
+   /**
+   * Get score
+   * @return score
+  **/
+  @ApiModelProperty(value = "")
+  public Integer getScore() {
+    return score;
+  }
+
+  public void setScore(Integer score) {
+    this.score = score;
+  }
+
   public UIVerifyOutput status(StatusEnum status) {
     this.status = status;
     return this;
@@ -166,13 +208,15 @@ public class UIVerifyOutput {
     UIVerifyOutput uiVerifyOutput = (UIVerifyOutput) o;
     return Objects.equals(this.confidence, uiVerifyOutput.confidence) &&
         Objects.equals(this.exception, uiVerifyOutput.exception) &&
+        Objects.equals(this.faP, uiVerifyOutput.faP) &&
+        Objects.equals(this.score, uiVerifyOutput.score) &&
         Objects.equals(this.status, uiVerifyOutput.status) &&
         Objects.equals(this.txId, uiVerifyOutput.txId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(confidence, exception, status, txId);
+    return Objects.hash(confidence, exception, faP, score, status, txId);
   }
 
 
@@ -183,6 +227,8 @@ public class UIVerifyOutput {
     
     sb.append("    confidence: ").append(toIndentedString(confidence)).append("\n");
     sb.append("    exception: ").append(toIndentedString(exception)).append("\n");
+    sb.append("    faP: ").append(toIndentedString(faP)).append("\n");
+    sb.append("    score: ").append(toIndentedString(score)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    txId: ").append(toIndentedString(txId)).append("\n");
     sb.append("}");

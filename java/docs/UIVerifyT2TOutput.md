@@ -6,6 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **confidence** | **Double** |  | 
 **exception** | **Boolean** |  |  [optional]
+**faP** | **Double** |  |  [optional]
+**score** | **Integer** |  |  [optional]
 **status** | [**StatusEnum**](#StatusEnum) |  |  [optional]
 **txId** | **String** |  |  [optional]
 

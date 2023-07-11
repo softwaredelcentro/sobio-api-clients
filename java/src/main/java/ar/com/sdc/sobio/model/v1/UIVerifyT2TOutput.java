@@ -23,13 +23,19 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * UIVerifyT2TOutput
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-06-14T14:59:22.046-03:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-07-11T17:05:54.141-03:00")
 public class UIVerifyT2TOutput {
   @JsonProperty("confidence")
   private Double confidence = null;
 
   @JsonProperty("exception")
   private Boolean exception = null;
+
+  @JsonProperty("faP")
+  private Double faP = null;
+
+  @JsonProperty("score")
+  private Integer score = null;
 
   /**
    * Gets or Sets status
@@ -110,6 +116,42 @@ public class UIVerifyT2TOutput {
     this.exception = exception;
   }
 
+  public UIVerifyT2TOutput faP(Double faP) {
+    this.faP = faP;
+    return this;
+  }
+
+   /**
+   * Get faP
+   * @return faP
+  **/
+  @ApiModelProperty(value = "")
+  public Double getFaP() {
+    return faP;
+  }
+
+  public void setFaP(Double faP) {
+    this.faP = faP;
+  }
+
+  public UIVerifyT2TOutput score(Integer score) {
+    this.score = score;
+    return this;
+  }
+
+   /**
+   * Get score
+   * @return score
+  **/
+  @ApiModelProperty(value = "")
+  public Integer getScore() {
+    return score;
+  }
+
+  public void setScore(Integer score) {
+    this.score = score;
+  }
+
   public UIVerifyT2TOutput status(StatusEnum status) {
     this.status = status;
     return this;
@@ -158,13 +200,15 @@ public class UIVerifyT2TOutput {
     UIVerifyT2TOutput uiVerifyT2TOutput = (UIVerifyT2TOutput) o;
     return Objects.equals(this.confidence, uiVerifyT2TOutput.confidence) &&
         Objects.equals(this.exception, uiVerifyT2TOutput.exception) &&
+        Objects.equals(this.faP, uiVerifyT2TOutput.faP) &&
+        Objects.equals(this.score, uiVerifyT2TOutput.score) &&
         Objects.equals(this.status, uiVerifyT2TOutput.status) &&
         Objects.equals(this.txId, uiVerifyT2TOutput.txId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(confidence, exception, status, txId);
+    return Objects.hash(confidence, exception, faP, score, status, txId);
   }
 
 
@@ -175,6 +219,8 @@ public class UIVerifyT2TOutput {
     
     sb.append("    confidence: ").append(toIndentedString(confidence)).append("\n");
     sb.append("    exception: ").append(toIndentedString(exception)).append("\n");
+    sb.append("    faP: ").append(toIndentedString(faP)).append("\n");
+    sb.append("    score: ").append(toIndentedString(score)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    txId: ").append(toIndentedString(txId)).append("\n");
     sb.append("}");

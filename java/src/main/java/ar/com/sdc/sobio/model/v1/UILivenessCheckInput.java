@@ -23,7 +23,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * UILivenessCheckInput
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-06-14T14:59:22.046-03:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-07-11T17:05:54.141-03:00")
 public class UILivenessCheckInput {
   @JsonProperty("auditToken")
   private String auditToken = null;
@@ -32,11 +32,15 @@ public class UILivenessCheckInput {
    * Gets or Sets checkLivenessMode
    */
   public enum CheckLivenessModeEnum {
-    LOW("LOW"),
+    PASSIVE("PASSIVE"),
     
-    MEDIUM("MEDIUM"),
+    ACTIVE("ACTIVE"),
     
-    HIGH("HIGH");
+    SIMPLE("SIMPLE"),
+    
+    BLINK("BLINK"),
+    
+    CUSTOM("CUSTOM");
 
     private String value;
 
@@ -67,6 +71,49 @@ public class UILivenessCheckInput {
 
   @JsonProperty("checkLivenessMode")
   private CheckLivenessModeEnum checkLivenessMode = null;
+
+  /**
+   * Gets or Sets checkLivnessLevel
+   */
+  public enum CheckLivnessLevelEnum {
+    LOW("LOW"),
+    
+    MEDIUM("MEDIUM"),
+    
+    HIGH("HIGH");
+
+    private String value;
+
+    CheckLivnessLevelEnum(String value) {
+      this.value = value;
+    }
+
+    @JsonValue
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    @JsonCreator
+    public static CheckLivnessLevelEnum fromValue(String text) {
+      for (CheckLivnessLevelEnum b : CheckLivnessLevelEnum.values()) {
+        if (String.valueOf(b.value).equals(text)) {
+          return b;
+        }
+      }
+      return null;
+    }
+  }
+
+  @JsonProperty("checkLivnessLevel")
+  private CheckLivnessLevelEnum checkLivnessLevel = null;
+
+  @JsonProperty("checkLivnessTryLowerLevel")
+  private Boolean checkLivnessTryLowerLevel = null;
 
   @JsonProperty("uiTemplate")
   private String uiTemplate = null;
@@ -107,6 +154,42 @@ public class UILivenessCheckInput {
     this.checkLivenessMode = checkLivenessMode;
   }
 
+  public UILivenessCheckInput checkLivnessLevel(CheckLivnessLevelEnum checkLivnessLevel) {
+    this.checkLivnessLevel = checkLivnessLevel;
+    return this;
+  }
+
+   /**
+   * Get checkLivnessLevel
+   * @return checkLivnessLevel
+  **/
+  @ApiModelProperty(required = true, value = "")
+  public CheckLivnessLevelEnum getCheckLivnessLevel() {
+    return checkLivnessLevel;
+  }
+
+  public void setCheckLivnessLevel(CheckLivnessLevelEnum checkLivnessLevel) {
+    this.checkLivnessLevel = checkLivnessLevel;
+  }
+
+  public UILivenessCheckInput checkLivnessTryLowerLevel(Boolean checkLivnessTryLowerLevel) {
+    this.checkLivnessTryLowerLevel = checkLivnessTryLowerLevel;
+    return this;
+  }
+
+   /**
+   * Get checkLivnessTryLowerLevel
+   * @return checkLivnessTryLowerLevel
+  **/
+  @ApiModelProperty(value = "")
+  public Boolean isCheckLivnessTryLowerLevel() {
+    return checkLivnessTryLowerLevel;
+  }
+
+  public void setCheckLivnessTryLowerLevel(Boolean checkLivnessTryLowerLevel) {
+    this.checkLivnessTryLowerLevel = checkLivnessTryLowerLevel;
+  }
+
   public UILivenessCheckInput uiTemplate(String uiTemplate) {
     this.uiTemplate = uiTemplate;
     return this;
@@ -137,12 +220,14 @@ public class UILivenessCheckInput {
     UILivenessCheckInput uiLivenessCheckInput = (UILivenessCheckInput) o;
     return Objects.equals(this.auditToken, uiLivenessCheckInput.auditToken) &&
         Objects.equals(this.checkLivenessMode, uiLivenessCheckInput.checkLivenessMode) &&
+        Objects.equals(this.checkLivnessLevel, uiLivenessCheckInput.checkLivnessLevel) &&
+        Objects.equals(this.checkLivnessTryLowerLevel, uiLivenessCheckInput.checkLivnessTryLowerLevel) &&
         Objects.equals(this.uiTemplate, uiLivenessCheckInput.uiTemplate);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(auditToken, checkLivenessMode, uiTemplate);
+    return Objects.hash(auditToken, checkLivenessMode, checkLivnessLevel, checkLivnessTryLowerLevel, uiTemplate);
   }
 
 
@@ -153,6 +238,8 @@ public class UILivenessCheckInput {
     
     sb.append("    auditToken: ").append(toIndentedString(auditToken)).append("\n");
     sb.append("    checkLivenessMode: ").append(toIndentedString(checkLivenessMode)).append("\n");
+    sb.append("    checkLivnessLevel: ").append(toIndentedString(checkLivnessLevel)).append("\n");
+    sb.append("    checkLivnessTryLowerLevel: ").append(toIndentedString(checkLivnessTryLowerLevel)).append("\n");
     sb.append("    uiTemplate: ").append(toIndentedString(uiTemplate)).append("\n");
     sb.append("}");
     return sb.toString();

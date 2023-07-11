@@ -15,6 +15,7 @@ package ar.com.sdc.sobio.model.v1;
 
 import java.util.Objects;
 import ar.com.sdc.sobio.model.v1.BiometricData;
+import ar.com.sdc.sobio.model.v1.VerificationParameters;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -24,13 +25,16 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * UIVerifyT2TInput
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-06-14T14:59:22.046-03:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-07-11T17:05:54.141-03:00")
 public class UIVerifyT2TInput {
   @JsonProperty("auditToken")
   private String auditToken = null;
 
   @JsonProperty("bioInfo")
   private BiometricData bioInfo = null;
+
+  @JsonProperty("params")
+  private VerificationParameters params = null;
 
   @JsonProperty("uiTemplate")
   private String uiTemplate = null;
@@ -72,6 +76,24 @@ public class UIVerifyT2TInput {
 
   public void setBioInfo(BiometricData bioInfo) {
     this.bioInfo = bioInfo;
+  }
+
+  public UIVerifyT2TInput params(VerificationParameters params) {
+    this.params = params;
+    return this;
+  }
+
+   /**
+   * Get params
+   * @return params
+  **/
+  @ApiModelProperty(value = "")
+  public VerificationParameters getParams() {
+    return params;
+  }
+
+  public void setParams(VerificationParameters params) {
+    this.params = params;
   }
 
   public UIVerifyT2TInput uiTemplate(String uiTemplate) {
@@ -122,13 +144,14 @@ public class UIVerifyT2TInput {
     UIVerifyT2TInput uiVerifyT2TInput = (UIVerifyT2TInput) o;
     return Objects.equals(this.auditToken, uiVerifyT2TInput.auditToken) &&
         Objects.equals(this.bioInfo, uiVerifyT2TInput.bioInfo) &&
+        Objects.equals(this.params, uiVerifyT2TInput.params) &&
         Objects.equals(this.uiTemplate, uiVerifyT2TInput.uiTemplate) &&
         Objects.equals(this.uiTemplate2, uiVerifyT2TInput.uiTemplate2);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(auditToken, bioInfo, uiTemplate, uiTemplate2);
+    return Objects.hash(auditToken, bioInfo, params, uiTemplate, uiTemplate2);
   }
 
 
@@ -139,6 +162,7 @@ public class UIVerifyT2TInput {
     
     sb.append("    auditToken: ").append(toIndentedString(auditToken)).append("\n");
     sb.append("    bioInfo: ").append(toIndentedString(bioInfo)).append("\n");
+    sb.append("    params: ").append(toIndentedString(params)).append("\n");
     sb.append("    uiTemplate: ").append(toIndentedString(uiTemplate)).append("\n");
     sb.append("    uiTemplate2: ").append(toIndentedString(uiTemplate2)).append("\n");
     sb.append("}");

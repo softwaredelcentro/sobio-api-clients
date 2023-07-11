@@ -25,7 +25,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * IdentifyInput
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-06-14T14:59:22.046-03:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-07-11T17:05:54.141-03:00")
 public class IdentifyInput {
   @JsonProperty("auditToken")
   private String auditToken = null;

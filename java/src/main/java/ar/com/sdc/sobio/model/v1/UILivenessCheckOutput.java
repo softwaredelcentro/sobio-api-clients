@@ -23,7 +23,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * UILivenessCheckOutput
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-06-14T14:59:22.046-03:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-07-11T17:05:54.141-03:00")
 public class UILivenessCheckOutput {
   @JsonProperty("exception")
   private Boolean exception = null;
@@ -38,7 +38,9 @@ public class UILivenessCheckOutput {
     
     LIVENESS_CHECK_OK("LIVENESS_CHECK_OK"),
     
-    LIVENESS_CHECK_FAILED("LIVENESS_CHECK_FAILED");
+    LIVENESS_CHECK_FAILED("LIVENESS_CHECK_FAILED"),
+    
+    LIVENESS_CHECK_OK_WITH_LOWER_LEVEL("LIVENESS_CHECK_OK_WITH_LOWER_LEVEL");
 
     private String value;
 

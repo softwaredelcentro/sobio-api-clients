@@ -14,6 +14,7 @@
 package ar.com.sdc.sobio.model.v1;
 
 import java.util.Objects;
+import ar.com.sdc.sobio.model.v1.VerificationParameters;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
@@ -23,10 +24,13 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * UIVerifyInput
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-06-14T14:59:22.046-03:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-07-11T17:05:54.141-03:00")
 public class UIVerifyInput {
   @JsonProperty("auditToken")
   private String auditToken = null;
+
+  @JsonProperty("params")
+  private VerificationParameters params = null;
 
   @JsonProperty("subjectId")
   private String subjectId = null;
@@ -50,6 +54,24 @@ public class UIVerifyInput {
 
   public void setAuditToken(String auditToken) {
     this.auditToken = auditToken;
+  }
+
+  public UIVerifyInput params(VerificationParameters params) {
+    this.params = params;
+    return this;
+  }
+
+   /**
+   * Get params
+   * @return params
+  **/
+  @ApiModelProperty(value = "")
+  public VerificationParameters getParams() {
+    return params;
+  }
+
+  public void setParams(VerificationParameters params) {
+    this.params = params;
   }
 
   public UIVerifyInput subjectId(String subjectId) {
@@ -99,13 +121,14 @@ public class UIVerifyInput {
     }
     UIVerifyInput uiVerifyInput = (UIVerifyInput) o;
     return Objects.equals(this.auditToken, uiVerifyInput.auditToken) &&
+        Objects.equals(this.params, uiVerifyInput.params) &&
         Objects.equals(this.subjectId, uiVerifyInput.subjectId) &&
         Objects.equals(this.template, uiVerifyInput.template);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(auditToken, subjectId, template);
+    return Objects.hash(auditToken, params, subjectId, template);
   }
 
 
@@ -115,6 +138,7 @@ public class UIVerifyInput {
     sb.append("class UIVerifyInput {\n");
     
     sb.append("    auditToken: ").append(toIndentedString(auditToken)).append("\n");
+    sb.append("    params: ").append(toIndentedString(params)).append("\n");
     sb.append("    subjectId: ").append(toIndentedString(subjectId)).append("\n");
     sb.append("    template: ").append(toIndentedString(template)).append("\n");
     sb.append("}");

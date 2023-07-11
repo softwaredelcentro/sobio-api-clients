@@ -28,7 +28,7 @@ import java.util.List;
 /**
  * ExtractFaceFromVideoResult
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-06-14T14:59:22.046-03:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-07-11T17:05:54.141-03:00")
 public class ExtractFaceFromVideoResult {
   @JsonProperty("detectedActions")
   private List<DetectedAction> detectedActions = null;
@@ -38,6 +38,9 @@ public class ExtractFaceFromVideoResult {
 
   @JsonProperty("face")
   private Face face = null;
+
+  @JsonProperty("livenessLevel")
+  private Integer livenessLevel = null;
 
   @JsonProperty("properties")
   private FaceProperties properties = null;
@@ -56,7 +59,9 @@ public class ExtractFaceFromVideoResult {
     
     FACE_NOT_DETECTED("FACE_NOT_DETECTED"),
     
-    LIVENESS_CHECK_FAILED("LIVENESS_CHECK_FAILED");
+    LIVENESS_CHECK_FAILED("LIVENESS_CHECK_FAILED"),
+    
+    LIVENESS_CHECK_LEVEL("LIVENESS_CHECK_LEVEL");
 
     private String value;
 
@@ -153,6 +158,24 @@ public class ExtractFaceFromVideoResult {
     this.face = face;
   }
 
+  public ExtractFaceFromVideoResult livenessLevel(Integer livenessLevel) {
+    this.livenessLevel = livenessLevel;
+    return this;
+  }
+
+   /**
+   * Get livenessLevel
+   * @return livenessLevel
+  **/
+  @ApiModelProperty(value = "")
+  public Integer getLivenessLevel() {
+    return livenessLevel;
+  }
+
+  public void setLivenessLevel(Integer livenessLevel) {
+    this.livenessLevel = livenessLevel;
+  }
+
   public ExtractFaceFromVideoResult properties(FaceProperties properties) {
     this.properties = properties;
     return this;
@@ -220,6 +243,7 @@ public class ExtractFaceFromVideoResult {
     return Objects.equals(this.detectedActions, extractFaceFromVideoResult.detectedActions) &&
         Objects.equals(this.exception, extractFaceFromVideoResult.exception) &&
         Objects.equals(this.face, extractFaceFromVideoResult.face) &&
+        Objects.equals(this.livenessLevel, extractFaceFromVideoResult.livenessLevel) &&
         Objects.equals(this.properties, extractFaceFromVideoResult.properties) &&
         Objects.equals(this.status, extractFaceFromVideoResult.status) &&
         Objects.equals(this.txId, extractFaceFromVideoResult.txId);
@@ -227,7 +251,7 @@ public class ExtractFaceFromVideoResult {
 
   @Override
   public int hashCode() {
-    return Objects.hash(detectedActions, exception, face, properties, status, txId);
+    return Objects.hash(detectedActions, exception, face, livenessLevel, properties, status, txId);
   }
 
 
@@ -239,6 +263,7 @@ public class ExtractFaceFromVideoResult {
     sb.append("    detectedActions: ").append(toIndentedString(detectedActions)).append("\n");
     sb.append("    exception: ").append(toIndentedString(exception)).append("\n");
     sb.append("    face: ").append(toIndentedString(face)).append("\n");
+    sb.append("    livenessLevel: ").append(toIndentedString(livenessLevel)).append("\n");
     sb.append("    properties: ").append(toIndentedString(properties)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");
     sb.append("    txId: ").append(toIndentedString(txId)).append("\n");
