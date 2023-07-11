@@ -6,7 +6,7 @@
 	<artifactId>sobio-api-client</artifactId>
 	<packaging>jar</packaging>
 	<name>sobio-api-client</name>
-	<version>20230711.a2d356f</version>	                  
+	<version>20230711.23431d1</version>	                  
 	<distributionManagement>
 		<repository>
 			<id>releases</id>
