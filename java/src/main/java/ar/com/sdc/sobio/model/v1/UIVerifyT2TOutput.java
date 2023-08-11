@@ -23,7 +23,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * UIVerifyT2TOutput
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-07-11T17:07:14.771-03:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-08-11T10:24:49.696-03:00")
 public class UIVerifyT2TOutput {
   @JsonProperty("confidence")
   private Double confidence = null;

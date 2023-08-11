@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **determinePatternClass** | **Boolean** |  |  [optional]
+**encryptTemplate** | **Boolean** |  |  [optional]
 **evaluateNFIQ** | **Boolean** |  |  [optional]
 **imageSource** | [**ImageSourceEnum**](#ImageSourceEnum) |  |  [optional]
 **maxRotation** | **Float** |  |  [optional]

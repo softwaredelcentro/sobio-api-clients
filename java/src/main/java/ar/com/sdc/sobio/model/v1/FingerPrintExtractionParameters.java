@@ -23,10 +23,13 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * FingerPrintExtractionParameters
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-07-11T17:07:14.771-03:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-08-11T10:24:49.696-03:00")
 public class FingerPrintExtractionParameters {
   @JsonProperty("determinePatternClass")
   private Boolean determinePatternClass = null;
+
+  @JsonProperty("encryptTemplate")
+  private Boolean encryptTemplate = null;
 
   @JsonProperty("evaluateNFIQ")
   private Boolean evaluateNFIQ = null;
@@ -155,6 +158,24 @@ public class FingerPrintExtractionParameters {
 
   public void setDeterminePatternClass(Boolean determinePatternClass) {
     this.determinePatternClass = determinePatternClass;
+  }
+
+  public FingerPrintExtractionParameters encryptTemplate(Boolean encryptTemplate) {
+    this.encryptTemplate = encryptTemplate;
+    return this;
+  }
+
+   /**
+   * Get encryptTemplate
+   * @return encryptTemplate
+  **/
+  @ApiModelProperty(value = "")
+  public Boolean isEncryptTemplate() {
+    return encryptTemplate;
+  }
+
+  public void setEncryptTemplate(Boolean encryptTemplate) {
+    this.encryptTemplate = encryptTemplate;
   }
 
   public FingerPrintExtractionParameters evaluateNFIQ(Boolean evaluateNFIQ) {
@@ -296,6 +317,7 @@ public class FingerPrintExtractionParameters {
     }
     FingerPrintExtractionParameters fingerPrintExtractionParameters = (FingerPrintExtractionParameters) o;
     return Objects.equals(this.determinePatternClass, fingerPrintExtractionParameters.determinePatternClass) &&
+        Objects.equals(this.encryptTemplate, fingerPrintExtractionParameters.encryptTemplate) &&
         Objects.equals(this.evaluateNFIQ, fingerPrintExtractionParameters.evaluateNFIQ) &&
         Objects.equals(this.imageSource, fingerPrintExtractionParameters.imageSource) &&
         Objects.equals(this.maxRotation, fingerPrintExtractionParameters.maxRotation) &&
@@ -307,7 +329,7 @@ public class FingerPrintExtractionParameters {
 
   @Override
   public int hashCode() {
-    return Objects.hash(determinePatternClass, evaluateNFIQ, imageSource, maxRotation, minQuality, position, useCache, useOnlyAnsi378);
+    return Objects.hash(determinePatternClass, encryptTemplate, evaluateNFIQ, imageSource, maxRotation, minQuality, position, useCache, useOnlyAnsi378);
   }
 
 
@@ -317,6 +339,7 @@ public class FingerPrintExtractionParameters {
     sb.append("class FingerPrintExtractionParameters {\n");
     
     sb.append("    determinePatternClass: ").append(toIndentedString(determinePatternClass)).append("\n");
+    sb.append("    encryptTemplate: ").append(toIndentedString(encryptTemplate)).append("\n");
     sb.append("    evaluateNFIQ: ").append(toIndentedString(evaluateNFIQ)).append("\n");
     sb.append("    imageSource: ").append(toIndentedString(imageSource)).append("\n");
     sb.append("    maxRotation: ").append(toIndentedString(maxRotation)).append("\n");

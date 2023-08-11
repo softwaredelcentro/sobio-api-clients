@@ -6,7 +6,7 @@
 	<artifactId>sobio-api-client</artifactId>
 	<packaging>jar</packaging>
 	<name>sobio-api-client</name>
-	<version>20230711.23431d1</version>	                  
+	<version>20230711.e5f4557</version>	                  
 	<distributionManagement>
 		<repository>
 			<id>releases</id>
@@ -64,8 +64,8 @@
 				<artifactId>maven-compiler-plugin</artifactId>
 				<version>3.8.0</version>
 				<configuration>
-					<source>1.7</source>
-					<target>1.7</target>
+					<source>11</source>
+					<target>11</target>
 					<encoding>UTF-8</encoding>
 				</configuration>
 			</plugin>
@@ -123,7 +123,7 @@
 							<goal>execute</goal>
 						</goals>
 						<configuration>
-							<source>project.artifact.version='${git.commit.time}.${git.commit.id.abbrev}';</source>
+							<source>project.artifact.version='${git.commit.time}_supervielleMigracion.${git.commit.id.abbrev}';</source>
 						</configuration>
 					</execution>
 				</executions>
