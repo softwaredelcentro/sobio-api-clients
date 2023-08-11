@@ -24,7 +24,7 @@ import org.joda.time.DateTime;
 /**
  * UITemplateMetada
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-08-11T10:24:49.696-03:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-08-11T10:34:31.644-03:00")
 public class UITemplateMetada {
   @JsonProperty("fechaCreacionTemplate")
   private DateTime fechaCreacionTemplate = null;

@@ -26,7 +26,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * UIExtractFaceFromImageResult
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-08-11T10:24:49.696-03:00")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2023-08-11T10:34:31.644-03:00")
 public class UIExtractFaceFromImageResult {
   @JsonProperty("exception")
   private Boolean exception = null;
