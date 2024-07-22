@@ -5,10 +5,12 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **detectedActions** | [**List&lt;DetectedAction&gt;**](DetectedAction.md) |  |  [optional]
+**durationTime** | **Long** |  |  [optional]
 **exception** | **Boolean** |  |  [optional]
 **face** | [**Face**](Face.md) |  |  [optional]
 **livenessLevel** | **Integer** |  |  [optional]
 **properties** | [**FaceProperties**](FaceProperties.md) |  |  [optional]
+**startTime** | **Long** |  |  [optional]
 **status** | [**StatusEnum**](#StatusEnum) |  |  [optional]
 **txId** | **String** |  |  [optional]
 

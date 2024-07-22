@@ -6,21 +6,21 @@
 	<artifactId>sobio-api-client</artifactId>
 	<packaging>jar</packaging>
 	<name>sobio-api-client</name>
-	<version>20230711.23431d1</version>	                  
+	<version>20230711.e5f4557</version>	                  
 	<distributionManagement>
 		<repository>
 			<id>releases</id>
 			<name>Internal Releases</name>
 			<!-- url>http://repo/repository/maven-releases/</url -->
 			<!-- url>file://${project.build.directory}/mvn-repo</url -->
-			<url>file:///home/daniel/local/proys/sdc/git/mvn-repo</url>			
+			<url>file:///home/daniel/local/proys/securbase/sdc_migracion/git/mvn-repo</url>			
 		</repository>
 		<snapshotRepository>
 			<id>snapshots</id>
 			<name>Internal Snapshots</name>
 			<!-- url>http://repo/repository/maven-snapshots/</url -->
 			<!-- url>file://${project.build.directory}/mvn-repo</url -->
-			<url>file:///home/daniel/local/proys/sdc/git/mvn-repo</url>			
+			<url>file:///home/daniel/local/proys/securbase/sdc_migracion/git/mvn-repo</url>			
 		</snapshotRepository>
 	</distributionManagement>
 	<profiles>
@@ -38,7 +38,7 @@
 									<goal>generate</goal>
 								</goals>
 								<configuration>
-									<inputSpec>http://127.0.0.1:8080/v2/api-docs</inputSpec>
+									<inputSpec>https://dev.securbase.biomix.cloud/v2/api-docs</inputSpec>
 									<language>java</language>
 									<output>${project.basedir}</output>
 									<apiPackage>ar.com.sdc.sobio.api.v1</apiPackage>
